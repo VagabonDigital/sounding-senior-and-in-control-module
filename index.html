@@ -1,0 +1,4513 @@
+<!-- ═══════════════════════════════════════════════════════════════
+     MODULE CONFIGURATION — update these when building a new module
+     ─────────────────────────────────────────────────────────────────
+     Module title:       "Sounding Senior and In Control"
+     Module subtitle:    "Business Communication Module"
+     Brand icon:         structured speech lines, teal accent bar (SVG symbol: #icon-senior)
+     Favicon:            matching structured speech lines (data URI in <head>)
+     Total pages:        18  (TOTAL constant in JS)
+     Landing page text:  "18 pages" (page 1 hero-body)
+     Section breaks:     Start=1-3, Framework=4-5, Skills=6-12,
+                         Practice=13-16, Complete=17-18  (getSec() in JS)
+     Page titles:        PAGE_TITLES object in JS
+     Framework:          Pause → Prioritise → Condense → Position →
+                         Calibrate → Close
+     Suggested next:     Page 17 completion section
+     Quick Reference:    #quick-reference (jump-only, not in page flow)
+════════════════════════════════════════════════════════════════ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+  <rect width='100' height='100' rx='18' fill='%231C2B4A'/>
+  <rect x='18' y='24' width='64' height='13' rx='6.5' fill='%23ffffff'/>
+  <rect x='18' y='45' width='48' height='13' rx='6.5' fill='%23ffffff'/>
+  <rect x='18' y='66' width='34' height='13' rx='6.5' fill='%232D8F87'/>
+  </svg>">
+  <title>Sounding Senior and In Control &#8212; Business Communication Module</title>
+  <style>
+    /* ── FONTS ──────────────────────────────────────────── */
+    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+    /* ── DESIGN TOKENS ─────────────────────────────────── */
+    :root {
+      --bg: #F5F4F0;
+      --card: #FFFFFF;
+      --navy: #1C2B4A;
+      --navy-mid: #2E4270;
+      --teal: #2D8F87;
+      --teal-light: #3AACA3;
+      --teal-pale: #E8F5F4;
+      --amber: #C8843A;
+      --amber-light: #FDF3E8;
+      --amber-border: #EAC08C;
+      --muted: #6B7280;
+      --muted-light: #9CA3AF;
+      --border: #E8E6E0;
+      --shadow: 0 2px 16px rgba(28, 43, 74, 0.07);
+      --shadow-md: 0 4px 24px rgba(28, 43, 74, 0.10);
+      --radius: 14px;
+      --radius-sm: 8px;
+      --transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ── RESET ─────────────────────────────────────────── */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--navy);
+      min-height: 100vh;
+      line-height: 1.6
+    }
+
+    /* ── HEADER ─────────────────────────────────────────── */
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 8px rgba(28, 43, 74, 0.06);
+      padding: 0 32px
+    }
+
+    .top-bar-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      flex-shrink: 0
+    }
+
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0
+    }
+
+    .brand-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+      line-height: 1.2
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 400
+    }
+
+    .section-progress {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      justify-content: center;
+      max-width: 560px
+    }
+
+    .sec-step {
+      display: flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    .sec-dot {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      border: 2px solid var(--border);
+      background: #fff;
+      color: var(--muted);
+      transition: var(--transition);
+      flex-shrink: 0
+    }
+
+    .sec-step.active .sec-dot {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: #fff
+    }
+
+    .sec-step.done .sec-dot {
+      background: var(--teal);
+      border-color: var(--teal);
+      color: #fff
+    }
+
+    .sec-label {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--muted);
+      white-space: nowrap;
+      letter-spacing: 0.01em;
+      transition: color 0.2s
+    }
+
+    .sec-step.active .sec-label {
+      color: var(--navy);
+      font-weight: 700
+    }
+
+    .sec-step.done .sec-label {
+      color: var(--teal)
+    }
+
+    .sec-connector {
+      width: 22px;
+      height: 1px;
+      background: var(--border);
+      margin: 0 8px;
+      flex-shrink: 0;
+      transition: var(--transition)
+    }
+
+    .sec-connector.done {
+      background: var(--teal)
+    }
+
+    @media(max-width:860px) {
+      .section-progress {
+        display: none
+      }
+    }
+
+    .sec-step.clickable {
+      cursor: pointer
+    }
+
+    .sec-step.clickable:hover .sec-dot {
+      opacity: 0.8
+    }
+
+    .sec-step.clickable:hover .sec-label {
+      color: var(--teal)
+    }
+
+    /* ── BOTTOM BAR ─────────────────────────────────────── */
+    .bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-top: 1px solid var(--border);
+      box-shadow: 0 -2px 16px rgba(28, 43, 74, 0.08);
+      z-index: 100;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.22s
+    }
+
+    .bottom-bar.hidden {
+      transform: translateY(100%);
+      opacity: 0;
+      pointer-events: none
+    }
+
+    .bottom-left {
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .bottom-right {
+      display: flex;
+      align-items: center;
+      gap: 14px
+    }
+
+    .page-indicator {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500;
+      letter-spacing: 0.02em
+    }
+
+    .page-count-mobile {
+      display: none;
+    }
+
+    .page-title-desktop {
+      display: inline;
+    }
+
+    /* ── JUMP MENU ──────────────────────────────────────── */
+    .btn-jump {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 9px 14px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      cursor: pointer;
+      transition: var(--transition)
+    }
+
+    .btn-jump:hover {
+      border-color: var(--navy);
+      color: var(--navy)
+    }
+
+    .btn-jump.open {
+      border-color: var(--navy);
+      color: var(--navy);
+      background: var(--bg)
+    }
+
+    .jump-panel {
+      position: fixed;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(680px, calc(100vw - 32px));
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 40px rgba(28, 43, 74, 0.16);
+      z-index: 200;
+      display: none;
+      overflow: hidden
+    }
+
+    .jump-panel.open {
+      display: block;
+      animation: fadeUp 0.2s ease both
+    }
+
+    .jump-panel-inner {
+      padding: 16px 20px 20px;
+      max-height: 70vh;
+      overflow-y: auto
+    }
+
+    .jump-section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted-light);
+      padding: 10px 0 6px;
+      border-top: 1px solid var(--border);
+      margin-top: 8px
+    }
+
+    .jump-section-label:first-child {
+      border-top: none;
+      margin-top: 0;
+      padding-top: 0
+    }
+
+    .jump-links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px
+    }
+
+    @media(max-width:520px) {
+      .jump-links {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .jump-link {
+      display: flex;
+      flex-direction: column;
+      padding: 9px 12px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: background 0.15s;
+      border: none;
+      background: transparent;
+      text-align: left;
+      width: 100%
+    }
+
+    .jump-link:hover {
+      background: var(--bg)
+    }
+
+    .jump-link.current {
+      background: var(--teal-pale)
+    }
+
+    .jump-link-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.3
+    }
+
+    .jump-link.current .jump-link-title {
+      color: var(--teal)
+    }
+
+    .jump-link-desc {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+      line-height: 1.4
+    }
+
+    .jump-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 199;
+      display: none
+    }
+
+    .jump-overlay.open {
+      display: block
+    }
+
+    /* ── BUTTONS ────────────────────────────────────────── */
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: transparent;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 10px 20px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--navy-mid);
+      cursor: pointer;
+      transition: var(--transition)
+    }
+
+    .btn-back:hover {
+      border-color: var(--navy);
+      color: var(--navy)
+    }
+
+    .btn-back:disabled {
+      opacity: 0.3;
+      cursor: not-allowed
+    }
+
+    .btn-continue {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--navy);
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 12px 28px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14.5px;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 3px 14px rgba(28, 43, 74, 0.2)
+    }
+
+    .btn-continue:hover {
+      background: var(--navy-mid);
+      transform: translateY(-1px);
+      box-shadow: 0 5px 20px rgba(28, 43, 74, 0.28)
+    }
+
+    .btn-continue svg {
+      transition: transform 0.2s
+    }
+
+    .btn-continue:hover svg {
+      transform: translateX(3px)
+    }
+
+    .btn-teal {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--teal);
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 12px 28px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14.5px;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 3px 14px rgba(45, 143, 135, 0.25)
+    }
+
+    .btn-teal:hover {
+      background: var(--teal-light);
+      transform: translateY(-1px)
+    }
+
+    /* ── PAGE LAYOUT & ANIMATION ────────────────────────── */
+    .page-content {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 40px 24px 100px
+    }
+
+    .page {
+      display: none;
+      animation: fadeUp 0.26s cubic-bezier(0.4, 0, 0.2, 1) both
+    }
+
+    .page.active {
+      display: block
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(-8px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    /* ── TYPOGRAPHY ─────────────────────────────────────── */
+    .page-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--teal-pale);
+      border: 1px solid rgba(45, 143, 135, 0.25);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--teal);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 14px
+    }
+
+    .page-eyebrow.amber {
+      background: var(--amber-light);
+      border-color: var(--amber-border);
+      color: var(--amber)
+    }
+
+    .hero-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.1;
+      color: var(--navy);
+      margin-bottom: 14px;
+      letter-spacing: -0.01em
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--teal)
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      color: var(--muted);
+      font-weight: 400;
+      max-width: 560px;
+      line-height: 1.55;
+      margin-bottom: 10px
+    }
+
+    .hero-body {
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 580px;
+      line-height: 1.7;
+      margin-bottom: 36px
+    }
+
+    .page-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(26px, 3vw, 38px);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px
+    }
+
+    .page-subtitle {
+      font-size: 16px;
+      color: var(--muted);
+      margin-bottom: 28px;
+      line-height: 1.55;
+      max-width: 620px
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 6px
+    }
+
+    /* ── CARDS & LAYOUT ─────────────────────────────────── */
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      padding: 24px
+    }
+
+    .card.card-sm {
+      padding: 18px 20px
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px
+    }
+
+    @media(max-width:680px) {
+      .two-col {
+        grid-template-columns: 1fr
+      }
+    }
+
+    /* ── LANDING: FLOW VISUAL ───────────────────────────── */
+    .flow-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 32px 0 40px
+    }
+
+    .flow-step {
+      display: flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    .flow-pill {
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: 24px;
+      padding: 8px 18px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--navy-mid);
+      box-shadow: var(--shadow);
+      white-space: nowrap
+    }
+
+    .flow-pill.hl {
+      background: var(--navy);
+      color: white;
+      border-color: var(--navy)
+    }
+
+    .flow-pill.teal {
+      background: var(--teal);
+      color: white;
+      border-color: var(--teal)
+    }
+
+    .flow-arrow {
+      color: var(--muted);
+      font-size: 13px;
+      opacity: 0.45
+    }
+
+    /* ── PRIMARY BUTTON ─────────────────────────────────── */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--navy);
+      color: white;
+      border: none;
+      border-radius: var(--radius);
+      padding: 16px 36px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      letter-spacing: 0.01em;
+      box-shadow: 0 4px 20px rgba(28, 43, 74, 0.22)
+    }
+
+    .btn-primary:hover {
+      background: var(--navy-mid);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 28px rgba(28, 43, 74, 0.28)
+    }
+
+    .btn-primary svg {
+      transition: transform 0.2s
+    }
+
+    .btn-primary:hover svg {
+      transform: translateX(3px)
+    }
+
+    /* ── OVERVIEW: BUILD LIST ───────────────────────────── */
+    .build-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px
+    }
+
+    .build-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14.5px;
+      color: var(--navy);
+      line-height: 1.5
+    }
+
+    .build-dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--teal-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px
+    }
+
+    /* ── SKILL PATH MAP ─────────────────────────────────── */
+    .skill-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 8px
+    }
+
+    .skill-stack-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      box-shadow: var(--shadow);
+      transition: var(--transition)
+    }
+
+    .skill-stack-item:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-1px)
+    }
+
+    .skill-num {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: white;
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0
+    }
+
+    .skill-stack-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 3px
+    }
+
+    .skill-stack-desc {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.5
+    }
+
+    /* ── CORE FRAMEWORK ─────────────────────────────────── */
+    .framework-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 12px
+    }
+
+    .fw-step {
+      display: flex;
+      gap: 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      box-shadow: var(--shadow)
+    }
+
+    .fw-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--teal-pale);
+      color: var(--teal);
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0
+    }
+
+    .fw-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px
+    }
+
+    .fw-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px
+    }
+
+    .fw-phrase {
+      font-size: 13.5px;
+      color: var(--muted);
+      font-style: italic
+    }
+
+    /* ── MEMORY BAR ─────────────────────────────────────── */
+    .memory-bar {
+      background: var(--navy);
+      color: white;
+      border-radius: var(--radius);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 16px
+    }
+
+    .memory-bar-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.55;
+      margin-right: 6px
+    }
+
+    .memory-pill {
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 13px;
+      font-weight: 600
+    }
+
+    .memory-arrow {
+      opacity: 0.4;
+      font-size: 13px
+    }
+
+    /* ── COMPLETION FRAMEWORK LIST ──────────────────────── */
+    .completion-framework {
+      background: var(--navy);
+      color: white;
+      border-radius: var(--radius);
+      padding: 24px 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .completion-framework-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.48);
+      margin-bottom: 18px;
+    }
+
+    .completion-framework-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .completion-framework-step {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      position: relative;
+      padding: 0 0 16px;
+    }
+
+    .completion-framework-step:last-child {
+      padding-bottom: 0;
+    }
+
+    .completion-framework-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 14px;
+      top: 32px;
+      width: 1px;
+      height: calc(100% - 18px);
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .completion-framework-dot {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.13);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .completion-framework-name {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    /* ── MINI EXAMPLE ───────────────────────────────────── */
+    .mini-example {
+      background: var(--teal-pale);
+      border: 1px solid rgba(45, 143, 135, 0.2);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      margin-top: 14px
+    }
+
+    .mini-example-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 10px
+    }
+
+    .client-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em
+    }
+
+    .client-quote {
+      background: white;
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      font-size: 13.5px;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 8px;
+      border-left: 3px solid var(--teal)
+    }
+
+    .response-text {
+      font-size: 13.5px;
+      color: var(--navy);
+      line-height: 1.6
+    }
+
+    /* ── SENIORITY SIGNAL MAP ───────────────────────────── */
+    .discovery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 12px;
+      margin-top: 8px
+    }
+
+    .discovery-card {
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: var(--shadow)
+    }
+
+    .discovery-card:hover {
+      border-color: var(--teal);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px)
+    }
+
+    .discovery-card.active {
+      border-color: var(--teal);
+      background: var(--teal-pale)
+    }
+
+    .discovery-type {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--teal);
+      margin-bottom: 6px
+    }
+
+    .discovery-quote {
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--navy);
+      font-style: italic;
+      margin-bottom: 10px;
+      line-height: 1.4
+    }
+
+    .discovery-meta {
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.5
+    }
+
+    .discovery-meta strong {
+      color: var(--navy-mid);
+      font-weight: 600
+    }
+
+    .discovery-detail {
+      display: none;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(45, 143, 135, 0.2);
+      font-size: 13px;
+      color: var(--navy-mid);
+      line-height: 1.55
+    }
+
+    .discovery-card.active .discovery-detail {
+      display: block
+    }
+
+    .discovery-move {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--teal);
+      color: white;
+      border-radius: 20px;
+      padding: 4px 11px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-top: 8px
+    }
+
+    /* ── SKILL BLOCK ────────────────────────────────────── */
+    .skill-hero {
+      background: var(--navy);
+      border-radius: var(--radius);
+      padding: 28px 28px 24px;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden
+    }
+
+    .skill-hero::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      right: -30px;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: rgba(45, 143, 135, 0.12)
+    }
+
+    .skill-number-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.7);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 10px
+    }
+
+    .skill-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(22px, 3vw, 32px);
+      color: white;
+      line-height: 1.15;
+      margin-bottom: 8px
+    }
+
+    .skill-key-move {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.55
+    }
+
+    .key-move-hl {
+      color: white;
+      font-weight: 600
+    }
+
+    .info-block {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      margin-bottom: 14px;
+      box-shadow: var(--shadow)
+    }
+
+    .info-block-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 8px
+    }
+
+    .info-block-text {
+      font-size: 14px;
+      color: var(--navy);
+      line-height: 1.6
+    }
+
+    .principle-block {
+      background: var(--amber-light);
+      border: 1px solid var(--amber-border);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px
+    }
+
+    .principle-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      background: rgba(200, 132, 58, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px
+    }
+
+    .principle-text {
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--amber);
+      line-height: 1.45
+    }
+
+    /* ── PHRASE CHIPS ───────────────────────────────────── */
+    .phrase-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px
+    }
+
+    .phrase-chip {
+      background: var(--teal-pale);
+      border: 1px solid rgba(45, 143, 135, 0.25);
+      border-radius: 24px;
+      padding: 7px 15px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--teal);
+      cursor: pointer;
+      transition: var(--transition);
+      user-select: none
+    }
+
+    .phrase-chip:hover,
+    .phrase-chip.selected {
+      background: var(--teal);
+      color: white
+    }
+
+    /* ── WEAK / STRONGER ────────────────────────────────── */
+    .ws-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 8px
+    }
+
+    @media(max-width:600px) {
+      .ws-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .ws-card {
+      border-radius: var(--radius);
+      padding: 16px 18px
+    }
+
+    .ws-card.weak {
+      background: #FEF2F2;
+      border: 1px solid #FECACA
+    }
+
+    .ws-card.strong {
+      background: var(--teal-pale);
+      border: 1px solid rgba(45, 143, 135, 0.25)
+    }
+
+    .ws-tag {
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px
+    }
+
+    .ws-card.weak .ws-tag {
+      color: #DC2626
+    }
+
+    .ws-card.strong .ws-tag {
+      color: var(--teal)
+    }
+
+    .ws-text {
+      font-size: 13.5px;
+      line-height: 1.55;
+      font-style: italic
+    }
+
+    .ws-card.weak .ws-text {
+      color: #7F1D1D
+    }
+
+    .ws-card.strong .ws-text {
+      color: var(--navy)
+    }
+
+    /* ── PRACTICE TABS ──────────────────────────────────── */
+    .practice-section {
+      margin-top: 18px
+    }
+
+    .practice-tabs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 14px;
+      flex-wrap: wrap
+    }
+
+    .practice-tab {
+      padding: 7px 16px;
+      border-radius: 24px;
+      border: 1.5px solid var(--border);
+      background: var(--card);
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--muted);
+      cursor: pointer;
+      transition: var(--transition)
+    }
+
+    .practice-tab:hover {
+      border-color: var(--teal);
+      color: var(--teal)
+    }
+
+    .practice-tab.active {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: white
+    }
+
+    .practice-pane {
+      display: none
+    }
+
+    .practice-pane.active {
+      display: block
+    }
+
+    .practice-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      box-shadow: var(--shadow)
+    }
+
+    .practice-prompt {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--navy);
+      font-style: italic;
+      margin-bottom: 10px;
+      line-height: 1.45
+    }
+
+    .practice-task {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.6
+    }
+
+    .practice-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px
+    }
+
+    .practice-opt {
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      padding: 5px 13px;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--navy-mid);
+      cursor: pointer;
+      transition: var(--transition)
+    }
+
+    .practice-opt:hover {
+      border-color: var(--teal);
+      color: var(--teal);
+      background: var(--teal-pale)
+    }
+
+    .practice-opt.selected {
+      background: var(--teal);
+      color: white;
+      border-color: var(--teal)
+    }
+
+    /* ── CHALLENGE CARDS ────────────────────────────────── */
+    .challenge-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 10px;
+      margin-top: 8px
+    }
+
+    .challenge-card {
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: var(--shadow)
+    }
+
+    .challenge-card:hover {
+      border-color: var(--amber);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-1px)
+    }
+
+    .challenge-card.active {
+      border-color: var(--amber);
+      background: var(--amber-light)
+    }
+
+    .challenge-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--amber-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 8px;
+      flex-shrink: 0
+    }
+
+    .challenge-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px
+    }
+
+    .challenge-quote {
+      font-size: 13px;
+      color: var(--muted);
+      font-style: italic;
+      line-height: 1.45
+    }
+
+    /* ── QUICK RECAP ────────────────────────────────────── */
+    .quick-recap {
+      background: var(--navy);
+      border-radius: var(--radius);
+      padding: 18px 22px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-top: 18px
+    }
+
+    .recap-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0
+    }
+
+    .recap-label {
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 4px
+    }
+
+    .recap-text {
+      font-size: 14px;
+      color: white;
+      line-height: 1.55;
+      margin-bottom: 6px
+    }
+
+    .recap-phrase {
+      display: inline-block;
+      background: rgba(45, 143, 135, 0.25);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #3AACA3;
+      font-style: italic
+    }
+
+    /* ── NEXT MODULES ───────────────────────────────────── */
+    .suggested-next-section {
+      margin-top: 28px;
+    }
+
+    .suggested-next-label {
+      margin-bottom: 12px;
+    }
+
+    .next-modules {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .next-module-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 56px 1fr auto;
+      gap: 16px;
+      align-items: center;
+      transition: var(--transition);
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    .next-module-card:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(45, 143, 135, 0.28);
+    }
+
+    .next-module-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: var(--teal-pale);
+      color: var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .next-module-kicker {
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 4px;
+    }
+
+    .next-module-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.25;
+      margin-bottom: 5px;
+    }
+
+    .next-module-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .next-module-desc strong {
+      color: var(--navy-mid);
+      font-weight: 700;
+    }
+
+    .next-module-arrow {
+      color: var(--teal);
+      font-size: 24px;
+      line-height: 1;
+      opacity: 0.85;
+      padding-left: 4px;
+    }
+
+    @media(max-width:700px) {
+      .next-modules {
+        grid-template-columns: 1fr;
+      }
+
+      .next-module-card {
+        grid-template-columns: 48px 1fr auto;
+        gap: 14px;
+        padding: 16px;
+      }
+
+      .next-module-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+      }
+
+      .next-module-arrow {
+        font-size: 20px;
+      }
+    }
+
+    /* ── OPTIONAL QUESTION ──────────────────────────────── */
+    .optional-q {
+      background: var(--card);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-top: 16px
+    }
+
+    .optional-q-label {
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted-light);
+      margin-bottom: 6px
+    }
+
+    .optional-q-text {
+      font-size: 14px;
+      color: var(--muted);
+      font-style: italic
+    }
+
+    /* ── PUT IT TOGETHER: SEQUENCE ──────────────────────── */
+    .sequence-steps {
+      display: flex;
+      flex-direction: column
+    }
+
+    .seq-step {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start
+    }
+
+    .seq-line-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+      width: 32px
+    }
+
+    .seq-dot {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--teal-pale);
+      border: 2px solid var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--teal);
+      flex-shrink: 0
+    }
+
+    .seq-connector {
+      width: 2px;
+      height: 24px;
+      background: rgba(45, 143, 135, 0.2)
+    }
+
+    .seq-content {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      flex: 1;
+      box-shadow: var(--shadow)
+    }
+
+    .seq-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--teal);
+      margin-bottom: 4px
+    }
+
+    .seq-phrase {
+      font-size: 14px;
+      font-style: italic;
+      color: var(--navy)
+    }
+
+    /* ── FULL EXAMPLE TOGGLE ────────────────────────────── */
+    .full-example {
+      margin-top: 16px
+    }
+
+    .full-example-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: var(--shadow)
+    }
+
+    .full-example-toggle:hover {
+      border-color: var(--teal)
+    }
+
+    .full-example-toggle.open {
+      border-color: var(--teal);
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0
+    }
+
+    .toggle-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy)
+    }
+
+    .toggle-sub {
+      font-size: 12.5px;
+      color: var(--muted);
+      margin-top: 2px
+    }
+
+    .toggle-chevron {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.22s;
+      flex-shrink: 0
+    }
+
+    .full-example-toggle.open .toggle-chevron {
+      transform: rotate(180deg)
+    }
+
+    .full-example-body {
+      display: none;
+      background: var(--teal-pale);
+      border: 1.5px solid var(--teal);
+      border-top: none;
+      border-radius: 0 0 var(--radius) var(--radius);
+      padding: 18px 20px
+    }
+
+    .full-example-toggle.open+.full-example-body {
+      display: block
+    }
+
+    /* ── LANGUAGE BANK ──────────────────────────────────── */
+    .lang-accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 8px
+    }
+
+    .lang-group {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow)
+    }
+
+    .lang-group-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      cursor: pointer;
+      transition: background 0.18s;
+      user-select: none
+    }
+
+    .lang-group-header:hover {
+      background: #FAFAF8
+    }
+
+    .lang-group-title {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--navy)
+    }
+
+    .lang-group-count {
+      font-size: 12px;
+      color: var(--muted);
+      margin-left: 8px
+    }
+
+    .lang-chevron {
+      transition: transform 0.22s
+    }
+
+    .lang-group.open .lang-chevron {
+      transform: rotate(180deg)
+    }
+
+    .lang-group-body {
+      display: none;
+      padding: 4px 20px 18px;
+      border-top: 1px solid var(--border)
+    }
+
+    .lang-group.open .lang-group-body {
+      display: block
+    }
+
+    .lang-phrase-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding-top: 12px
+    }
+
+    .lang-phrase {
+      background: var(--teal-pale);
+      border: 1px solid rgba(45, 143, 135, 0.2);
+      border-radius: 20px;
+      padding: 7px 14px;
+      font-size: 13px;
+      color: var(--teal);
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition)
+    }
+
+    .lang-phrase:hover {
+      background: var(--teal);
+      color: white
+    }
+
+    /* ── PRACTICE PROMPT LIBRARY ────────────────────────── */
+    .prompt-library {
+      display: flex;
+      flex-direction: column;
+      gap: 10px
+    }
+
+    .prompt-item {
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow)
+    }
+
+    .prompt-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      cursor: pointer;
+      transition: background 0.18s
+    }
+
+    .prompt-header:hover {
+      background: #FAFAF8
+    }
+
+    .prompt-item.open .prompt-header {
+      background: var(--navy)
+    }
+
+    .prompt-item.open .prompt-title {
+      color: white
+    }
+
+    .prompt-item.open .prompt-quote {
+      color: rgba(255, 255, 255, 0.65)
+    }
+
+    .prompt-title {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 2px
+    }
+
+    .prompt-quote {
+      font-size: 12.5px;
+      color: var(--muted);
+      font-style: italic
+    }
+
+    .prompt-chevron {
+      flex-shrink: 0;
+      transition: transform 0.22s
+    }
+
+    .prompt-item.open .prompt-chevron {
+      transform: rotate(180deg)
+    }
+
+    .prompt-item.open .prompt-chevron path {
+      stroke: white
+    }
+
+    .prompt-body {
+      display: none;
+      padding: 18px 20px;
+      border-top: 1px solid var(--border)
+    }
+
+    .prompt-item.open .prompt-body {
+      display: block
+    }
+
+    .prompt-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px
+    }
+
+    .prompt-opt {
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--navy-mid);
+      cursor: pointer;
+      transition: var(--transition)
+    }
+
+    .prompt-opt:hover {
+      background: var(--teal-pale);
+      border-color: var(--teal);
+      color: var(--teal)
+    }
+
+    .prompt-opt.selected {
+      background: var(--teal);
+      border-color: var(--teal);
+      color: white
+    }
+
+    /* ── WHAT GOOD LOOKS LIKE ───────────────────────────── */
+    .good-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px
+    }
+
+    .good-item {
+      display: flex;
+      gap: 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      box-shadow: var(--shadow)
+    }
+
+    .good-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px
+    }
+
+    .good-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px
+    }
+
+    .good-phrase {
+      font-size: 13px;
+      color: var(--muted);
+      font-style: italic
+    }
+
+    .checklist {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--teal-pale);
+      border: 1px solid rgba(45, 143, 135, 0.2);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 13px;
+      color: var(--teal);
+      font-weight: 500
+    }
+
+    /* ── COMPLETION PAGE ────────────────────────────────── */
+    .completion-hero {
+      text-align: center;
+      padding: 32px 20px 36px
+    }
+
+    .completion-badge {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      box-shadow: 0 8px 32px rgba(45, 143, 135, 0.3)
+    }
+
+    .completion-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(28px, 4vw, 42px);
+      color: var(--navy);
+      margin-bottom: 10px;
+      line-height: 1.15
+    }
+
+    .completion-sub {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 480px;
+      margin: 0 auto 24px;
+      line-height: 1.55
+    }
+
+    .win-message {
+      background: var(--teal);
+      color: white;
+      border-radius: var(--radius);
+      padding: 18px 24px;
+      font-size: 15px;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(45, 143, 135, 0.28)
+    }
+
+    .can-do-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 8px;
+      margin-bottom: 16px
+    }
+
+    .can-do-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--navy)
+    }
+
+    .can-do-check {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--teal-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0
+    }
+
+    .reflection-q {
+      background: var(--card);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius-sm);
+      padding: 13px 16px;
+      font-size: 14px;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 8px
+    }
+
+    /* ── BONUS ROUND ────────────────────────────────────── */
+    .bonus-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 14px;
+      margin-top: 8px
+    }
+
+    .bonus-card {
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: var(--transition)
+    }
+
+    .bonus-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px)
+    }
+
+    .bonus-num {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted-light);
+      margin-bottom: 8px
+    }
+
+    .bonus-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px
+    }
+
+    .bonus-desc {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.55;
+      margin-bottom: 12px
+    }
+
+    .bonus-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px
+    }
+
+    .bonus-opt {
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      padding: 5px 12px;
+      font-size: 12.5px;
+      color: var(--navy-mid);
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition)
+    }
+
+    .bonus-opt:hover,
+    .bonus-opt.selected {
+      background: var(--navy);
+      color: white;
+      border-color: var(--navy)
+    }
+
+    .bonus-for {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 6px;
+      font-style: italic
+    }
+
+    /* ── UTILITY: SPACING ───────────────────────────────── */
+    .mt-8 { margin-top: 8px }
+    .mt-12 { margin-top: 12px }
+    .mt-14 { margin-top: 14px }
+    .mt-16 { margin-top: 16px }
+    .mt-20 { margin-top: 20px }
+    .mt-24 { margin-top: 24px }
+    .mt-28 { margin-top: 28px }
+    .mt-32 { margin-top: 32px }
+    .mb-8 { margin-bottom: 8px }
+    .mb-12 { margin-bottom: 12px }
+    .mb-14 { margin-bottom: 14px }
+
+    /* ── MODIFIER CLASSES ──────────────────────────────────── */
+    .skill-num.teal { background: var(--teal) }
+    .fw-num.teal { background: var(--teal-pale); color: var(--teal) }
+    .seq-dot.final { background: var(--teal); border-color: var(--teal); color: white }
+    .card.card-navy { background: var(--navy); border-color: var(--navy) }
+    .card.card-amber { background: var(--amber-light); border-color: var(--amber-border) }
+    .client-label.mt-10 { margin-top: 10px }
+    .client-label.mt-12 { margin-top: 12px }
+    .practice-opt.block { border-radius: var(--radius-sm); padding: 10px 14px }
+    .section-label.on-dark { color: rgba(255, 255, 255, 0.5); margin-bottom: 8px }
+    .reflection-q.last { margin-bottom: 0 }
+    .bonus-for.mt { margin-top: 12px }
+
+    /* Tap hint */
+    .tap-hint {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 20px;
+      font-style: italic
+    }
+
+    /* Prompt body hint */
+    .prompt-hint {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 12px
+    }
+
+    /* Completion page action group */
+    .completion-actions {
+      text-align: center;
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px
+    }
+
+    /* Challenge example box */
+    .challenge-example {
+      background: var(--bg);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px
+    }
+
+    .challenge-example p {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 4px
+    }
+
+    .challenge-example p:last-child { margin-bottom: 0 }
+
+    .challenge-example .task {
+      color: var(--teal);
+      font-weight: 600
+    }
+
+    /* ── STUDY TOOLS ────────────────────────────────────────── */
+    .study-tools { margin-top: 28px }
+
+    .study-tools-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 12px
+    }
+
+    .study-tools-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px
+    }
+
+    @media (max-width: 600px) {
+      .study-tools-grid { grid-template-columns: 1fr }
+    }
+
+    .study-tool-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 12px
+    }
+
+    .study-tool-header {
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .study-tool-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--teal-pale);
+      color: var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0
+    }
+
+    .study-tool-kicker {
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 3px
+    }
+
+    .study-tool-title {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.25
+    }
+
+    .study-tool-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55
+    }
+
+    .study-tool-audio {
+      width: 100%;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      accent-color: var(--teal)
+    }
+
+    .study-tool-audio::-webkit-media-controls-panel {
+      background: var(--teal-pale)
+    }
+
+    .study-tool-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--teal-pale);
+      border: 1px solid rgba(45, 143, 135, 0.25);
+      border-radius: var(--radius-sm);
+      padding: 9px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--teal);
+      text-decoration: none;
+      transition: var(--transition);
+      align-self: flex-start
+    }
+
+    .study-tool-link:hover {
+      background: var(--teal);
+      color: white
+    }
+
+    /* ── PRINT / SAVE AS PDF (Quick Reference only) ────────── */
+    @media print {
+      .top-bar,
+      .bottom-bar,
+      .jump-overlay,
+      .jump-panel { display: none !important; }
+
+      body { background: white; }
+
+      .page { display: none !important; }
+
+      #quick-reference {
+        display: block !important;
+        animation: none !important;
+      }
+
+      .page-content {
+        padding: 24px;
+        max-width: 100%;
+      }
+
+      .memory-bar { box-shadow: none; }
+      .good-item { box-shadow: none; break-inside: avoid; }
+      .mini-example { break-inside: avoid; }
+      #qr-print-btn { display: none !important; }
+    }
+
+    /* ── MOBILE FIRST ────────────────────────────────────────────
+       Breakpoint: ≤ 540px (single-column phone)
+    ──────────────────────────────────────────────────────────── */
+    @media (max-width: 540px) {
+      .page-content { padding: 24px 16px 90px }
+
+      .bottom-bar { padding: 0 12px; height: 64px; gap: 6px }
+      .bottom-left { gap: 6px; flex-shrink: 1; min-width: 0 }
+      .bottom-right { gap: 8px; flex-shrink: 0 }
+
+      .page-indicator { font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 80px }
+      .page-count-desktop, .page-title-desktop { display: none; }
+      .page-count-mobile { display: inline; }
+
+      .btn-back { padding: 9px 12px; font-size: 13px }
+      .btn-jump { padding: 9px 12px; font-size: 13px }
+      .btn-continue { padding: 10px 16px; font-size: 13.5px }
+
+      .jump-panel { bottom: 68px; left: 8px; right: 8px; width: auto; transform: none }
+
+      .flow-visual { gap: 6px; margin: 20px 0 28px; justify-content: center }
+      .flow-arrow { display: none }
+      .flow-pill { font-size: 12.5px; padding: 7px 14px }
+
+      .phrase-chip { font-size: 12.5px; padding: 6px 12px }
+
+      .practice-tabs { flex-wrap: nowrap; gap: 5px }
+      .practice-tab { font-size: 11.5px; padding: 7px 11px; white-space: nowrap }
+
+      .memory-bar { flex-direction: column; align-items: stretch; gap: 0; padding: 20px 20px }
+      .memory-bar-label { font-size: 11px; letter-spacing: 0.1em; color: rgba(255, 255, 255, 0.48); margin-bottom: 14px; margin-right: 0 }
+      .memory-arrow { display: none }
+      .memory-pill { display: block; background: rgba(255, 255, 255, 0.1); border-radius: var(--radius-sm); padding: 10px 14px; font-size: 14px; font-weight: 600; color: white; margin-bottom: 6px }
+      .memory-pill:last-of-type { margin-bottom: 0 }
+
+      .skill-key-move { font-size: 13px }
+      .brand-sub { display: none }
+      .page-title { font-size: 26px }
+      .hero-title { font-size: clamp(30px, 9vw, 42px) }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+     SVG ICON SYMBOL LIBRARY
+     Usage: <svg width="W" height="H"><use href="#icon-NAME"/></svg>
+     Colour inherits via currentColor — set on parent or svg element.
+════════════════════════════════════════════════════════════════ -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="icon-check" viewBox="0 0 10 10">
+      <path d="M2 5.5l2 2L8 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-check-lg" viewBox="0 0 11 11">
+      <path d="M2 5.5l2.5 2.5L9 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-check-sm" viewBox="0 0 12 12">
+      <path d="M2 6l3 3 5-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-bulb" viewBox="0 0 14 14">
+      <path d="M7 2a3.5 3.5 0 0 1 2 6.4V10a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V8.4A3.5 3.5 0 0 1 7 2z" fill="none" stroke="currentColor" stroke-width="1.3"/>
+      <path d="M5.5 12h3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-target" viewBox="0 0 14 14">
+      <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.3" opacity="0.6" fill="none"/>
+      <circle cx="7" cy="7" r="3" stroke="currentColor" stroke-width="1.3" opacity="0.8" fill="none"/>
+      <circle cx="7" cy="7" r="1" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-chevron-down" viewBox="0 0 16 16">
+      <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-chevron-down-sm" viewBox="0 0 14 14">
+      <path d="M3 5l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-chevron-down-md" viewBox="0 0 18 18">
+      <path d="M4.5 7L9 11.5 13.5 7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-arrow-right" viewBox="0 0 14 14">
+      <path d="M5 3l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-arrow-right-wide" viewBox="0 0 16 16">
+      <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-arrow-right-bonus" viewBox="0 0 15 15">
+      <path d="M3 7.5h9M8 3.5l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-arrow-left" viewBox="0 0 14 14">
+      <path d="M9 3L5 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-list" viewBox="0 0 14 14">
+      <path d="M2 4h10M2 7h7M2 10h5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+    </symbol>
+    <!-- Brand icon: structured speech lines, teal accent on bottom bar -->
+    <symbol id="icon-senior" viewBox="0 0 20 20">
+      <rect x="2" y="3.5" width="16" height="3.2" rx="1.6" fill="white"/>
+      <rect x="2" y="8.8" width="12" height="3.2" rx="1.6" fill="white"/>
+      <rect x="2" y="14.1" width="8.5" height="3.2" rx="1.6" fill="#2D8F87"/>
+    </symbol>
+    <symbol id="icon-circle-check" viewBox="0 0 12 12">
+      <circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="1.3"/>
+      <path d="M4 6l1.5 1.5L8 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-print" viewBox="0 0 15 15">
+      <path d="M4 5V2h7v3M4 10H2V6h11v4h-2M4 10v3h7v-3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-doc-plus" viewBox="0 0 13 13">
+      <rect x="1.5" y="1.5" width="10" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/>
+      <path d="M4 6.5h5M6.5 4v5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-podcast" viewBox="0 0 20 20">
+      <circle cx="10" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <path d="M5.5 8a4.5 4.5 0 0 0 9 0" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M3 8a7 7 0 0 0 14 0" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity="0.5"/>
+      <line x1="10" y1="12.5" x2="10" y2="17" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M7.5 17h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-mindmap" viewBox="0 0 20 20">
+      <circle cx="10" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <circle cx="3.5" cy="5" r="1.5" fill="none" stroke="currentColor" stroke-width="1.3"/>
+      <circle cx="3.5" cy="15" r="1.5" fill="none" stroke="currentColor" stroke-width="1.3"/>
+      <circle cx="16.5" cy="5" r="1.5" fill="none" stroke="currentColor" stroke-width="1.3"/>
+      <circle cx="16.5" cy="15" r="1.5" fill="none" stroke="currentColor" stroke-width="1.3"/>
+      <line x1="7.7" y1="8.4" x2="4.8" y2="6.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="7.7" y1="11.6" x2="4.8" y2="13.9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="12.3" y1="8.4" x2="15.2" y2="6.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="12.3" y1="11.6" x2="15.2" y2="13.9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
+  <header class="top-bar">
+    <div class="top-bar-inner">
+      <div class="brand">
+        <div class="brand-icon">
+          <svg width="20" height="20"><use href="#icon-senior"/></svg>
+        </div>
+        <div>
+          <div class="brand-name">Sounding Senior and In Control</div>
+          <div class="brand-sub">Business Communication Module</div>
+        </div>
+      </div>
+      <nav class="section-progress" id="sectionProgress">
+        <div class="sec-step clickable" id="sec-0" onclick="goToPage(1)">
+          <div class="sec-dot">1</div><span class="sec-label">Start</span>
+        </div>
+        <div class="sec-connector" id="conn-0"></div>
+        <div class="sec-step clickable" id="sec-1" onclick="goToPage(4)">
+          <div class="sec-dot">2</div><span class="sec-label">Framework</span>
+        </div>
+        <div class="sec-connector" id="conn-1"></div>
+        <div class="sec-step clickable" id="sec-2" onclick="goToPage(6)">
+          <div class="sec-dot">3</div><span class="sec-label">Skills</span>
+        </div>
+        <div class="sec-connector" id="conn-2"></div>
+        <div class="sec-step clickable" id="sec-3" onclick="goToPage(13)">
+          <div class="sec-dot">4</div><span class="sec-label">Practice</span>
+        </div>
+        <div class="sec-connector" id="conn-3"></div>
+        <div class="sec-step clickable" id="sec-4" onclick="goToPage(17)">
+          <div class="sec-dot">5</div><span class="sec-label">Complete</span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content">
+
+    <!-- PAGE 1 ─ LANDING ──────────────────────────────────────── -->
+    <div class="page active" id="page-1">
+      <div style="text-align:center;padding:20px 0 48px">
+        <div class="page-eyebrow"><svg width="12" height="12"><use href="#icon-circle-check"/></svg> Business Communication Module</div>
+        <h1 class="hero-title" style="max-width:620px;margin:0 auto 16px"><em>Sounding Senior</em><br>and In Control</h1>
+        <p class="hero-sub" style="margin:0 auto 12px">Sound calmer, clearer, and more senior in professional English conversations.</p>
+        <p class="hero-body" style="margin:0 auto 36px">Build the structure, language, and habits to pause before answering, lead with the main point, condense your message, state your view with confidence, calibrate tone, and close with a clear next step &#8212; without sounding cold, robotic, or over-formal.</p>
+        <div class="flow-visual">
+          <div class="flow-step"><div class="flow-pill">Pause</div><span class="flow-arrow">&#8594;</span></div>
+          <div class="flow-step"><div class="flow-pill">Prioritise</div><span class="flow-arrow">&#8594;</span></div>
+          <div class="flow-step"><div class="flow-pill hl">Condense</div><span class="flow-arrow">&#8594;</span></div>
+          <div class="flow-step"><div class="flow-pill">Position</div><span class="flow-arrow">&#8594;</span></div>
+          <div class="flow-step"><div class="flow-pill">Calibrate</div><span class="flow-arrow">&#8594;</span></div>
+          <div class="flow-step"><div class="flow-pill teal">Close</div></div>
+        </div>
+        <button class="btn-primary" onclick="goToPage(2)">Start Module <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div style="margin-top:28px;font-size:13px;color:var(--muted)">3&#8211;5 lessons &nbsp;&middot;&nbsp; 18 pages &nbsp;&middot;&nbsp; Skill-based workspace</div>
+      </div>
+    </div>
+
+    <!-- PAGE 2 ─ MODULE OVERVIEW ──────────────────────────────── -->
+    <div class="page" id="page-2">
+      <div class="page-eyebrow">Module Overview</div>
+      <h1 class="page-title">What This Module Builds</h1>
+      <p class="page-subtitle">Good ideas can sound weaker when the English is too vague, apologetic, or overloaded with detail.</p>
+      <div class="two-col mt-8">
+        <div>
+          <div class="card">
+            <div class="section-label mb-8">In this module</div>
+            <p style="font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:14px">We&#8217;ll practise how to slow down before answering, lead with the main point, make messages shorter, state a position clearly, calibrate tone when pushing back, and close with a clear next step.</p>
+            <p style="font-size:14px;color:var(--muted);line-height:1.65">The goal is not to sound impressive. The goal is to sound clear, calm, and useful.</p>
+          </div>
+          <div class="card card-navy mt-12">
+            <div class="section-label on-dark">Typical path</div>
+            <div style="font-size:22px;font-weight:700;color:white;margin-bottom:4px">3&#8211;5 lessons</div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.55)">Depending on the student&#8217;s current level of concision, confidence, and phrasing under pressure.</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="section-label mb-8">You&#8217;ll build</div>
+          <ul class="build-list">
+            <li><div class="build-dot"><svg width="10" height="10" style="color:#2D8F87"><use href="#icon-check"/></svg></div>Stronger main-message answers</li>
+            <li><div class="build-dot"><svg width="10" height="10" style="color:#2D8F87"><use href="#icon-check"/></svg></div>Calmer responses under pressure</li>
+            <li><div class="build-dot"><svg width="10" height="10" style="color:#2D8F87"><use href="#icon-check"/></svg></div>Fewer weak hedging words</li>
+            <li><div class="build-dot"><svg width="10" height="10" style="color:#2D8F87"><use href="#icon-check"/></svg></div>Less apologetic opening language</li>
+            <li><div class="build-dot"><svg width="10" height="10" style="color:#2D8F87"><use href="#icon-check"/></svg></div>Clearer recommendation phrasing</li>
+            <li><div class="build-dot"><svg width="10" height="10" style="color:#2D8F87"><use href="#icon-check"/></svg></div>More concise project updates</li>
+            <li><div class="build-dot"><svg width="10" height="10" style="color:#2D8F87"><use href="#icon-check"/></svg></div>Better pushback without sounding blunt</li>
+            <li><div class="build-dot"><svg width="10" height="10" style="color:#2D8F87"><use href="#icon-check"/></svg></div>More controlled disagreement</li>
+            <li><div class="build-dot"><svg width="10" height="10" style="color:#2D8F87"><use href="#icon-check"/></svg></div>Stronger close and next-step language</li>
+          </ul>
+        </div>
+      </div>
+      <div class="study-tools">
+        <div class="study-tools-label">Study Tools</div>
+        <div class="study-tools-grid">
+          <div class="study-tool-card">
+            <div class="study-tool-header">
+              <div class="study-tool-icon"><svg width="20" height="20"><use href="#icon-podcast"/></svg></div>
+              <div>
+                <div class="study-tool-kicker">Podcast · Deep Dive</div>
+                <div class="study-tool-title">Sounding Senior and In Control Audio Overview</div>
+              </div>
+            </div>
+            <div class="study-tool-desc">A hosted audio walkthrough of the senior communication framework using real workplace situations as examples. Good before or after a session.</div>
+            <audio class="study-tool-audio" controls preload="metadata">
+              <source src="sounding-senior-and-in-control-audio-overview.m4a" type="audio/mp4">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+          <div class="study-tool-card">
+            <div class="study-tool-header">
+              <div class="study-tool-icon"><svg width="20" height="20"><use href="#icon-mindmap"/></svg></div>
+              <div>
+                <div class="study-tool-kicker">Mind Map · Framework Overview</div>
+                <div class="study-tool-title">Sounding Senior Framework at a Glance</div>
+              </div>
+            </div>
+            <div class="study-tool-desc">An interactive visual map of the six steps, key phrases, weak signal patterns, and practice challenges. Open it, explore it, save it.</div>
+            <a class="study-tool-link" href="#" target="_blank" rel="noopener">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M5 2H2.5A1.5 1.5 0 0 0 1 3.5v7A1.5 1.5 0 0 0 2.5 12h7A1.5 1.5 0 0 0 11 10.5V8M8 1h4m0 0v4m0-4L5.5 7.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Open Mind Map
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 3 ─ SKILL PATH MAP ───────────────────────────────── -->
+    <div class="page" id="page-3">
+      <div class="page-eyebrow">Skill Path</div>
+      <h1 class="page-title">Sounding senior is built one move at a time.</h1>
+      <p class="page-subtitle">You don&#8217;t need complicated English to sound more senior. You need better habits: a calmer start, a clearer main point, and a controlled finish.</p>
+      <div class="skill-stack mt-8">
+        <div class="skill-stack-item">
+          <div class="skill-num">1</div>
+          <div>
+            <div class="skill-stack-title">Pause before responding</div>
+            <div class="skill-stack-desc">Slow the moment down so you don&#8217;t sound rushed, defensive, or uncertain.</div>
+          </div>
+        </div>
+        <div class="skill-stack-item">
+          <div class="skill-num">2</div>
+          <div>
+            <div class="skill-stack-title">Prioritise the main point</div>
+            <div class="skill-stack-desc">Lead with the most important message before adding context.</div>
+          </div>
+        </div>
+        <div class="skill-stack-item">
+          <div class="skill-num">3</div>
+          <div>
+            <div class="skill-stack-title">Condense the message</div>
+            <div class="skill-stack-desc">Cut unnecessary detail, repeated ideas, and weak filler.</div>
+          </div>
+        </div>
+        <div class="skill-stack-item">
+          <div class="skill-num">4</div>
+          <div>
+            <div class="skill-stack-title">Position your view clearly</div>
+            <div class="skill-stack-desc">State your recommendation or opinion with measured confidence.</div>
+          </div>
+        </div>
+        <div class="skill-stack-item">
+          <div class="skill-num">5</div>
+          <div>
+            <div class="skill-stack-title">Calibrate the tone</div>
+            <div class="skill-stack-desc">Sound firm without sounding harsh. Sound collaborative without sounding weak.</div>
+          </div>
+        </div>
+        <div class="skill-stack-item">
+          <div class="skill-num teal">6</div>
+          <div>
+            <div class="skill-stack-title">Close with control</div>
+            <div class="skill-stack-desc">End on a clear next step, action, or decision &#8212; not a vague fade-out.</div>
+          </div>
+        </div>
+      </div>
+      <div class="optional-q mt-20">
+        <div class="optional-q-label">Optional &#8212; quick question</div>
+        <div class="optional-q-text">Which feels hardest right now: pausing, leading with the point, being concise, sounding confident, pushing back without tension, or closing clearly?</div>
+      </div>
+    </div>
+
+    <!-- PAGE 4 ─ CORE FRAMEWORK ───────────────────────────────── -->
+    <div class="page" id="page-4">
+      <div class="page-eyebrow">Core Framework</div>
+      <h1 class="page-title">The Senior Communication Framework</h1>
+      <p class="page-subtitle">When you feel pressure to answer quickly or say the right thing, this framework helps you stay calm and sound controlled.</p>
+      <div class="framework-steps">
+        <div class="fw-step">
+          <div class="fw-num">1</div>
+          <div>
+            <div class="fw-label">Pause</div>
+            <div class="fw-title">Slow the moment down before answering.</div>
+            <div class="fw-phrase">&#8220;Let me give you the short version first.&#8221;</div>
+          </div>
+        </div>
+        <div class="fw-step">
+          <div class="fw-num">2</div>
+          <div>
+            <div class="fw-label">Prioritise</div>
+            <div class="fw-title">Start with the most important point.</div>
+            <div class="fw-phrase">&#8220;The main thing here is&#8230;&#8221;</div>
+          </div>
+        </div>
+        <div class="fw-step">
+          <div class="fw-num">3</div>
+          <div>
+            <div class="fw-label">Condense</div>
+            <div class="fw-title">Remove the words that don&#8217;t add value.</div>
+            <div class="fw-phrase">&#8220;In practical terms&#8230;&#8221;</div>
+          </div>
+        </div>
+        <div class="fw-step">
+          <div class="fw-num">4</div>
+          <div>
+            <div class="fw-label">Position</div>
+            <div class="fw-title">State your recommendation or view clearly.</div>
+            <div class="fw-phrase">&#8220;My recommendation would be&#8230;&#8221;</div>
+          </div>
+        </div>
+        <div class="fw-step">
+          <div class="fw-num">5</div>
+          <div>
+            <div class="fw-label">Calibrate</div>
+            <div class="fw-title">Adjust tone to stay professional under pressure.</div>
+            <div class="fw-phrase">&#8220;I see where you&#8217;re coming from, but I&#8217;d frame it slightly differently.&#8221;</div>
+          </div>
+        </div>
+        <div class="fw-step">
+          <div class="fw-num teal">6</div>
+          <div>
+            <div class="fw-label">Close</div>
+            <div class="fw-title">End with action, timing, or a clear decision.</div>
+            <div class="fw-phrase">&#8220;The practical next step is&#8230;&#8221;</div>
+          </div>
+        </div>
+      </div>
+      <div class="memory-bar mt-16">
+        <span class="memory-bar-label">Remember</span>
+        <span class="memory-pill">Pause</span><span class="memory-arrow">&#8594;</span>
+        <span class="memory-pill">Prioritise</span><span class="memory-arrow">&#8594;</span>
+        <span class="memory-pill">Condense</span><span class="memory-arrow">&#8594;</span>
+        <span class="memory-pill">Position</span><span class="memory-arrow">&#8594;</span>
+        <span class="memory-pill">Calibrate</span><span class="memory-arrow">&#8594;</span>
+        <span class="memory-pill">Close</span>
+      </div>
+      <div class="mini-example mt-16">
+        <div class="mini-example-label">Mini Example &#8212; Full Framework in One Response</div>
+        <div class="client-label">Colleague</div>
+        <div class="client-quote">&#8220;Can you quickly explain where we are with this project?&#8221;</div>
+        <div class="client-label mt-10">Senior-sounding response</div>
+        <div class="response-text">&#8220;Let me give you the short version first. The main thing here is that the deadline is still achievable, but the approval step is the current risk. In practical terms, everything depends on a decision this week. My recommendation would be to confirm the decision owner today. I see where you&#8217;re coming from on waiting until Friday, but I&#8217;d frame it slightly differently &#8212; the risk is that we lose a week. The practical next step is for me to send a short summary with the two options and the timeline.&#8221;</div>
+      </div>
+      <div class="optional-q mt-16">
+        <div class="optional-q-label">Optional &#8212; quick question</div>
+        <div class="optional-q-text">Which step do you usually skip or rush through when you&#8217;re under pressure?</div>
+      </div>
+    </div>
+
+    <!-- PAGE 5 ─ SENIORITY SIGNAL MAP ─────────────────────────── -->
+    <div class="page" id="page-5">
+      <div class="page-eyebrow">Situation Map</div>
+      <h1 class="page-title">Patterns That Sound Less Senior</h1>
+      <p class="page-subtitle">Small changes in phrasing and structure make a big difference to how senior a response sounds. Tap a card to see the better move.</p>
+      <p class="tap-hint">Tap any card to expand it.</p>
+      <div class="discovery-grid">
+
+        <div class="discovery-card" onclick="toggleDiscovery(this)">
+          <div class="discovery-type">Weak pattern 1</div>
+          <div class="discovery-quote">&#8220;Over-apologising at the start&#8221;</div>
+          <div class="discovery-meta"><strong>Sounds like:</strong> &#8220;Sorry, I&#8217;m not sure if this is right, but&#8230;&#8221;</div>
+          <div class="discovery-detail">Starting with an apology signals uncertainty before any content has been delivered. Senior communicators do not need to pre-apologise for their own answer. A calm, direct opening is not rude &#8212; it is professional.<div class="discovery-move">Better: &#8220;Here&#8217;s how I&#8217;d approach this.&#8221;</div></div>
+        </div>
+
+        <div class="discovery-card" onclick="toggleDiscovery(this)">
+          <div class="discovery-type">Weak pattern 2</div>
+          <div class="discovery-quote">&#8220;Burying the main point&#8221;</div>
+          <div class="discovery-meta"><strong>Sounds like:</strong> Long context before the answer arrives.</div>
+          <div class="discovery-detail">When the listener has to wait too long for the main point, they wonder if the speaker knows what matters most. Leading with the conclusion sounds more senior &#8212; context can follow.<div class="discovery-move">Better: &#8220;The short version is&#8230;&#8221;</div></div>
+        </div>
+
+        <div class="discovery-card" onclick="toggleDiscovery(this)">
+          <div class="discovery-type">Weak pattern 3</div>
+          <div class="discovery-quote">&#8220;Too many hedges in one sentence&#8221;</div>
+          <div class="discovery-meta"><strong>Sounds like:</strong> &#8220;Maybe we could possibly consider&#8230;&#8221;</div>
+          <div class="discovery-detail">Stacking softeners drains the message of all weight. One calibrated hedge is professional. Multiple hedges in a row signals the speaker does not stand behind their own point.<div class="discovery-move">Better: &#8220;My recommendation would be to start with option two.&#8221;</div></div>
+        </div>
+
+        <div class="discovery-card" onclick="toggleDiscovery(this)">
+          <div class="discovery-type">Weak pattern 4</div>
+          <div class="discovery-quote">&#8220;Over-explaining to prove you&#8217;ve thought about it&#8221;</div>
+          <div class="discovery-meta"><strong>Sounds like:</strong> Giving every detail to show you&#8217;re prepared.</div>
+          <div class="discovery-detail">More words usually mean more work for the listener, not more credibility for the speaker. Senior communication removes weight rather than adding it. The point, one reason, one next step.<div class="discovery-move">Better: &#8220;The key issue is timing. We need a decision this week.&#8221;</div></div>
+        </div>
+
+        <div class="discovery-card" onclick="toggleDiscovery(this)">
+          <div class="discovery-type">Weak pattern 5</div>
+          <div class="discovery-quote">&#8220;Defensive pushback&#8221;</div>
+          <div class="discovery-meta"><strong>Sounds like:</strong> &#8220;But that&#8217;s not what I said.&#8221;</div>
+          <div class="discovery-detail">Reactive pushback sounds emotional rather than professional. Acknowledging the other person&#8217;s reading before reframing it keeps the conversation constructive and positions the speaker as calm and in control.<div class="discovery-move">Better: &#8220;I see where you&#8217;re coming from. What I&#8217;m pointing to is slightly different.&#8221;</div></div>
+        </div>
+
+        <div class="discovery-card" onclick="toggleDiscovery(this)">
+          <div class="discovery-type">Weak pattern 6</div>
+          <div class="discovery-quote">&#8220;Avoiding a clear recommendation&#8221;</div>
+          <div class="discovery-meta"><strong>Sounds like:</strong> &#8220;It depends. We could do either really.&#8221;</div>
+          <div class="discovery-detail">Refusing to take a position makes the speaker seem passive or uncertain. Giving a clear recommendation while staying open to discussion is more useful and sounds more senior.<div class="discovery-move">Better: &#8220;My recommendation would be option two, but I&#8217;m happy to talk through the trade-offs.&#8221;</div></div>
+        </div>
+
+        <div class="discovery-card" onclick="toggleDiscovery(this)">
+          <div class="discovery-type">Weak pattern 7</div>
+          <div class="discovery-quote">&#8220;Vague ending&#8221;</div>
+          <div class="discovery-meta"><strong>Sounds like:</strong> &#8220;So yes, that&#8217;s basically it.&#8221;</div>
+          <div class="discovery-detail">Strong answers that fade out lose all the control built earlier. Senior responses land somewhere. The listener should know what happens next &#8212; the action, the owner, or the timing.<div class="discovery-move">Better: &#8220;The practical next step is for me to confirm the decision owner by Thursday.&#8221;</div></div>
+        </div>
+
+        <div class="discovery-card" onclick="toggleDiscovery(this)">
+          <div class="discovery-type">Weak pattern 8</div>
+          <div class="discovery-quote">&#8220;Overly formal or stiff language&#8221;</div>
+          <div class="discovery-meta"><strong>Sounds like:</strong> &#8220;Kindly be informed that we shall proceed accordingly.&#8221;</div>
+          <div class="discovery-detail">Over-formal language can signal that the speaker is translating from a formal written register rather than speaking naturally. Clear, direct professional English is almost always more credible than elaborate or stilted phrasing.<div class="discovery-move">Better: &#8220;We&#8217;ll move ahead with this unless you have concerns.&#8221;</div></div>
+        </div>
+
+      </div>
+      <div class="optional-q mt-20">
+        <div class="optional-q-label">Optional &#8212; quick question</div>
+        <div class="optional-q-text">Which of these patterns do you recognise most in your own work conversations?</div>
+      </div>
+    </div>
+
+    <!-- PAGE 6 ─ SKILL 1: PAUSE ───────────────────────────────── -->
+    <div class="page" id="page-6">
+      <div class="skill-hero">
+        <div class="skill-number-badge">Skill 1 of 6</div>
+        <h1 class="skill-title">Pause Before Responding</h1>
+        <div class="skill-key-move">Key Move: <span class="key-move-hl">Slow the moment down so you don&#8217;t sound rushed or defensive.</span></div>
+      </div>
+      <div class="two-col">
+        <div>
+          <div class="info-block">
+            <div class="info-block-label">Why this matters</div>
+            <div class="info-block-text">Students often start answering too quickly. The first few words come out as &#8220;um,&#8221; &#8220;sorry,&#8221; &#8220;I think maybe&#8230;&#8221; &#8212; which signals anxiety before the content arrives. A short framing phrase at the start shifts the tone immediately and gives the speaker a moment to organise the response.</div>
+          </div>
+          <div class="principle-block">
+            <div class="principle-icon"><svg width="14" height="14" style="color:#C8843A"><use href="#icon-bulb"/></svg></div>
+            <div class="principle-text">Control begins before the first sentence.</div>
+          </div>
+        </div>
+        <div class="info-block">
+          <div class="info-block-label">Useful language</div>
+          <div class="phrase-chips">
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;Let me give you the short version first.&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;There are two parts to this.&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;The simplest way to explain it is&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;Let me frame this clearly.&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;I&#8217;d separate this into two things.&#8221;</div>
+          </div>
+        </div>
+      </div>
+      <div class="info-block mt-14">
+        <div class="info-block-label">Weak &#8594; Stronger</div>
+        <div class="ws-grid">
+          <div class="ws-card weak">
+            <div class="ws-tag">Weak</div>
+            <div class="ws-text">&#8220;Um, yes, so basically I think maybe we can do it but it depends on a few things and I&#8217;m not totally sure yet.&#8221;</div>
+          </div>
+          <div class="ws-card strong">
+            <div class="ws-tag">Stronger</div>
+            <div class="ws-text">&#8220;Let me give you the short version first. We can do it, but it depends on two things I need to confirm.&#8221;</div>
+          </div>
+        </div>
+      </div>
+      <div class="full-example">
+        <div class="full-example-toggle" onclick="toggleFullExample(this)">
+          <div>
+            <div class="toggle-label">See it in context</div>
+            <div class="toggle-sub">A short model response using this skill.</div>
+          </div>
+          <div class="toggle-chevron"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="full-example-body">
+          <div class="client-label">Situation</div>
+          <div class="client-quote">A senior colleague asks for a quick update in a meeting and the student feels pressure to answer immediately.</div>
+          <div class="client-label mt-10">Response using Pause</div>
+          <div class="response-text">&#8220;Let me give you the short version first. The project is on track, but there&#8217;s one approval step that&#8217;s creating some risk for the timeline.&#8221;</div>
+        </div>
+      </div>
+      <div class="practice-section">
+        <div class="practice-tabs">
+          <div class="practice-tab active" onclick="switchTab(this,'p6-c')">Controlled</div>
+          <div class="practice-tab" onclick="switchTab(this,'p6-a')">Applied</div>
+          <div class="practice-tab" onclick="switchTab(this,'p6-r')">More Realistic</div>
+        </div>
+        <div class="practice-pane active" id="p6-c">
+          <div class="practice-card">
+            <div class="practice-prompt">Someone asks, &#8220;Can you quickly explain the situation?&#8221;</div>
+            <div class="practice-task"><strong>Task:</strong> Use one pause phrase before you answer. Don&#8217;t start with &#8220;um,&#8221; &#8220;so,&#8221; or &#8220;sorry.&#8221;</div>
+          </div>
+        </div>
+        <div class="practice-pane" id="p6-a">
+          <div class="practice-card">
+            <div class="practice-prompt">A client asks a broad question and expects a clear, concise answer.</div>
+            <div class="practice-task"><strong>Task:</strong> Pause, frame the response, and give the short version before going into detail.</div>
+          </div>
+        </div>
+        <div class="practice-pane" id="p6-r">
+          <div class="practice-card">
+            <div class="practice-prompt">The listener sounds impatient and keeps speaking over you.</div>
+            <div class="practice-task"><strong>Challenge:</strong> Use a pause phrase without sounding slow or defensive, even under pressure.</div>
+          </div>
+        </div>
+      </div>
+      <div class="quick-recap">
+        <div class="recap-icon"><svg width="14" height="14" style="color:white"><use href="#icon-target"/></svg></div>
+        <div>
+          <div class="recap-label">Quick Recap</div>
+          <div class="recap-text">A calm first sentence makes everything that follows sound more controlled.</div>
+          <div class="recap-phrase">&#8220;Let me give you the short version first.&#8221;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 7 ─ SKILL 2: PRIORITISE ─────────────────────────── -->
+    <div class="page" id="page-7">
+      <div class="skill-hero">
+        <div class="skill-number-badge">Skill 2 of 6</div>
+        <h1 class="skill-title">Prioritise the Main Point</h1>
+        <div class="skill-key-move">Key Move: <span class="key-move-hl">Lead with the most important message before adding context or explanation.</span></div>
+      </div>
+      <div class="two-col">
+        <div>
+          <div class="info-block">
+            <div class="info-block-label">Why this matters</div>
+            <div class="info-block-text">When the main point comes late, the listener has to work through background detail to find the answer. Senior communicators put the conclusion first. This does not mean being blunt &#8212; it means making the key message easy to hear.</div>
+          </div>
+          <div class="principle-block">
+            <div class="principle-icon"><svg width="14" height="14" style="color:#C8843A"><use href="#icon-bulb"/></svg></div>
+            <div class="principle-text">The answer comes first. The explanation follows.</div>
+          </div>
+        </div>
+        <div class="info-block">
+          <div class="info-block-label">Useful language</div>
+          <div class="phrase-chips">
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;The main thing here is&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;The short version is&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;What matters most right now is&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;The key issue is&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;The most important point is&#8230;&#8221;</div>
+          </div>
+        </div>
+      </div>
+      <div class="info-block mt-14">
+        <div class="info-block-label">Weak &#8594; Stronger</div>
+        <div class="ws-grid">
+          <div class="ws-card weak">
+            <div class="ws-tag">Weak</div>
+            <div class="ws-text">&#8220;So last week we had a few meetings and then there were some delays and then we checked with the team and then&#8230;&#8221;</div>
+          </div>
+          <div class="ws-card strong">
+            <div class="ws-tag">Stronger</div>
+            <div class="ws-text">&#8220;The main thing here is that the deadline is at risk. There were delays last week and we still need one approval.&#8221;</div>
+          </div>
+        </div>
+      </div>
+      <div class="full-example">
+        <div class="full-example-toggle" onclick="toggleFullExample(this)">
+          <div>
+            <div class="toggle-label">See it in context</div>
+            <div class="toggle-sub">A short model response using this skill.</div>
+          </div>
+          <div class="toggle-chevron"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="full-example-body">
+          <div class="client-label">Situation</div>
+          <div class="client-quote">A manager asks, &#8220;Where are we with the proposal?&#8221;</div>
+          <div class="client-label mt-10">Response using Prioritise</div>
+          <div class="response-text">&#8220;The key issue is timing. The proposal is ready, but we&#8217;re still waiting for one internal sign-off.&#8221;</div>
+        </div>
+      </div>
+      <div class="practice-section">
+        <div class="practice-tabs">
+          <div class="practice-tab active" onclick="switchTab(this,'p7-c')">Controlled</div>
+          <div class="practice-tab" onclick="switchTab(this,'p7-a')">Applied</div>
+          <div class="practice-tab" onclick="switchTab(this,'p7-r')">More Realistic</div>
+        </div>
+        <div class="practice-pane active" id="p7-c">
+          <div class="practice-card">
+            <div class="practice-prompt">You have three pieces of information to share. Only one is really important.</div>
+            <div class="practice-task"><strong>Task:</strong> Lead with the most important one. Start with &#8220;The main thing here is&#8230;&#8221;</div>
+          </div>
+        </div>
+        <div class="practice-pane" id="p7-a">
+          <div class="practice-card">
+            <div class="practice-prompt">A senior person asks for the status of a project before a meeting.</div>
+            <div class="practice-task"><strong>Task:</strong> Give the answer in two sentences. Main point first, key context second.</div>
+          </div>
+        </div>
+        <div class="practice-pane" id="p7-r">
+          <div class="practice-card">
+            <div class="practice-prompt">The listener says, &#8220;Can you keep it very brief?&#8221;</div>
+            <div class="practice-task"><strong>Challenge:</strong> Lead with the point and stop after one supporting sentence.</div>
+          </div>
+        </div>
+      </div>
+      <div class="quick-recap">
+        <div class="recap-icon"><svg width="14" height="14" style="color:white"><use href="#icon-target"/></svg></div>
+        <div>
+          <div class="recap-label">Quick Recap</div>
+          <div class="recap-text">If the listener has to wait for the main point, the response sounds less controlled.</div>
+          <div class="recap-phrase">&#8220;The main thing here is&#8230;&#8221;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 8 ─ SKILL 3: CONDENSE ───────────────────────────── -->
+    <div class="page" id="page-8">
+      <div class="skill-hero">
+        <div class="skill-number-badge">Skill 3 of 6</div>
+        <h1 class="skill-title">Condense the Message</h1>
+        <div class="skill-key-move">Key Move: <span class="key-move-hl">Remove the words that don&#8217;t add value so the real message is easier to hear.</span></div>
+      </div>
+      <div class="two-col">
+        <div>
+          <div class="info-block">
+            <div class="info-block-label">Why this matters</div>
+            <div class="info-block-text">When students feel uncertain, they often add more words to try to sound thorough or safe. This usually has the opposite effect. Shorter, cleaner answers tend to sound more confident and more senior. Condensing is not about dumbing down &#8212; it is about removing unnecessary effort for the listener.</div>
+          </div>
+          <div class="principle-block">
+            <div class="principle-icon"><svg width="14" height="14" style="color:#C8843A"><use href="#icon-bulb"/></svg></div>
+            <div class="principle-text">Shorter is usually stronger.</div>
+          </div>
+        </div>
+        <div class="info-block">
+          <div class="info-block-label">Useful language</div>
+          <div class="phrase-chips">
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;In practical terms&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;To summarise&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;The key point is&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;What this means in practice&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;Put simply&#8230;&#8221;</div>
+          </div>
+        </div>
+      </div>
+      <div class="info-block mt-14">
+        <div class="info-block-label">Weak &#8594; Stronger</div>
+        <div class="ws-grid">
+          <div class="ws-card weak">
+            <div class="ws-tag">Weak</div>
+            <div class="ws-text">&#8220;There are a number of things to consider and the situation is quite complex because there are several different people involved and it&#8217;s not completely clear yet.&#8221;</div>
+          </div>
+          <div class="ws-card strong">
+            <div class="ws-tag">Stronger</div>
+            <div class="ws-text">&#8220;In practical terms, this depends on a decision from three people. We&#8217;ll know more by Thursday.&#8221;</div>
+          </div>
+        </div>
+      </div>
+      <div class="full-example">
+        <div class="full-example-toggle" onclick="toggleFullExample(this)">
+          <div>
+            <div class="toggle-label">See it in context</div>
+            <div class="toggle-sub">A short model response using this skill.</div>
+          </div>
+          <div class="toggle-chevron"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="full-example-body">
+          <div class="client-label">Situation</div>
+          <div class="client-quote">A client asks why a proposal is taking longer than expected.</div>
+          <div class="client-label mt-10">Response using Condense</div>
+          <div class="response-text">&#8220;In practical terms, the work is done. We&#8217;re just waiting for one internal sign-off before we can send it through.&#8221;</div>
+        </div>
+      </div>
+      <div class="practice-section">
+        <div class="practice-tabs">
+          <div class="practice-tab active" onclick="switchTab(this,'p8-c')">Controlled</div>
+          <div class="practice-tab" onclick="switchTab(this,'p8-a')">Applied</div>
+          <div class="practice-tab" onclick="switchTab(this,'p8-r')">More Realistic</div>
+        </div>
+        <div class="practice-pane active" id="p8-c">
+          <div class="practice-card">
+            <div class="practice-prompt">Take a long explanation and cut it to two clear sentences.</div>
+            <div class="practice-task"><strong>Task:</strong> Keep only the main point, one reason, and one next step. Remove everything else.</div>
+          </div>
+        </div>
+        <div class="practice-pane" id="p8-a">
+          <div class="practice-card">
+            <div class="practice-prompt">The client asks for a brief summary of a complicated situation.</div>
+            <div class="practice-task"><strong>Task:</strong> Condense the message so the key information is easy to understand in 30 seconds.</div>
+          </div>
+        </div>
+        <div class="practice-pane" id="p8-r">
+          <div class="practice-card">
+            <div class="practice-prompt">The listener says, &#8220;Can you simplify that for me?&#8221;</div>
+            <div class="practice-task"><strong>Challenge:</strong> Give the condensed version calmly without sounding defensive or flustered.</div>
+          </div>
+        </div>
+      </div>
+      <div class="quick-recap">
+        <div class="recap-icon"><svg width="14" height="14" style="color:white"><use href="#icon-target"/></svg></div>
+        <div>
+          <div class="recap-label">Quick Recap</div>
+          <div class="recap-text">Fewer words usually means more clarity &#8212; not less credibility.</div>
+          <div class="recap-phrase">&#8220;In practical terms&#8230;&#8221;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 9 ─ SKILL 4: POSITION ───────────────────────────── -->
+    <div class="page" id="page-9">
+      <div class="skill-hero">
+        <div class="skill-number-badge">Skill 4 of 6</div>
+        <h1 class="skill-title">Position Your View Clearly</h1>
+        <div class="skill-key-move">Key Move: <span class="key-move-hl">State your recommendation or opinion with measured confidence &#8212; not as a question or apology.</span></div>
+      </div>
+      <div class="two-col">
+        <div>
+          <div class="info-block">
+            <div class="info-block-label">Why this matters</div>
+            <div class="info-block-text">Students often avoid committing to a view because they worry about being wrong or seeming arrogant. But weak, non-committal answers often sound less credible, not more humble. Stating a clear recommendation &#8212; while remaining open to discussion &#8212; is a sign of senior-level communication.</div>
+          </div>
+          <div class="principle-block">
+            <div class="principle-icon"><svg width="14" height="14" style="color:#C8843A"><use href="#icon-bulb"/></svg></div>
+            <div class="principle-text">A clear view is more useful than a safe one.</div>
+          </div>
+        </div>
+        <div class="info-block">
+          <div class="info-block-label">Useful language</div>
+          <div class="phrase-chips">
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;My recommendation would be&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;Based on what we know, I&#8217;d suggest&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;My view is&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;I&#8217;d go with&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;The option I&#8217;d prioritise is&#8230;&#8221;</div>
+          </div>
+        </div>
+      </div>
+      <div class="info-block mt-14">
+        <div class="info-block-label">Weak &#8594; Stronger</div>
+        <div class="ws-grid">
+          <div class="ws-card weak">
+            <div class="ws-tag">Weak</div>
+            <div class="ws-text">&#8220;Maybe option two could be good? But I&#8217;m not sure. It depends. We could do either one.&#8221;</div>
+          </div>
+          <div class="ws-card strong">
+            <div class="ws-tag">Stronger</div>
+            <div class="ws-text">&#8220;My recommendation would be option two. It&#8217;s simpler to implement and it gives us more flexibility on timing.&#8221;</div>
+          </div>
+        </div>
+      </div>
+      <div class="full-example">
+        <div class="full-example-toggle" onclick="toggleFullExample(this)">
+          <div>
+            <div class="toggle-label">See it in context</div>
+            <div class="toggle-sub">A short model response using this skill.</div>
+          </div>
+          <div class="toggle-chevron"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="full-example-body">
+          <div class="client-label">Situation</div>
+          <div class="client-quote">A senior stakeholder asks, &#8220;Which approach do you think we should take?&#8221;</div>
+          <div class="client-label mt-10">Response using Position</div>
+          <div class="response-text">&#8220;My recommendation would be to go with the phased approach. It carries lower risk and it&#8217;s easier to adjust if the requirements change.&#8221;</div>
+        </div>
+      </div>
+      <div class="practice-section">
+        <div class="practice-tabs">
+          <div class="practice-tab active" onclick="switchTab(this,'p9-c')">Controlled</div>
+          <div class="practice-tab" onclick="switchTab(this,'p9-a')">Applied</div>
+          <div class="practice-tab" onclick="switchTab(this,'p9-r')">More Realistic</div>
+        </div>
+        <div class="practice-pane active" id="p9-c">
+          <div class="practice-card">
+            <div class="practice-prompt">There are two options. Both have some merit.</div>
+            <div class="practice-task"><strong>Task:</strong> Give a clear recommendation. Start with &#8220;My recommendation would be&#8230;&#8221; and give one reason.</div>
+          </div>
+        </div>
+        <div class="practice-pane" id="p9-a">
+          <div class="practice-card">
+            <div class="practice-prompt">The situation is uncertain and the listener wants your view on how to proceed.</div>
+            <div class="practice-task"><strong>Task:</strong> Give a recommendation without pretending everything is certain. Acknowledge the risk briefly.</div>
+          </div>
+        </div>
+        <div class="practice-pane" id="p9-r">
+          <div class="practice-card">
+            <div class="practice-prompt">The listener responds, &#8220;Are you sure about that?&#8221;</div>
+            <div class="practice-task"><strong>Challenge:</strong> Hold your recommendation calmly without becoming either defensive or backing away from it.</div>
+          </div>
+        </div>
+      </div>
+      <div class="quick-recap">
+        <div class="recap-icon"><svg width="14" height="14" style="color:white"><use href="#icon-target"/></svg></div>
+        <div>
+          <div class="recap-label">Quick Recap</div>
+          <div class="recap-text">You can sound confident without sounding certain about everything.</div>
+          <div class="recap-phrase">&#8220;My recommendation would be&#8230;&#8221;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 10 ─ SKILL 5: CALIBRATE ─────────────────────────── -->
+    <div class="page" id="page-10">
+      <div class="skill-hero">
+        <div class="skill-number-badge">Skill 5 of 6</div>
+        <h1 class="skill-title">Calibrate the Tone</h1>
+        <div class="skill-key-move">Key Move: <span class="key-move-hl">Sound firm and professional without sounding blunt, cold, or defensive.</span></div>
+      </div>
+      <div class="two-col">
+        <div>
+          <div class="info-block">
+            <div class="info-block-label">Why this matters</div>
+            <div class="info-block-text">Senior tone is not just directness. If the student becomes too direct or too clipped, they can sound arrogant or unapproachable. If they soften too much, they can sound uncertain again. Calibrated tone means holding the message while keeping the relationship intact.</div>
+          </div>
+          <div class="principle-block">
+            <div class="principle-icon"><svg width="14" height="14" style="color:#C8843A"><use href="#icon-bulb"/></svg></div>
+            <div class="principle-text">Firm and warm are not opposites.</div>
+          </div>
+        </div>
+        <div class="info-block">
+          <div class="info-block-label">Useful language</div>
+          <div class="phrase-chips">
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;I see where you&#8217;re coming from, but I&#8217;d frame it slightly differently.&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;I understand the concern. The risk I&#8217;d highlight is&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;That&#8217;s a fair point. What I&#8217;d add is&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;I agree in principle, but I&#8217;d be cautious about&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;I wouldn&#8217;t want to commit to that yet.&#8221;</div>
+          </div>
+        </div>
+      </div>
+      <div class="info-block mt-14">
+        <div class="info-block-label">Weak &#8594; Stronger</div>
+        <div class="ws-grid">
+          <div class="ws-card weak">
+            <div class="ws-tag">Weak (too soft)</div>
+            <div class="ws-text">&#8220;Yes, that&#8217;s totally fine. Whatever you think is best. I&#8217;m happy either way.&#8221;</div>
+          </div>
+          <div class="ws-card strong">
+            <div class="ws-tag">Stronger (calibrated)</div>
+            <div class="ws-text">&#8220;I understand the thinking. What I&#8217;d flag is that this option carries a bit more timing risk. I&#8217;m comfortable either way, but I&#8217;d want to flag that before we commit.&#8221;</div>
+          </div>
+        </div>
+      </div>
+      <div class="info-block mt-14">
+        <div class="info-block-label">Weak &#8594; Stronger</div>
+        <div class="ws-grid">
+          <div class="ws-card weak">
+            <div class="ws-tag">Weak (too blunt)</div>
+            <div class="ws-text">&#8220;No, I don&#8217;t agree with that. That&#8217;s not how it works.&#8221;</div>
+          </div>
+          <div class="ws-card strong">
+            <div class="ws-tag">Stronger (calibrated)</div>
+            <div class="ws-text">&#8220;I see where you&#8217;re coming from, but I&#8217;d frame it slightly differently. The issue is more about timing than about the process itself.&#8221;</div>
+          </div>
+        </div>
+      </div>
+      <div class="practice-section">
+        <div class="practice-tabs">
+          <div class="practice-tab active" onclick="switchTab(this,'p10-c')">Controlled</div>
+          <div class="practice-tab" onclick="switchTab(this,'p10-a')">Applied</div>
+          <div class="practice-tab" onclick="switchTab(this,'p10-r')">More Realistic</div>
+        </div>
+        <div class="practice-pane active" id="p10-c">
+          <div class="practice-card">
+            <div class="practice-prompt">Disagree with a suggestion, but stay professional.</div>
+            <div class="practice-task"><strong>Task:</strong> Use &#8220;I see where you&#8217;re coming from, but&#8230;&#8221; to push back without sounding dismissive.</div>
+          </div>
+        </div>
+        <div class="practice-pane" id="p10-a">
+          <div class="practice-card">
+            <div class="practice-prompt">A senior colleague suggests a plan that you think carries too much risk.</div>
+            <div class="practice-task"><strong>Task:</strong> Acknowledge the point, flag the concern, and offer an alternative &#8212; all in a professional tone.</div>
+          </div>
+        </div>
+        <div class="practice-pane" id="p10-r">
+          <div class="practice-card">
+            <div class="practice-prompt">The listener is pushing back and sounds frustrated.</div>
+            <div class="practice-task"><strong>Challenge:</strong> Stay calm and professional. Don&#8217;t become either submissive or confrontational.</div>
+          </div>
+        </div>
+      </div>
+      <div class="quick-recap">
+        <div class="recap-icon"><svg width="14" height="14" style="color:white"><use href="#icon-target"/></svg></div>
+        <div>
+          <div class="recap-label">Quick Recap</div>
+          <div class="recap-text">Calibration means holding a clear position without losing the relationship.</div>
+          <div class="recap-phrase">&#8220;I see where you&#8217;re coming from, but I&#8217;d frame it slightly differently.&#8221;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 11 ─ SKILL 6: CLOSE ──────────────────────────────── -->
+    <div class="page" id="page-11">
+      <div class="skill-hero">
+        <div class="skill-number-badge">Skill 6 of 6</div>
+        <h1 class="skill-title">Close With Control</h1>
+        <div class="skill-key-move">Key Move: <span class="key-move-hl">End on a clear action, timing, or decision &#8212; not a vague fade-out.</span></div>
+      </div>
+      <div class="two-col">
+        <div>
+          <div class="info-block">
+            <div class="info-block-label">Why this matters</div>
+            <div class="info-block-text">A strong message that fades out loses all the control built up during the response. Senior communicators close clearly. The listener should leave knowing exactly what happens next &#8212; who does what, by when, or what has been decided. Vague endings undermine everything that came before.</div>
+          </div>
+          <div class="principle-block">
+            <div class="principle-icon"><svg width="14" height="14" style="color:#C8843A"><use href="#icon-bulb"/></svg></div>
+            <div class="principle-text">The close is what people remember.</div>
+          </div>
+        </div>
+        <div class="info-block">
+          <div class="info-block-label">Useful language</div>
+          <div class="phrase-chips">
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;The practical next step is&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;From my side, I&#8217;ll&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;What I&#8217;d need from you is&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;I&#8217;ll have this to you by&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;We should confirm this by&#8230;&#8221;</div>
+          </div>
+        </div>
+      </div>
+      <div class="info-block mt-14">
+        <div class="info-block-label">Weak &#8594; Stronger</div>
+        <div class="ws-grid">
+          <div class="ws-card weak">
+            <div class="ws-tag">Weak</div>
+            <div class="ws-text">&#8220;So yes, that&#8217;s basically it. Let me know if you have any questions or anything.&#8221;</div>
+          </div>
+          <div class="ws-card strong">
+            <div class="ws-tag">Stronger</div>
+            <div class="ws-text">&#8220;The practical next step is for me to confirm the decision owner and send a short summary with the timeline. I&#8217;ll have that to you by Thursday.&#8221;</div>
+          </div>
+        </div>
+      </div>
+      <div class="full-example">
+        <div class="full-example-toggle" onclick="toggleFullExample(this)">
+          <div>
+            <div class="toggle-label">See it in context</div>
+            <div class="toggle-sub">A short model response using this skill.</div>
+          </div>
+          <div class="toggle-chevron"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="full-example-body">
+          <div class="client-label">Situation</div>
+          <div class="client-quote">The student has just explained a project delay and needs to finish the response clearly.</div>
+          <div class="client-label mt-10">Response using Close</div>
+          <div class="response-text">&#8220;The practical next step is for me to send a short summary of the two options and the revised timeline. I&#8217;ll have that with you by Thursday so you can confirm the direction before the end of the week.&#8221;</div>
+        </div>
+      </div>
+      <div class="practice-section">
+        <div class="practice-tabs">
+          <div class="practice-tab active" onclick="switchTab(this,'p11-c')">Controlled</div>
+          <div class="practice-tab" onclick="switchTab(this,'p11-a')">Applied</div>
+          <div class="practice-tab" onclick="switchTab(this,'p11-r')">More Realistic</div>
+        </div>
+        <div class="practice-pane active" id="p11-c">
+          <div class="practice-card">
+            <div class="practice-prompt">You&#8217;ve just explained a situation and need to close clearly.</div>
+            <div class="practice-task"><strong>Task:</strong> End with &#8220;The practical next step is&#8230;&#8221; and include action, owner, and timing.</div>
+          </div>
+        </div>
+        <div class="practice-pane" id="p11-a">
+          <div class="practice-card">
+            <div class="practice-prompt">Both sides need to take action before the next meeting.</div>
+            <div class="practice-task"><strong>Task:</strong> Close with one action for each side. Be specific about timing.</div>
+          </div>
+        </div>
+        <div class="practice-pane" id="p11-r">
+          <div class="practice-card">
+            <div class="practice-prompt">The listener is ready to move on and about to close the conversation themselves.</div>
+            <div class="practice-task"><strong>Challenge:</strong> Step in first with a clear close before they drift to a vague ending.</div>
+          </div>
+        </div>
+      </div>
+      <div class="quick-recap">
+        <div class="recap-icon"><svg width="14" height="14" style="color:white"><use href="#icon-target"/></svg></div>
+        <div>
+          <div class="recap-label">Quick Recap</div>
+          <div class="recap-text">A strong close turns a good response into a professional one.</div>
+          <div class="recap-phrase">&#8220;The practical next step is&#8230;&#8221;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 12 ─ PUT IT TOGETHER ──────────────────────────────── -->
+    <div class="page" id="page-12">
+      <div class="page-eyebrow">Full Sequence</div>
+      <h1 class="page-title">Put the Framework Together</h1>
+      <p class="page-subtitle">A senior-sounding response uses all six steps: a calm start, a clear main point, a condensed explanation, a positioned view, a calibrated tone, and a controlled close.</p>
+      <div class="sequence-steps mt-8">
+        <div class="seq-step">
+          <div class="seq-line-col">
+            <div class="seq-dot">1</div>
+            <div class="seq-connector"></div>
+          </div>
+          <div class="seq-content">
+            <div class="seq-label">Pause</div>
+            <div class="seq-phrase">&#8220;Let me give you the short version first.&#8221;</div>
+          </div>
+        </div>
+        <div class="seq-step">
+          <div class="seq-line-col">
+            <div class="seq-dot">2</div>
+            <div class="seq-connector"></div>
+          </div>
+          <div class="seq-content">
+            <div class="seq-label">Prioritise</div>
+            <div class="seq-phrase">&#8220;The main thing here is that the deadline is still achievable, but the approval step is the current risk.&#8221;</div>
+          </div>
+        </div>
+        <div class="seq-step">
+          <div class="seq-line-col">
+            <div class="seq-dot">3</div>
+            <div class="seq-connector"></div>
+          </div>
+          <div class="seq-content">
+            <div class="seq-label">Condense</div>
+            <div class="seq-phrase">&#8220;In practical terms, everything depends on a decision this week.&#8221;</div>
+          </div>
+        </div>
+        <div class="seq-step">
+          <div class="seq-line-col">
+            <div class="seq-dot">4</div>
+            <div class="seq-connector"></div>
+          </div>
+          <div class="seq-content">
+            <div class="seq-label">Position</div>
+            <div class="seq-phrase">&#8220;My recommendation would be to confirm the decision owner today rather than waiting until Friday.&#8221;</div>
+          </div>
+        </div>
+        <div class="seq-step">
+          <div class="seq-line-col">
+            <div class="seq-dot">5</div>
+            <div class="seq-connector"></div>
+          </div>
+          <div class="seq-content">
+            <div class="seq-label">Calibrate</div>
+            <div class="seq-phrase">&#8220;I see where you&#8217;re coming from on waiting, but I&#8217;d frame it slightly differently &#8212; the risk is that we lose another full week.&#8221;</div>
+          </div>
+        </div>
+        <div class="seq-step">
+          <div class="seq-line-col">
+            <div class="seq-dot final">6</div>
+          </div>
+          <div class="seq-content">
+            <div class="seq-label">Close</div>
+            <div class="seq-phrase">&#8220;The practical next step is for me to send a short summary with the two options and the timeline. I&#8217;ll have that with you by end of day.&#8221;</div>
+          </div>
+        </div>
+      </div>
+      <div class="mini-example mt-20">
+        <div class="mini-example-label">Full spoken version</div>
+        <div class="client-label">Colleague</div>
+        <div class="client-quote">&#8220;Can you quickly explain where we are with this project?&#8221;</div>
+        <div class="client-label mt-10">Response</div>
+        <div class="response-text">&#8220;Let me give you the short version first. The main thing here is that the deadline is still achievable, but the approval step is the current risk. In practical terms, everything depends on a decision this week. My recommendation would be to confirm the decision owner today rather than waiting until Friday. I see where you&#8217;re coming from on waiting, but I&#8217;d frame it slightly differently &#8212; the risk is that we lose another full week. The practical next step is for me to send a short summary with the two options and the timeline. I&#8217;ll have that with you by end of day.&#8221;</div>
+      </div>
+      <div class="card mt-14">
+        <div class="section-label mb-8">Written version</div>
+        <p style="font-size:14px;color:var(--navy);line-height:1.7">&#8220;Quick update: the deadline is still achievable but the approval step is the current risk. Everything depends on a decision this week. My recommendation is to confirm the decision owner today. The practical next step is for me to send you a short summary with the two options and the timeline &#8212; I&#8217;ll have that with you by end of day.&#8221;</p>
+      </div>
+      <div class="optional-q mt-16">
+        <div class="optional-q-label">Optional &#8212; quick question</div>
+        <div class="optional-q-text">Which step made the most difference to how senior the response sounds: the opening pause, the main point, the condensed message, the recommendation, the calibrated pushback, or the clear close?</div>
+      </div>
+    </div>
+
+    <!-- PAGE 13 ─ LANGUAGE BANK ────────────────────────────────── -->
+    <div class="page" id="page-13">
+      <div class="page-eyebrow">Reference</div>
+      <h1 class="page-title">Sounding Senior Language Bank</h1>
+      <p class="page-subtitle">Key phrases organised by the six framework steps. Use this page during or after practice.</p>
+      <div class="lang-accordion mt-8">
+
+        <div class="lang-group">
+          <div class="lang-group-header" onclick="toggleLangGroup(this)">
+            <span class="lang-group-title">Pause and framing<span class="lang-group-count">5 phrases</span></span>
+            <svg class="lang-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="lang-group-body">
+            <div class="lang-phrase-list">
+              <div class="lang-phrase">&#8220;Let me give you the short version first.&#8221;</div>
+              <div class="lang-phrase">&#8220;There are two parts to this.&#8221;</div>
+              <div class="lang-phrase">&#8220;The simplest way to explain it is&#8230;&#8221;</div>
+              <div class="lang-phrase">&#8220;Let me frame this clearly.&#8221;</div>
+              <div class="lang-phrase">&#8220;I&#8217;d separate this into two things.&#8221;</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lang-group">
+          <div class="lang-group-header" onclick="toggleLangGroup(this)">
+            <span class="lang-group-title">Prioritising the main point<span class="lang-group-count">5 phrases</span></span>
+            <svg class="lang-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="lang-group-body">
+            <div class="lang-phrase-list">
+              <div class="lang-phrase">&#8220;The main thing here is&#8230;&#8221;</div>
+              <div class="lang-phrase">&#8220;The short version is&#8230;&#8221;</div>
+              <div class="lang-phrase">&#8220;What matters most right now is&#8230;&#8221;</div>
+              <div class="lang-phrase">&#8220;The key issue is&#8230;&#8221;</div>
+              <div class="lang-phrase">&#8220;The most important point is&#8230;&#8221;</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lang-group">
+          <div class="lang-group-header" onclick="toggleLangGroup(this)">
+            <span class="lang-group-title">Condensing<span class="lang-group-count">5 phrases</span></span>
+            <svg class="lang-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="lang-group-body">
+            <div class="lang-phrase-list">
+              <div class="lang-phrase">&#8220;In practical terms&#8230;&#8221;</div>
+              <div class="lang-phrase">&#8220;To summarise&#8230;&#8221;</div>
+              <div class="lang-phrase">&#8220;The key point is&#8230;&#8221;</div>
+              <div class="lang-phrase">&#8220;What this means in practice&#8230;&#8221;</div>
+              <div class="lang-phrase">&#8220;Put simply&#8230;&#8221;</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lang-group">
+          <div class="lang-group-header" onclick="toggleLangGroup(this)">
+            <span class="lang-group-title">Positioning a recommendation<span class="lang-group-count">5 phrases</span></span>
+            <svg class="lang-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="lang-group-body">
+            <div class="lang-phrase-list">
+              <div class="lang-phrase">&#8220;My recommendation would be&#8230;&#8221;</div>
+              <div class="lang-phrase">&#8220;Based on what we know, I&#8217;d suggest&#8230;&#8221;</div>
+              <div class="lang-phrase">&#8220;My view is&#8230;&#8221;</div>
+              <div class="lang-phrase">&#8220;I&#8217;d go with&#8230;&#8221;</div>
+              <div class="lang-phrase">&#8220;The option I&#8217;d prioritise is&#8230;&#8221;</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lang-group">
+          <div class="lang-group-header" onclick="toggleLangGroup(this)">
+            <span class="lang-group-title">Calibrated pushback and disagreement<span class="lang-group-count">6 phrases</span></span>
+            <svg class="lang-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="lang-group-body">
+            <div class="lang-phrase-list">
+              <div class="lang-phrase">&#8220;I see where you&#8217;re coming from, but I&#8217;d frame it slightly differently.&#8221;</div>
+              <div class="lang-phrase">&#8220;I understand the concern. The risk I&#8217;d highlight is&#8230;&#8221;</div>
+              <div class="lang-phrase">&#8220;That&#8217;s a fair point. What I&#8217;d add is&#8230;&#8221;</div>
+              <div class="lang-phrase">&#8220;I agree in principle, but I&#8217;d be cautious about&#8230;&#8221;</div>
+              <div class="lang-phrase">&#8220;I wouldn&#8217;t want to commit to that yet.&#8221;</div>
+              <div class="lang-phrase">&#8220;I&#8217;d push back slightly on that.&#8221;</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lang-group">
+          <div class="lang-group-header" onclick="toggleLangGroup(this)">
+            <span class="lang-group-title">Saying no or not yet<span class="lang-group-count">4 phrases</span></span>
+            <svg class="lang-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="lang-group-body">
+            <div class="lang-phrase-list">
+              <div class="lang-phrase">&#8220;I&#8217;d hold off on committing to that.&#8221;</div>
+              <div class="lang-phrase">&#8220;That&#8217;s not something I can confirm right now.&#8221;</div>
+              <div class="lang-phrase">&#8220;I don&#8217;t think that&#8217;s the right move at this stage.&#8221;</div>
+              <div class="lang-phrase">&#8220;I&#8217;d want to check one thing before we decide.&#8221;</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lang-group">
+          <div class="lang-group-header" onclick="toggleLangGroup(this)">
+            <span class="lang-group-title">Closing with control<span class="lang-group-count">5 phrases</span></span>
+            <svg class="lang-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="lang-group-body">
+            <div class="lang-phrase-list">
+              <div class="lang-phrase">&#8220;The practical next step is&#8230;&#8221;</div>
+              <div class="lang-phrase">&#8220;From my side, I&#8217;ll&#8230;&#8221;</div>
+              <div class="lang-phrase">&#8220;What I&#8217;d need from you is&#8230;&#8221;</div>
+              <div class="lang-phrase">&#8220;I&#8217;ll have this to you by&#8230;&#8221;</div>
+              <div class="lang-phrase">&#8220;We should confirm this by&#8230;&#8221;</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lang-group">
+          <div class="lang-group-header" onclick="toggleLangGroup(this)">
+            <span class="lang-group-title">Handling pressure and unexpected questions<span class="lang-group-count">5 phrases</span></span>
+            <svg class="lang-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="lang-group-body">
+            <div class="lang-phrase-list">
+              <div class="lang-phrase">&#8220;That&#8217;s a good question. Let me think about that for a moment.&#8221;</div>
+              <div class="lang-phrase">&#8220;I don&#8217;t have that detail with me right now, but I&#8217;ll confirm it today.&#8221;</div>
+              <div class="lang-phrase">&#8220;I&#8217;d rather give you the accurate answer than guess.&#8221;</div>
+              <div class="lang-phrase">&#8220;Let me make sure I&#8217;m answering the right question.&#8221;</div>
+              <div class="lang-phrase">&#8220;Can I come back to that point in a moment?&#8221;</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="optional-q mt-16">
+        <div class="optional-q-label">Optional &#8212; quick question</div>
+        <div class="optional-q-text">Which two or three phrases here would make the biggest difference in your real work conversations?</div>
+      </div>
+    </div>
+
+    <!-- PAGE 14 ─ PRACTICE PROMPT LIBRARY ──────────────────────── -->
+    <div class="page" id="page-14">
+      <div class="page-eyebrow">Practice</div>
+      <h1 class="page-title">Practice Prompt Library</h1>
+      <p class="page-subtitle">Choose one situation and practise one skill or the full framework.</p>
+      <div class="prompt-library mt-8">
+
+        <div class="prompt-item">
+          <div class="prompt-header" onclick="togglePrompt(this)">
+            <div>
+              <div class="prompt-title">Prompt 1 &#8212; Quick Project Update</div>
+              <div class="prompt-quote">&#8220;Can you quickly explain where we are with this?&#8221;</div>
+            </div>
+            <svg class="prompt-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="prompt-body">
+            <p class="prompt-hint">Choose one skill to practise, or use the full framework.</p>
+            <div class="prompt-options">
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">pause</div>
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">main point</div>
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">condense</div>
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">full framework</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="prompt-item">
+          <div class="prompt-header" onclick="togglePrompt(this)">
+            <div>
+              <div class="prompt-title">Prompt 2 &#8212; Explaining a Delay</div>
+              <div class="prompt-quote">&#8220;Why is this taking longer than expected?&#8221;</div>
+            </div>
+            <svg class="prompt-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="prompt-body">
+            <div class="prompt-options">
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">pause</div>
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">condense</div>
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">calibrate</div>
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">close</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="prompt-item">
+          <div class="prompt-header" onclick="togglePrompt(this)">
+            <div>
+              <div class="prompt-title">Prompt 3 &#8212; Giving a Recommendation</div>
+              <div class="prompt-quote">&#8220;What do you think we should do?&#8221;</div>
+            </div>
+            <svg class="prompt-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="prompt-body">
+            <div class="prompt-options">
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">position</div>
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">condense</div>
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">close</div>
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">full framework</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="prompt-item">
+          <div class="prompt-header" onclick="togglePrompt(this)">
+            <div>
+              <div class="prompt-title">Prompt 4 &#8212; Pushing Back Professionally</div>
+              <div class="prompt-quote">&#8220;I think we should just move ahead with the original plan.&#8221;</div>
+            </div>
+            <svg class="prompt-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="prompt-body">
+            <div class="prompt-options">
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">calibrate</div>
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">position</div>
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">close</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="prompt-item">
+          <div class="prompt-header" onclick="togglePrompt(this)">
+            <div>
+              <div class="prompt-title">Prompt 5 &#8212; Responding Under Pressure</div>
+              <div class="prompt-quote">&#8220;We need an answer now. What do you think?&#8221;</div>
+            </div>
+            <svg class="prompt-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="prompt-body">
+            <div class="prompt-options">
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">pause</div>
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">position</div>
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">calibrate</div>
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">close</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="prompt-item">
+          <div class="prompt-header" onclick="togglePrompt(this)">
+            <div>
+              <div class="prompt-title">Prompt 6 &#8212; Saying Not Yet</div>
+              <div class="prompt-quote">&#8220;Can you confirm you&#8217;ll have this done by Friday?&#8221;</div>
+            </div>
+            <svg class="prompt-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="prompt-body">
+            <div class="prompt-options">
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">calibrate</div>
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">position</div>
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">close with conditions</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="prompt-item">
+          <div class="prompt-header" onclick="togglePrompt(this)">
+            <div>
+              <div class="prompt-title">Prompt 7 &#8212; Giving a Concise Senior Update</div>
+              <div class="prompt-quote">&#8220;I only have two minutes. Can you summarise where we are?&#8221;</div>
+            </div>
+            <svg class="prompt-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="prompt-body">
+            <div class="prompt-options">
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">pause</div>
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">prioritise</div>
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">condense</div>
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">close</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="prompt-item">
+          <div class="prompt-header" onclick="togglePrompt(this)">
+            <div>
+              <div class="prompt-title">Prompt 8 &#8212; Responding to a Broad Question</div>
+              <div class="prompt-quote">&#8220;What&#8217;s your view on how this project is going?&#8221;</div>
+            </div>
+            <svg class="prompt-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="prompt-body">
+            <div class="prompt-options">
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">pause</div>
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">prioritise</div>
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">position</div>
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">close</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="prompt-item">
+          <div class="prompt-header" onclick="togglePrompt(this)">
+            <div>
+              <div class="prompt-title">Prompt 9 &#8212; Closing a Meeting or Conversation</div>
+              <div class="prompt-quote">&#8220;Is there anything else, or are we done?&#8221;</div>
+            </div>
+            <svg class="prompt-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="prompt-body">
+            <div class="prompt-options">
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">confirm actions</div>
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">confirm timing</div>
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">close clearly</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="prompt-item">
+          <div class="prompt-header" onclick="togglePrompt(this)">
+            <div>
+              <div class="prompt-title">Prompt 10 &#8212; Unexpected Question</div>
+              <div class="prompt-quote">&#8220;Someone asks something you did not prepare for.&#8221;</div>
+            </div>
+            <svg class="prompt-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="prompt-body">
+            <div class="prompt-options">
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">pause</div>
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">buy time professionally</div>
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">give a clear answer</div>
+              <div class="prompt-opt" onclick="this.classList.toggle('selected')">close</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PAGE 15 ─ MAKE IT MORE REALISTIC ──────────────────────── -->
+    <div class="page" id="page-15">
+      <div class="page-eyebrow amber">Practice Upgrade</div>
+      <h1 class="page-title">Make It More Realistic</h1>
+      <p class="page-subtitle">Once the response is clear, try the same task with one extra difficulty. Add one challenge at a time.</p>
+      <div class="challenge-grid mt-8">
+
+        <div class="challenge-card" onclick="this.classList.toggle('active')">
+          <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="9" r="5.5" stroke="#C8843A" stroke-width="1.3"/><path d="M8 6v3l2 1.5" stroke="#C8843A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="challenge-title">Short Version</div>
+          <div class="challenge-quote">You only have 30 seconds.</div>
+        </div>
+
+        <div class="challenge-card" onclick="this.classList.toggle('active')">
+          <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 6a5 5 0 0 1 10 0c0 2-1 3.5-2.5 4.5V12H5.5v-1.5C4 9.5 3 8 3 6z" stroke="#C8843A" stroke-width="1.3" fill="none"/></svg></div>
+          <div class="challenge-title">Impatient Listener</div>
+          <div class="challenge-quote">The listener seems in a hurry and keeps cutting in.</div>
+        </div>
+
+        <div class="challenge-card" onclick="this.classList.toggle('active')">
+          <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="5" width="12" height="8" rx="1.5" stroke="#C8843A" stroke-width="1.3"/><path d="M5 5V4a3 3 0 0 1 6 0v1" stroke="#C8843A" stroke-width="1.3"/></svg></div>
+          <div class="challenge-title">Senior Audience</div>
+          <div class="challenge-quote">The listener expects brevity and hates unnecessary detail.</div>
+        </div>
+
+        <div class="challenge-card" onclick="this.classList.toggle('active')">
+          <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="#C8843A" stroke-width="1.3"/><path d="M6 6.5c0-1 .9-1.5 2-1.5s2 .7 2 1.5c0 1-1 1.5-2 2" stroke="#C8843A" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="11" r="0.75" fill="#C8843A"/></svg></div>
+          <div class="challenge-title">Unexpected Question</div>
+          <div class="challenge-quote">You did not prepare for this question.</div>
+        </div>
+
+        <div class="challenge-card" onclick="this.classList.toggle('active')">
+          <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2.5" y="3.5" width="11" height="9" rx="1.5" stroke="#C8843A" stroke-width="1.3"/><path d="M5 7h6M5 9.5h4" stroke="#C8843A" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+          <div class="challenge-title">Incomplete Information</div>
+          <div class="challenge-quote">You don&#8217;t have all the details yet.</div>
+        </div>
+
+        <div class="challenge-card" onclick="this.classList.toggle('active')">
+          <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 8V4a1 1 0 0 1 2 0v4M6 8V6a1 1 0 0 0-2 0v3a5 5 0 0 0 5 5h1a4 4 0 0 0 4-4V8a1 1 0 0 0-2 0" stroke="#C8843A" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg></div>
+          <div class="challenge-title">Interruption</div>
+          <div class="challenge-quote">The listener interrupts before you finish.</div>
+        </div>
+
+        <div class="challenge-card" onclick="this.classList.toggle('active')">
+          <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="#C8843A" stroke-width="1.3" opacity="0.5"/><path d="M8 4v4l3 2" stroke="#C8843A" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+          <div class="challenge-title">Skeptical Listener</div>
+          <div class="challenge-quote">The listener challenges your recommendation.</div>
+        </div>
+
+        <div class="challenge-card" onclick="this.classList.toggle('active')">
+          <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="6" cy="6" r="3" stroke="#C8843A" stroke-width="1.3"/><circle cx="11" cy="6" r="3" stroke="#C8843A" stroke-width="1.3"/><path d="M8 13c-2 0-5-1-5-3" stroke="#C8843A" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+          <div class="challenge-title">Multiple Listeners</div>
+          <div class="challenge-quote">More than one person is asking or responding.</div>
+        </div>
+
+        <div class="challenge-card" onclick="this.classList.toggle('active')">
+          <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h3M11 8h3M5 4l2 4-2 4M11 4l-2 4 2 4" stroke="#C8843A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="challenge-title">Written Format</div>
+          <div class="challenge-quote">The same response needs to work as a written message.</div>
+        </div>
+
+        <div class="challenge-card" onclick="this.classList.toggle('active')">
+          <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="#C8843A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="challenge-title">Pushback Needed</div>
+          <div class="challenge-quote">You need to disagree calmly as part of the response.</div>
+        </div>
+
+      </div>
+      <div class="card mt-20">
+        <div class="section-label mb-8">How to use these</div>
+        <p style="font-size:14px;color:var(--navy);line-height:1.65;margin-bottom:12px">Choose one prompt from the Practice Prompt Library and one challenge from this page. Practise using one skill or the full framework.</p>
+        <div class="challenge-example">
+          <p><strong>Prompt:</strong> &#8220;What do you think we should do?&#8221;</p>
+          <p><strong>Challenge:</strong> The listener is senior and only has 30 seconds.</p>
+          <p class="task">Task: Give a clear recommendation in one confident sentence, then close with a next step.</p>
+        </div>
+        <p style="font-size:13px;color:var(--muted);margin-top:12px;font-style:italic">Rule: Add one challenge at a time. The goal is not pressure for the sake of pressure. The goal is to stay clear, calm, and senior-sounding even when the situation is harder.</p>
+      </div>
+    </div>
+
+    <!-- PAGE 16 ─ WHAT GOOD LOOKS LIKE ─────────────────────────── -->
+    <div class="page" id="page-16">
+      <div class="page-eyebrow">Standard</div>
+      <h1 class="page-title">What Good Sounding Senior Looks Like</h1>
+      <p class="page-subtitle">A senior-sounding response does not need to be perfect. It needs to be clear, calm, and easy to act on.</p>
+      <div class="good-list mt-8">
+        <div class="good-item">
+          <div class="good-num">1</div>
+          <div>
+            <div class="good-title">Calm start</div>
+            <div class="good-phrase">The response begins with control, not with &#8220;um,&#8221; &#8220;sorry,&#8221; or rushing.</div>
+          </div>
+        </div>
+        <div class="good-item">
+          <div class="good-num">2</div>
+          <div>
+            <div class="good-title">Main point first</div>
+            <div class="good-phrase">The listener can hear the key message without waiting through background detail.</div>
+          </div>
+        </div>
+        <div class="good-item">
+          <div class="good-num">3</div>
+          <div>
+            <div class="good-title">Concise explanation</div>
+            <div class="good-phrase">The message is clear in two to three sentences, not seven or eight.</div>
+          </div>
+        </div>
+        <div class="good-item">
+          <div class="good-num">4</div>
+          <div>
+            <div class="good-title">Clear position</div>
+            <div class="good-phrase">There is a recommendation, view, or decision &#8212; not just a list of possibilities.</div>
+          </div>
+        </div>
+        <div class="good-item">
+          <div class="good-num">5</div>
+          <div>
+            <div class="good-title">Calibrated tone</div>
+            <div class="good-phrase">The speaker sounds confident without sounding blunt or arrogant.</div>
+          </div>
+        </div>
+        <div class="good-item">
+          <div class="good-num">6</div>
+          <div>
+            <div class="good-title">Professional pushback when needed</div>
+            <div class="good-phrase">Disagreement is calm, specific, and keeps the relationship intact.</div>
+          </div>
+        </div>
+        <div class="good-item">
+          <div class="good-num">7</div>
+          <div>
+            <div class="good-title">Clear close</div>
+            <div class="good-phrase">The response ends with an action, timing, or decision &#8212; not a vague &#8220;let me know.&#8221;</div>
+          </div>
+        </div>
+      </div>
+      <div class="card mt-20">
+        <div class="section-label mb-8">Strong Senior Communication Checklist</div>
+        <p style="font-size:13.5px;color:var(--muted);margin-bottom:14px">A strong senior-sounding response usually includes most of these:</p>
+        <div class="checklist">
+          <div class="checklist-item"><svg width="12" height="12" style="color:#2D8F87"><use href="#icon-check-sm"/></svg>no apologetic opening</div>
+          <div class="checklist-item"><svg width="12" height="12" style="color:#2D8F87"><use href="#icon-check-sm"/></svg>answer comes first</div>
+          <div class="checklist-item"><svg width="12" height="12" style="color:#2D8F87"><use href="#icon-check-sm"/></svg>short and condensed</div>
+          <div class="checklist-item"><svg width="12" height="12" style="color:#2D8F87"><use href="#icon-check-sm"/></svg>clear recommendation</div>
+          <div class="checklist-item"><svg width="12" height="12" style="color:#2D8F87"><use href="#icon-check-sm"/></svg>calm pushback when needed</div>
+          <div class="checklist-item"><svg width="12" height="12" style="color:#2D8F87"><use href="#icon-check-sm"/></svg>no weak hedging</div>
+          <div class="checklist-item"><svg width="12" height="12" style="color:#2D8F87"><use href="#icon-check-sm"/></svg>controlled close</div>
+          <div class="checklist-item"><svg width="12" height="12" style="color:#2D8F87"><use href="#icon-check-sm"/></svg>clear next step</div>
+          <div class="checklist-item"><svg width="12" height="12" style="color:#2D8F87"><use href="#icon-check-sm"/></svg>sounds useful, not impressive</div>
+        </div>
+      </div>
+      <div class="mini-example mt-16">
+        <div class="mini-example-label">Example &#8212; Weak vs Strong</div>
+        <div class="client-label">Weak</div>
+        <div class="response-text" style="color:var(--muted);font-style:italic;margin-bottom:12px">&#8220;Um, sorry, I think maybe it&#8217;s going okay, but there are some things that are a bit complicated and I&#8217;m not totally sure yet, so&#8230; maybe we just wait and see?&#8221;</div>
+        <div class="client-label">Stronger</div>
+        <div class="response-text">&#8220;Let me give you the short version. The main thing here is timing &#8212; we&#8217;re on track, but one approval is still missing. My recommendation is to confirm the decision owner today. The practical next step is for me to send you a brief summary with the options by end of day.&#8221;</div>
+      </div>
+      <div class="optional-q mt-16">
+        <div class="optional-q-label">Tone note</div>
+        <div class="optional-q-text">Senior English sounds calm and useful &#8212; not perfect, not impressive, and not cold.</div>
+      </div>
+    </div>
+
+    <!-- PAGE 17 ─ COMPLETION ───────────────────────────────────── -->
+    <div class="page" id="page-17">
+      <div class="completion-hero">
+        <div class="completion-badge">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M8 18l6 6 14-14" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h1 class="completion-title">Sounding Senior and In Control<br>Complete</h1>
+        <p class="completion-sub">You now have a clear structure for sounding calmer, clearer, and more controlled in professional English.</p>
+      </div>
+      <div class="win-message">You can now slow down, lead with the point, make your message shorter, state your view clearly, calibrate under pressure, and close with control &#8212; in any professional conversation.</div>
+      <div class="two-col">
+        <div class="card">
+          <div class="section-label mb-8">What you can do now</div>
+          <div class="can-do-list">
+            <div class="can-do-item"><div class="can-do-check"><svg width="11" height="11" style="color:#2D8F87"><use href="#icon-check-lg"/></svg></div>Pause and frame before answering</div>
+            <div class="can-do-item"><div class="can-do-check"><svg width="11" height="11" style="color:#2D8F87"><use href="#icon-check-lg"/></svg></div>Lead with the most important point</div>
+            <div class="can-do-item"><div class="can-do-check"><svg width="11" height="11" style="color:#2D8F87"><use href="#icon-check-lg"/></svg></div>Condense without losing clarity</div>
+            <div class="can-do-item"><div class="can-do-check"><svg width="11" height="11" style="color:#2D8F87"><use href="#icon-check-lg"/></svg></div>State a recommendation with confidence</div>
+            <div class="can-do-item"><div class="can-do-check"><svg width="11" height="11" style="color:#2D8F87"><use href="#icon-check-lg"/></svg></div>Push back calmly and professionally</div>
+            <div class="can-do-item"><div class="can-do-check"><svg width="11" height="11" style="color:#2D8F87"><use href="#icon-check-lg"/></svg></div>Close every response with a clear next step</div>
+          </div>
+        </div>
+        <div>
+          <div class="completion-framework">
+            <div class="completion-framework-label">Framework Recap</div>
+            <div class="completion-framework-list">
+              <div class="completion-framework-step">
+                <div class="completion-framework-dot">1</div>
+                <div class="completion-framework-name">Pause</div>
+              </div>
+              <div class="completion-framework-step">
+                <div class="completion-framework-dot">2</div>
+                <div class="completion-framework-name">Prioritise</div>
+              </div>
+              <div class="completion-framework-step">
+                <div class="completion-framework-dot">3</div>
+                <div class="completion-framework-name">Condense</div>
+              </div>
+              <div class="completion-framework-step">
+                <div class="completion-framework-dot">4</div>
+                <div class="completion-framework-name">Position</div>
+              </div>
+              <div class="completion-framework-step">
+                <div class="completion-framework-dot">5</div>
+                <div class="completion-framework-name">Calibrate</div>
+              </div>
+              <div class="completion-framework-step">
+                <div class="completion-framework-dot">6</div>
+                <div class="completion-framework-name">Close</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mt-14">
+        <div class="section-label mb-8">Reflection</div>
+        <div class="reflection-q">Which skill made the biggest difference to how your responses sound?</div>
+        <div class="reflection-q">Which weak pattern &#8212; over-apologising, burying the point, hedging, or vague endings &#8212; do you still need to reduce?</div>
+        <div class="reflection-q last">In which conversations &#8212; client calls, internal meetings, written updates, or difficult discussions &#8212; will you use this framework first?</div>
+      </div>
+
+      <div class="suggested-next-section">
+        <div class="suggested-next-label">
+          <div class="section-label">Suggested next modules</div>
+        </div>
+        <div class="next-modules">
+          <a class="next-module-card" href="#" target="_blank" rel="noopener">
+            <div class="next-module-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M4 10 Q4 4 12 4 Q20 4 20 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                <rect x="2.5" y="9.5" width="4" height="6" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/>
+                <rect x="17.5" y="9.5" width="4" height="6" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/>
+                <path d="M21 15.5 Q21 19 17 19 L14 19" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                <circle cx="12" cy="19.5" r="1.5" fill="currentColor" opacity="0.6"/>
+              </svg>
+            </div>
+            <div class="next-module-content">
+              <div class="next-module-kicker">Next Path</div>
+              <div class="next-module-title">Client Call Confidence</div>
+              <div class="next-module-desc"><strong>Best if</strong> you need more control during live calls, fast questions, or unclear client conversations.</div>
+            </div>
+            <div class="next-module-arrow">&#8594;</div>
+          </a>
+          <a class="next-module-card" href="#" target="_blank" rel="noopener">
+            <div class="next-module-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <rect x="3" y="4" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="next-module-content">
+              <div class="next-module-kicker">Next Path</div>
+              <div class="next-module-title">Meeting Participation</div>
+              <div class="next-module-desc"><strong>Best if</strong> you need to contribute, push back, and stay on the record in live meetings.</div>
+            </div>
+            <div class="next-module-arrow">&#8594;</div>
+          </a>
+          <a class="next-module-card" href="#" target="_blank" rel="noopener">
+            <div class="next-module-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2L4 6V13C4 18 7.5 21.5 12 23C16.5 21.5 20 18 20 13V6L12 2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                <path d="M9 13l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="next-module-content">
+              <div class="next-module-kicker">Next Path</div>
+              <div class="next-module-title">Negotiation and Difficult Conversations</div>
+              <div class="next-module-desc"><strong>Best if</strong> you need to handle tension, disagreement, or sensitive conversations professionally.</div>
+            </div>
+            <div class="next-module-arrow">&#8594;</div>
+          </a>
+          <a class="next-module-card" href="#" target="_blank" rel="noopener">
+            <div class="next-module-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M7 10l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+              </svg>
+            </div>
+            <div class="next-module-content">
+              <div class="next-module-kicker">Next Path</div>
+              <div class="next-module-title">Presentation and Q&amp;A Structure</div>
+              <div class="next-module-desc"><strong>Best if</strong> you need to structure and deliver ideas clearly in front of a group.</div>
+            </div>
+            <div class="next-module-arrow">&#8594;</div>
+          </a>
+        </div>
+      </div>
+
+      <div class="completion-actions">
+        <button class="btn-teal" onclick="goToPage(18)">Bonus Round <svg width="15" height="15" style="color:white"><use href="#icon-arrow-right-bonus"/></svg></button>
+        <div style="font-size:12.5px;color:var(--muted)">Optional &#8212; one more round if useful</div>
+        <button class="btn-back" style="border-color:var(--border)" onclick="jumpToQuickReference()">
+          <svg width="13" height="13"><use href="#icon-doc-plus"/></svg>
+          Quick Reference
+        </button>
+      </div>
+    </div>
+
+    <!-- PAGE 18 ─ BONUS ROUND ──────────────────────────────────── -->
+    <div class="page" id="page-18">
+      <div class="page-eyebrow">Optional</div>
+      <h1 class="page-title">Bonus Round</h1>
+      <p class="page-subtitle">One extra practice round. No new theory &#8212; just one more useful round to reinforce the framework.</p>
+      <div class="bonus-cards mt-8">
+        <div class="bonus-card">
+          <div class="bonus-num">Option 1</div>
+          <div class="bonus-title">30-Second Senior Answer</div>
+          <div class="bonus-desc">Answer a broad question using the full framework in 30 seconds or less. Pause, main point, position, and close.</div>
+          <div class="bonus-options">
+            <div class="bonus-opt" onclick="this.classList.toggle('selected')">project update</div>
+            <div class="bonus-opt" onclick="this.classList.toggle('selected')">unexpected question</div>
+            <div class="bonus-opt" onclick="this.classList.toggle('selected')">recommendation request</div>
+            <div class="bonus-opt" onclick="this.classList.toggle('selected')">status question</div>
+          </div>
+          <div class="bonus-for mt">Best for: concision, confidence, under pressure</div>
+        </div>
+        <div class="bonus-card">
+          <div class="bonus-num">Option 2</div>
+          <div class="bonus-title">No Hedging Challenge</div>
+          <div class="bonus-desc">Give the same response again but remove all weak hedging words: &#8220;maybe,&#8221; &#8220;I think,&#8221; &#8220;kind of,&#8221; &#8220;possibly,&#8221; &#8220;I&#8217;m not sure but.&#8221;</div>
+          <div class="bonus-options">
+            <div class="bonus-opt" onclick="this.classList.toggle('selected')">recommendation</div>
+            <div class="bonus-opt" onclick="this.classList.toggle('selected')">project update</div>
+            <div class="bonus-opt" onclick="this.classList.toggle('selected')">written message</div>
+            <div class="bonus-opt" onclick="this.classList.toggle('selected')">pushback</div>
+          </div>
+          <div class="bonus-for mt">Best for: phrasing confidence, removing filler, clear positioning</div>
+        </div>
+        <div class="bonus-card">
+          <div class="bonus-num">Option 3</div>
+          <div class="bonus-title">Push Back Challenge</div>
+          <div class="bonus-desc">The listener suggests something you disagree with. Push back calmly, give your view, and close with a practical next step.</div>
+          <div class="bonus-options">
+            <div class="bonus-opt" onclick="this.classList.toggle('selected')">timing pressure</div>
+            <div class="bonus-opt" onclick="this.classList.toggle('selected')">skeptical senior</div>
+            <div class="bonus-opt" onclick="this.classList.toggle('selected')">wrong approach</div>
+            <div class="bonus-opt" onclick="this.classList.toggle('selected')">written version</div>
+          </div>
+          <div class="bonus-for mt">Best for: disagreement, calibration, pressure control</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUICK REFERENCE ─ JUMP-ONLY, NOT IN PAGE FLOW ──────────── -->
+    <div class="page" id="quick-reference">
+      <div class="page-eyebrow">Student Reference</div>
+      <h1 class="page-title">Sounding Senior and In Control Quick Reference</h1>
+      <p class="page-subtitle">A compact review of the framework, key phrases, weak patterns to reduce, and one model response.</p>
+
+      <!-- Section 1: Framework -->
+      <div class="section-label" style="margin-bottom:8px">Framework</div>
+      <div class="completion-framework" style="margin-top:0">
+        <div class="completion-framework-label">Framework</div>
+        <div class="completion-framework-list">
+          <div class="completion-framework-step">
+            <div class="completion-framework-dot">1</div>
+            <div class="completion-framework-name">Pause</div>
+          </div>
+          <div class="completion-framework-step">
+            <div class="completion-framework-dot">2</div>
+            <div class="completion-framework-name">Prioritise</div>
+          </div>
+          <div class="completion-framework-step">
+            <div class="completion-framework-dot">3</div>
+            <div class="completion-framework-name">Condense</div>
+          </div>
+          <div class="completion-framework-step">
+            <div class="completion-framework-dot">4</div>
+            <div class="completion-framework-name">Position</div>
+          </div>
+          <div class="completion-framework-step">
+            <div class="completion-framework-dot">5</div>
+            <div class="completion-framework-name">Calibrate</div>
+          </div>
+          <div class="completion-framework-step">
+            <div class="completion-framework-dot">6</div>
+            <div class="completion-framework-name">Close</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: Key Phrases -->
+      <div class="section-label" style="margin-top:24px;margin-bottom:8px">Key Phrases</div>
+      <div class="good-list">
+        <div class="good-item">
+          <div class="good-num">1</div>
+          <div>
+            <div class="good-title">Pause</div>
+            <div class="good-phrase">&#8220;Let me give you the short version first.&#8221;</div>
+          </div>
+        </div>
+        <div class="good-item">
+          <div class="good-num">2</div>
+          <div>
+            <div class="good-title">Prioritise</div>
+            <div class="good-phrase">&#8220;The main thing here is&#8230;&#8221;</div>
+          </div>
+        </div>
+        <div class="good-item">
+          <div class="good-num">3</div>
+          <div>
+            <div class="good-title">Condense</div>
+            <div class="good-phrase">&#8220;In practical terms&#8230;&#8221;</div>
+          </div>
+        </div>
+        <div class="good-item">
+          <div class="good-num">4</div>
+          <div>
+            <div class="good-title">Position</div>
+            <div class="good-phrase">&#8220;My recommendation would be&#8230;&#8221;</div>
+          </div>
+        </div>
+        <div class="good-item">
+          <div class="good-num">5</div>
+          <div>
+            <div class="good-title">Calibrate</div>
+            <div class="good-phrase">&#8220;I see where you&#8217;re coming from, but I&#8217;d frame it slightly differently.&#8221;</div>
+          </div>
+        </div>
+        <div class="good-item">
+          <div class="good-num">6</div>
+          <div>
+            <div class="good-title">Close</div>
+            <div class="good-phrase">&#8220;The practical next step is&#8230;&#8221;</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3: Weak Patterns to Reduce -->
+      <div class="section-label" style="margin-top:24px;margin-bottom:8px">Weak Patterns to Reduce</div>
+      <div class="card">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="font-size:13.5px;color:var(--navy)"><span style="font-weight:700;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.07em">Over-apologising: </span>&#8220;Sorry, I&#8217;m not sure if this is right, but&#8230;&#8221;</div>
+          <div style="font-size:13.5px;color:var(--navy)"><span style="font-weight:700;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.07em">Burying the point: </span>Long context before the answer arrives.</div>
+          <div style="font-size:13.5px;color:var(--navy)"><span style="font-weight:700;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.07em">Too many hedges: </span>&#8220;Maybe we could possibly consider&#8230;&#8221;</div>
+          <div style="font-size:13.5px;color:var(--navy)"><span style="font-weight:700;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.07em">Avoiding a view: </span>&#8220;It depends. We could do either really.&#8221;</div>
+          <div style="font-size:13.5px;color:var(--navy)"><span style="font-weight:700;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.07em">Vague ending: </span>&#8220;So yes, that&#8217;s basically it.&#8221;</div>
+        </div>
+      </div>
+
+      <!-- Section 4: Model Response -->
+      <div class="section-label" style="margin-top:24px;margin-bottom:8px">Model Response</div>
+      <div class="mini-example" style="margin-top:0">
+        <div class="mini-example-label">Example &#8212; Full Framework Under Pressure</div>
+        <div class="client-label">Colleague</div>
+        <div class="client-quote">&#8220;Can you quickly explain where we are with this project?&#8221;</div>
+        <div class="client-label mt-10">Response</div>
+        <div class="response-text">&#8220;Let me give you the short version first. The main thing here is that the deadline is still achievable, but the approval step is the current risk. In practical terms, everything depends on a decision this week. My recommendation would be to confirm the decision owner today rather than waiting. I see where you&#8217;re coming from on waiting, but I&#8217;d frame it slightly differently &#8212; the risk is that we lose another full week. The practical next step is for me to send a short summary with the options and the timeline by end of day.&#8221;</div>
+      </div>
+
+      <!-- Section 5: Use This When -->
+      <div class="optional-q" style="margin-top:20px">
+        <div class="optional-q-label">Use this when</div>
+        <div class="optional-q-text">Use this page before calls, meetings, written updates, or any situation where you need to sound calm, clear, and in control &#8212; especially when the listener is senior or time is short.</div>
+      </div>
+
+      <!-- Section 6: Print button -->
+      <div style="margin-top:24px;text-align:center">
+        <button id="qr-print-btn" class="btn-teal" onclick="window.print()">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M4 5V2h7v3M4 10H2V6h11v4h-2M4 10v3h7v-3" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          Print / Save as PDF
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- JUMP OVERLAY -->
+  <div class="jump-overlay" id="jumpOverlay" onclick="closeJump()"></div>
+
+  <!-- JUMP PANEL -->
+  <div class="jump-panel" id="jumpPanel">
+    <div class="jump-panel-inner">
+      <div class="jump-section-label">Start</div>
+      <div class="jump-links">
+        <button class="jump-link" onclick="jumpTo(1)"><span class="jump-link-title">Landing</span><span class="jump-link-desc">Begin the module</span></button>
+        <button class="jump-link" onclick="jumpTo(2)"><span class="jump-link-title">Overview</span><span class="jump-link-desc">What this module builds</span></button>
+        <button class="jump-link" onclick="jumpTo(3)"><span class="jump-link-title">Skill Path</span><span class="jump-link-desc">See the skill progression</span></button>
+      </div>
+      <div class="jump-section-label">Framework</div>
+      <div class="jump-links">
+        <button class="jump-link" onclick="jumpTo(4)"><span class="jump-link-title">Core Framework</span><span class="jump-link-desc">Learn the senior communication structure</span></button>
+        <button class="jump-link" onclick="jumpTo(5)"><span class="jump-link-title">Seniority Signal Map</span><span class="jump-link-desc">Patterns that sound less senior</span></button>
+      </div>
+      <div class="jump-section-label">Skills</div>
+      <div class="jump-links">
+        <button class="jump-link" onclick="jumpTo(6)"><span class="jump-link-title">Skill 1 &#8212; Pause</span><span class="jump-link-desc">Slow the moment down before answering.</span></button>
+        <button class="jump-link" onclick="jumpTo(7)"><span class="jump-link-title">Skill 2 &#8212; Prioritise</span><span class="jump-link-desc">Lead with the most important point.</span></button>
+        <button class="jump-link" onclick="jumpTo(8)"><span class="jump-link-title">Skill 3 &#8212; Condense</span><span class="jump-link-desc">Remove the words that don&#8217;t add value.</span></button>
+        <button class="jump-link" onclick="jumpTo(9)"><span class="jump-link-title">Skill 4 &#8212; Position</span><span class="jump-link-desc">State your view with measured confidence.</span></button>
+        <button class="jump-link" onclick="jumpTo(10)"><span class="jump-link-title">Skill 5 &#8212; Calibrate</span><span class="jump-link-desc">Sound firm without sounding blunt.</span></button>
+        <button class="jump-link" onclick="jumpTo(11)"><span class="jump-link-title">Skill 6 &#8212; Close</span><span class="jump-link-desc">End on a clear action or decision.</span></button>
+        <button class="jump-link" onclick="jumpTo(12)"><span class="jump-link-title">Put It Together</span><span class="jump-link-desc">Combine the full six-step sequence.</span></button>
+      </div>
+      <div class="jump-section-label">Practice &amp; Reference</div>
+      <div class="jump-links">
+        <button class="jump-link" onclick="jumpTo(13)"><span class="jump-link-title">Language Bank</span><span class="jump-link-desc">Find useful phrases quickly</span></button>
+        <button class="jump-link" onclick="jumpTo(14)"><span class="jump-link-title">Practice Prompts</span><span class="jump-link-desc">Choose focused practice</span></button>
+        <button class="jump-link" onclick="jumpTo(15)"><span class="jump-link-title">Make It More Realistic</span><span class="jump-link-desc">Add one realistic challenge</span></button>
+        <button class="jump-link" onclick="jumpTo(16)"><span class="jump-link-title">What Good Looks Like</span><span class="jump-link-desc">Review strong performance</span></button>
+      </div>
+      <div class="jump-section-label">Finish</div>
+      <div class="jump-links">
+        <button class="jump-link" onclick="jumpTo(17)"><span class="jump-link-title">Module Complete</span><span class="jump-link-desc">Review what the student can now do</span></button>
+        <button class="jump-link" onclick="jumpTo(18)"><span class="jump-link-title">Bonus Round</span><span class="jump-link-desc">Optional extra practice</span></button>
+        <button class="jump-link" id="qr-jump-link" onclick="jumpToQuickReference()"><span class="jump-link-title">Quick Reference</span><span class="jump-link-desc">Compact student takeaway</span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="bottom-bar hidden" id="bottomBar">
+    <div class="bottom-left">
+      <button class="btn-back" id="btnBack" onclick="handleBack()">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 3L5 7l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back
+      </button>
+      <span class="page-indicator" id="pageIndicator">
+        <span class="page-count-desktop">Page 1 of 18</span>
+        <span class="page-count-mobile">1/18</span>
+      </span>
+    </div>
+    <div class="bottom-right">
+      <button class="btn-jump" id="btnJump" onclick="toggleJump()">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 4h10M2 7h7M2 10h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        Jump to
+      </button>
+      <button class="btn-continue" id="btnContinue" onclick="handleContinue()">
+        Continue
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    /* ═══════════════════════════════════════════════════════════════
+       NAVIGATION & STATE
+    ════════════════════════════════════════════════════════════════ */
+    const TOTAL = 18;
+
+    const PAGE_TITLES = {
+      1: 'Landing',
+      2: 'Overview',
+      3: 'Skill Path',
+      4: 'Core Framework',
+      5: 'Seniority Signal Map',
+      6: 'Pause',
+      7: 'Prioritise',
+      8: 'Condense',
+      9: 'Position',
+      10: 'Calibrate',
+      11: 'Close',
+      12: 'Put It Together',
+      13: 'Language Bank',
+      14: 'Practice Prompts',
+      15: 'Make It Realistic',
+      16: 'What Good Looks Like',
+      17: 'Complete',
+      18: 'Bonus Round'
+    };
+
+    let cur = 1;
+    let quickRefActive = false;
+
+    function getSec(p) {
+      if (p <= 3) return 0;
+      if (p <= 5) return 1;
+      if (p <= 12) return 2;
+      if (p <= 16) return 3;
+      return 4;
+    }
+
+    function updateHeader(p) {
+      const s = getSec(p);
+      for (let i = 0; i < 5; i++) {
+        const step = document.getElementById('sec-' + i);
+        const conn = document.getElementById('conn-' + i);
+        step.classList.remove('active', 'done');
+        if (conn) conn.classList.remove('done');
+        if (i < s) { step.classList.add('done'); if (conn) conn.classList.add('done'); }
+        else if (i === s) step.classList.add('active');
+      }
+    }
+
+    function updateBar(p) {
+      const back = document.getElementById('btnBack');
+      const cont = document.getElementById('btnContinue');
+      const ind = document.getElementById('pageIndicator');
+      const bar = document.getElementById('bottomBar');
+
+      if (p === 1 && !quickRefActive) {
+        bar.classList.add('hidden');
+      } else {
+        bar.classList.remove('hidden');
+        back.disabled = false;
+      }
+
+      if (quickRefActive) {
+        ind.innerHTML =
+          '<span class="page-count-desktop">Quick Reference</span>' +
+          '<span class="page-count-mobile">Quick Ref</span>';
+      } else {
+        ind.innerHTML =
+          '<span class="page-count-desktop">Page ' + p + ' of ' + TOTAL + '</span>' +
+          '<span class="page-count-mobile">' + p + '/' + TOTAL + '</span>' +
+          '<span class="page-title-desktop"> &middot; ' + PAGE_TITLES[p] + '</span>';
+      }
+
+      if (quickRefActive || p === TOTAL) {
+        cont.style.display = 'none';
+      } else {
+        cont.style.display = 'inline-flex';
+        const lbl = p === 17 ? 'Bonus Round' : 'Continue';
+        cont.innerHTML = lbl + ' <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      }
+
+      document.querySelectorAll('.jump-link').forEach(function (el) {
+        el.classList.remove('current');
+      });
+      if (quickRefActive) {
+        const qrLink = document.getElementById('qr-jump-link');
+        if (qrLink) qrLink.classList.add('current');
+      } else {
+        document.querySelectorAll('.jump-link').forEach(function (el) {
+          const fn = el.getAttribute('onclick');
+          if (fn && fn.includes('jumpTo(' + p + ')')) { el.classList.add('current'); }
+        });
+      }
+    }
+
+    function goToPage(n) {
+      if (n < 1 || n > TOTAL) return;
+      if (quickRefActive) {
+        document.getElementById('quick-reference').classList.remove('active');
+        quickRefActive = false;
+      } else {
+        document.getElementById('page-' + cur).classList.remove('active');
+      }
+      cur = n;
+      document.getElementById('page-' + cur).classList.add('active');
+      updateHeader(cur);
+      updateBar(cur);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function jumpToQuickReference() {
+      closeJump();
+      if (quickRefActive) return;
+      if (cur >= 1 && cur <= TOTAL) {
+        document.getElementById('page-' + cur).classList.remove('active');
+      }
+      quickRefActive = true;
+      document.getElementById('quick-reference').classList.add('active');
+      updateHeader(17);
+      updateBar(cur);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function handleBack() {
+      if (quickRefActive) {
+        document.getElementById('quick-reference').classList.remove('active');
+        quickRefActive = false;
+        document.getElementById('page-' + cur).classList.add('active');
+        updateHeader(cur);
+        updateBar(cur);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (cur > 1) {
+        goToPage(cur - 1);
+      }
+    }
+
+    function handleContinue() { if (cur < TOTAL) goToPage(cur + 1); }
+
+    function toggleJump() {
+      const panel = document.getElementById('jumpPanel');
+      const overlay = document.getElementById('jumpOverlay');
+      const btn = document.getElementById('btnJump');
+      const isOpen = panel.classList.contains('open');
+      if (isOpen) {
+        panel.classList.remove('open');
+        overlay.classList.remove('open');
+        btn.classList.remove('open');
+      } else {
+        panel.classList.add('open');
+        overlay.classList.add('open');
+        btn.classList.add('open');
+      }
+    }
+
+    function closeJump() {
+      document.getElementById('jumpPanel').classList.remove('open');
+      document.getElementById('jumpOverlay').classList.remove('open');
+      document.getElementById('btnJump').classList.remove('open');
+    }
+
+    function jumpTo(n) {
+      closeJump();
+      goToPage(n);
+    }
+
+    /* ── INTERACTIVE COMPONENTS ──────────────────────────── */
+    function toggleDiscovery(card) {
+      const was = card.classList.contains('active');
+      document.querySelectorAll('.discovery-card').forEach(c => c.classList.remove('active'));
+      if (!was) card.classList.add('active');
+    }
+
+    function switchTab(tab, paneId) {
+      const row = tab.closest('.practice-tabs');
+      row.querySelectorAll('.practice-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const sec = tab.closest('.practice-section');
+      sec.querySelectorAll('.practice-pane').forEach(p => p.classList.remove('active'));
+      const pane = document.getElementById(paneId);
+      if (pane) pane.classList.add('active');
+    }
+
+    function toggleLangGroup(header) {
+      header.closest('.lang-group').classList.toggle('open');
+    }
+
+    function togglePrompt(header) {
+      const item = header.closest('.prompt-item');
+      const was = item.classList.contains('open');
+      document.querySelectorAll('.prompt-item').forEach(i => i.classList.remove('open'));
+      if (!was) item.classList.add('open');
+    }
+
+    function toggleFullExample(toggle) {
+      toggle.classList.toggle('open');
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeJump();
+    });
+
+    updateHeader(1);
+    updateBar(1);
+  </script>
+</body>
+
+</html>
