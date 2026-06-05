@@ -2141,30 +2141,101 @@
     }
 
     /* ── UTILITY: SPACING ───────────────────────────────── */
-    .mt-8 { margin-top: 8px }
-    .mt-12 { margin-top: 12px }
-    .mt-14 { margin-top: 14px }
-    .mt-16 { margin-top: 16px }
-    .mt-20 { margin-top: 20px }
-    .mt-24 { margin-top: 24px }
-    .mt-28 { margin-top: 28px }
-    .mt-32 { margin-top: 32px }
-    .mb-8 { margin-bottom: 8px }
-    .mb-12 { margin-bottom: 12px }
-    .mb-14 { margin-bottom: 14px }
+    .mt-8 {
+      margin-top: 8px
+    }
+
+    .mt-12 {
+      margin-top: 12px
+    }
+
+    .mt-14 {
+      margin-top: 14px
+    }
+
+    .mt-16 {
+      margin-top: 16px
+    }
+
+    .mt-20 {
+      margin-top: 20px
+    }
+
+    .mt-24 {
+      margin-top: 24px
+    }
+
+    .mt-28 {
+      margin-top: 28px
+    }
+
+    .mt-32 {
+      margin-top: 32px
+    }
+
+    .mb-8 {
+      margin-bottom: 8px
+    }
+
+    .mb-12 {
+      margin-bottom: 12px
+    }
+
+    .mb-14 {
+      margin-bottom: 14px
+    }
 
     /* ── MODIFIER CLASSES ──────────────────────────────────── */
-    .skill-num.teal { background: var(--teal) }
-    .fw-num.teal { background: var(--teal-pale); color: var(--teal) }
-    .seq-dot.final { background: var(--teal); border-color: var(--teal); color: white }
-    .card.card-navy { background: var(--navy); border-color: var(--navy) }
-    .card.card-amber { background: var(--amber-light); border-color: var(--amber-border) }
-    .client-label.mt-10 { margin-top: 10px }
-    .client-label.mt-12 { margin-top: 12px }
-    .practice-opt.block { border-radius: var(--radius-sm); padding: 10px 14px }
-    .section-label.on-dark { color: rgba(255, 255, 255, 0.5); margin-bottom: 8px }
-    .reflection-q.last { margin-bottom: 0 }
-    .bonus-for.mt { margin-top: 12px }
+    .skill-num.teal {
+      background: var(--teal)
+    }
+
+    .fw-num.teal {
+      background: var(--teal-pale);
+      color: var(--teal)
+    }
+
+    .seq-dot.final {
+      background: var(--teal);
+      border-color: var(--teal);
+      color: white
+    }
+
+    .card.card-navy {
+      background: var(--navy);
+      border-color: var(--navy)
+    }
+
+    .card.card-amber {
+      background: var(--amber-light);
+      border-color: var(--amber-border)
+    }
+
+    .client-label.mt-10 {
+      margin-top: 10px
+    }
+
+    .client-label.mt-12 {
+      margin-top: 12px
+    }
+
+    .practice-opt.block {
+      border-radius: var(--radius-sm);
+      padding: 10px 14px
+    }
+
+    .section-label.on-dark {
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 8px
+    }
+
+    .reflection-q.last {
+      margin-bottom: 0
+    }
+
+    .bonus-for.mt {
+      margin-top: 12px
+    }
 
     /* Tap hint */
     .tap-hint {
@@ -2204,7 +2275,9 @@
       margin-bottom: 4px
     }
 
-    .challenge-example p:last-child { margin-bottom: 0 }
+    .challenge-example p:last-child {
+      margin-bottom: 0
+    }
 
     .challenge-example .task {
       color: var(--teal);
@@ -2212,7 +2285,9 @@
     }
 
     /* ── STUDY TOOLS ────────────────────────────────────────── */
-    .study-tools { margin-top: 28px }
+    .study-tools {
+      margin-top: 28px
+    }
 
     .study-tools-label {
       font-size: 11px;
@@ -2230,7 +2305,9 @@
     }
 
     @media (max-width: 600px) {
-      .study-tools-grid { grid-template-columns: 1fr }
+      .study-tools-grid {
+        grid-template-columns: 1fr
+      }
     }
 
     .study-tool-card {
@@ -2318,14 +2395,21 @@
 
     /* ── PRINT / SAVE AS PDF (Quick Reference only) ────────── */
     @media print {
+
       .top-bar,
       .bottom-bar,
       .jump-overlay,
-      .jump-panel { display: none !important; }
+      .jump-panel {
+        display: none !important;
+      }
 
-      body { background: white; }
+      body {
+        background: white;
+      }
 
-      .page { display: none !important; }
+      .page {
+        display: none !important;
+      }
 
       #quick-reference {
         display: block !important;
@@ -2337,51 +2421,169 @@
         max-width: 100%;
       }
 
-      .memory-bar { box-shadow: none; }
-      .good-item { box-shadow: none; break-inside: avoid; }
-      .mini-example { break-inside: avoid; }
-      #qr-print-btn { display: none !important; }
+      .memory-bar {
+        box-shadow: none;
+      }
+
+      .good-item {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+
+      .mini-example {
+        break-inside: avoid;
+      }
+
+      #qr-print-btn {
+        display: none !important;
+      }
     }
 
     /* ── MOBILE FIRST ────────────────────────────────────────────
        Breakpoint: ≤ 540px (single-column phone)
     ──────────────────────────────────────────────────────────── */
     @media (max-width: 540px) {
-      .page-content { padding: 24px 16px 90px }
+      .page-content {
+        padding: 24px 16px 90px
+      }
 
-      .bottom-bar { padding: 0 12px; height: 64px; gap: 6px }
-      .bottom-left { gap: 6px; flex-shrink: 1; min-width: 0 }
-      .bottom-right { gap: 8px; flex-shrink: 0 }
+      .bottom-bar {
+        padding: 0 12px;
+        height: 64px;
+        gap: 6px
+      }
 
-      .page-indicator { font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 80px }
-      .page-count-desktop, .page-title-desktop { display: none; }
-      .page-count-mobile { display: inline; }
+      .bottom-left {
+        gap: 6px;
+        flex-shrink: 1;
+        min-width: 0
+      }
 
-      .btn-back { padding: 9px 12px; font-size: 13px }
-      .btn-jump { padding: 9px 12px; font-size: 13px }
-      .btn-continue { padding: 10px 16px; font-size: 13.5px }
+      .bottom-right {
+        gap: 8px;
+        flex-shrink: 0
+      }
 
-      .jump-panel { bottom: 68px; left: 8px; right: 8px; width: auto; transform: none }
+      .page-indicator {
+        font-size: 11px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 80px
+      }
 
-      .flow-visual { gap: 6px; margin: 20px 0 28px; justify-content: center }
-      .flow-arrow { display: none }
-      .flow-pill { font-size: 12.5px; padding: 7px 14px }
+      .page-count-desktop,
+      .page-title-desktop {
+        display: none;
+      }
 
-      .phrase-chip { font-size: 12.5px; padding: 6px 12px }
+      .page-count-mobile {
+        display: inline;
+      }
 
-      .practice-tabs { flex-wrap: nowrap; gap: 5px }
-      .practice-tab { font-size: 11.5px; padding: 7px 11px; white-space: nowrap }
+      .btn-back {
+        padding: 9px 12px;
+        font-size: 13px
+      }
 
-      .memory-bar { flex-direction: column; align-items: stretch; gap: 0; padding: 20px 20px }
-      .memory-bar-label { font-size: 11px; letter-spacing: 0.1em; color: rgba(255, 255, 255, 0.48); margin-bottom: 14px; margin-right: 0 }
-      .memory-arrow { display: none }
-      .memory-pill { display: block; background: rgba(255, 255, 255, 0.1); border-radius: var(--radius-sm); padding: 10px 14px; font-size: 14px; font-weight: 600; color: white; margin-bottom: 6px }
-      .memory-pill:last-of-type { margin-bottom: 0 }
+      .btn-jump {
+        padding: 9px 12px;
+        font-size: 13px
+      }
 
-      .skill-key-move { font-size: 13px }
-      .brand-sub { display: none }
-      .page-title { font-size: 26px }
-      .hero-title { font-size: clamp(30px, 9vw, 42px) }
+      .btn-continue {
+        padding: 10px 16px;
+        font-size: 13.5px
+      }
+
+      .jump-panel {
+        bottom: 68px;
+        left: 8px;
+        right: 8px;
+        width: auto;
+        transform: none
+      }
+
+      .flow-visual {
+        gap: 6px;
+        margin: 20px 0 28px;
+        justify-content: center
+      }
+
+      .flow-arrow {
+        display: none
+      }
+
+      .flow-pill {
+        font-size: 12.5px;
+        padding: 7px 14px
+      }
+
+      .phrase-chip {
+        font-size: 12.5px;
+        padding: 6px 12px
+      }
+
+      .practice-tabs {
+        flex-wrap: nowrap;
+        gap: 5px
+      }
+
+      .practice-tab {
+        font-size: 11.5px;
+        padding: 7px 11px;
+        white-space: nowrap
+      }
+
+      .memory-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 20px 20px
+      }
+
+      .memory-bar-label {
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        color: rgba(255, 255, 255, 0.48);
+        margin-bottom: 14px;
+        margin-right: 0
+      }
+
+      .memory-arrow {
+        display: none
+      }
+
+      .memory-pill {
+        display: block;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: var(--radius-sm);
+        padding: 10px 14px;
+        font-size: 14px;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 6px
+      }
+
+      .memory-pill:last-of-type {
+        margin-bottom: 0
+      }
+
+      .skill-key-move {
+        font-size: 13px
+      }
+
+      .brand-sub {
+        display: none
+      }
+
+      .page-title {
+        font-size: 26px
+      }
+
+      .hero-title {
+        font-size: clamp(30px, 9vw, 42px)
+      }
     }
   </style>
 </head>
@@ -2395,81 +2597,94 @@
 ════════════════════════════════════════════════════════════════ -->
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
     <symbol id="icon-check" viewBox="0 0 10 10">
-      <path d="M2 5.5l2 2L8 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M2 5.5l2 2L8 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+        stroke-linejoin="round" />
     </symbol>
     <symbol id="icon-check-lg" viewBox="0 0 11 11">
-      <path d="M2 5.5l2.5 2.5L9 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M2 5.5l2.5 2.5L9 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+        stroke-linejoin="round" />
     </symbol>
     <symbol id="icon-check-sm" viewBox="0 0 12 12">
-      <path d="M2 6l3 3 5-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M2 6l3 3 5-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+        stroke-linejoin="round" />
     </symbol>
     <symbol id="icon-bulb" viewBox="0 0 14 14">
-      <path d="M7 2a3.5 3.5 0 0 1 2 6.4V10a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V8.4A3.5 3.5 0 0 1 7 2z" fill="none" stroke="currentColor" stroke-width="1.3"/>
-      <path d="M5.5 12h3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+      <path d="M7 2a3.5 3.5 0 0 1 2 6.4V10a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V8.4A3.5 3.5 0 0 1 7 2z" fill="none"
+        stroke="currentColor" stroke-width="1.3" />
+      <path d="M5.5 12h3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" />
     </symbol>
     <symbol id="icon-target" viewBox="0 0 14 14">
-      <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.3" opacity="0.6" fill="none"/>
-      <circle cx="7" cy="7" r="3" stroke="currentColor" stroke-width="1.3" opacity="0.8" fill="none"/>
-      <circle cx="7" cy="7" r="1" fill="currentColor"/>
+      <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.3" opacity="0.6" fill="none" />
+      <circle cx="7" cy="7" r="3" stroke="currentColor" stroke-width="1.3" opacity="0.8" fill="none" />
+      <circle cx="7" cy="7" r="1" fill="currentColor" />
     </symbol>
     <symbol id="icon-chevron-down" viewBox="0 0 16 16">
-      <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+        stroke-linejoin="round" />
     </symbol>
     <symbol id="icon-chevron-down-sm" viewBox="0 0 14 14">
-      <path d="M3 5l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M3 5l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+        stroke-linejoin="round" />
     </symbol>
     <symbol id="icon-chevron-down-md" viewBox="0 0 18 18">
-      <path d="M4.5 7L9 11.5 13.5 7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M4.5 7L9 11.5 13.5 7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+        stroke-linejoin="round" />
     </symbol>
     <symbol id="icon-arrow-right" viewBox="0 0 14 14">
-      <path d="M5 3l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M5 3l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+        stroke-linejoin="round" />
     </symbol>
     <symbol id="icon-arrow-right-wide" viewBox="0 0 16 16">
-      <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+        stroke-linejoin="round" />
     </symbol>
     <symbol id="icon-arrow-right-bonus" viewBox="0 0 15 15">
-      <path d="M3 7.5h9M8 3.5l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M3 7.5h9M8 3.5l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+        stroke-linejoin="round" />
     </symbol>
     <symbol id="icon-arrow-left" viewBox="0 0 14 14">
-      <path d="M9 3L5 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 3L5 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+        stroke-linejoin="round" />
     </symbol>
     <symbol id="icon-list" viewBox="0 0 14 14">
-      <path d="M2 4h10M2 7h7M2 10h5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M2 4h10M2 7h7M2 10h5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
     </symbol>
     <!-- Brand icon: structured speech lines, teal accent on bottom bar -->
     <symbol id="icon-senior" viewBox="0 0 20 20">
-      <rect x="2" y="3.5" width="16" height="3.2" rx="1.6" fill="white"/>
-      <rect x="2" y="8.8" width="12" height="3.2" rx="1.6" fill="white"/>
-      <rect x="2" y="14.1" width="8.5" height="3.2" rx="1.6" fill="#2D8F87"/>
+      <rect x="2" y="3.5" width="16" height="3.2" rx="1.6" fill="white" />
+      <rect x="2" y="8.8" width="12" height="3.2" rx="1.6" fill="white" />
+      <rect x="2" y="14.1" width="8.5" height="3.2" rx="1.6" fill="#2D8F87" />
     </symbol>
     <symbol id="icon-circle-check" viewBox="0 0 12 12">
-      <circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="1.3"/>
-      <path d="M4 6l1.5 1.5L8 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+      <circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="1.3" />
+      <path d="M4 6l1.5 1.5L8 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" />
     </symbol>
     <symbol id="icon-print" viewBox="0 0 15 15">
-      <path d="M4 5V2h7v3M4 10H2V6h11v4h-2M4 10v3h7v-3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M4 5V2h7v3M4 10H2V6h11v4h-2M4 10v3h7v-3" fill="none" stroke="currentColor" stroke-width="1.4"
+        stroke-linecap="round" stroke-linejoin="round" />
     </symbol>
     <symbol id="icon-doc-plus" viewBox="0 0 13 13">
-      <rect x="1.5" y="1.5" width="10" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/>
-      <path d="M4 6.5h5M6.5 4v5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+      <rect x="1.5" y="1.5" width="10" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.3" />
+      <path d="M4 6.5h5M6.5 4v5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" />
     </symbol>
     <symbol id="icon-podcast" viewBox="0 0 20 20">
-      <circle cx="10" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="1.4"/>
-      <path d="M5.5 8a4.5 4.5 0 0 0 9 0" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-      <path d="M3 8a7 7 0 0 0 14 0" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity="0.5"/>
-      <line x1="10" y1="12.5" x2="10" y2="17" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-      <path d="M7.5 17h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <circle cx="10" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="1.4" />
+      <path d="M5.5 8a4.5 4.5 0 0 0 9 0" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+      <path d="M3 8a7 7 0 0 0 14 0" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+        opacity="0.5" />
+      <line x1="10" y1="12.5" x2="10" y2="17" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+      <path d="M7.5 17h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
     </symbol>
     <symbol id="icon-mindmap" viewBox="0 0 20 20">
-      <circle cx="10" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.4"/>
-      <circle cx="3.5" cy="5" r="1.5" fill="none" stroke="currentColor" stroke-width="1.3"/>
-      <circle cx="3.5" cy="15" r="1.5" fill="none" stroke="currentColor" stroke-width="1.3"/>
-      <circle cx="16.5" cy="5" r="1.5" fill="none" stroke="currentColor" stroke-width="1.3"/>
-      <circle cx="16.5" cy="15" r="1.5" fill="none" stroke="currentColor" stroke-width="1.3"/>
-      <line x1="7.7" y1="8.4" x2="4.8" y2="6.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-      <line x1="7.7" y1="11.6" x2="4.8" y2="13.9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-      <line x1="12.3" y1="8.4" x2="15.2" y2="6.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-      <line x1="12.3" y1="11.6" x2="15.2" y2="13.9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <circle cx="10" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.4" />
+      <circle cx="3.5" cy="5" r="1.5" fill="none" stroke="currentColor" stroke-width="1.3" />
+      <circle cx="3.5" cy="15" r="1.5" fill="none" stroke="currentColor" stroke-width="1.3" />
+      <circle cx="16.5" cy="5" r="1.5" fill="none" stroke="currentColor" stroke-width="1.3" />
+      <circle cx="16.5" cy="15" r="1.5" fill="none" stroke="currentColor" stroke-width="1.3" />
+      <line x1="7.7" y1="8.4" x2="4.8" y2="6.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
+      <line x1="7.7" y1="11.6" x2="4.8" y2="13.9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
+      <line x1="12.3" y1="8.4" x2="15.2" y2="6.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
+      <line x1="12.3" y1="11.6" x2="15.2" y2="13.9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
     </symbol>
   </svg>
 
@@ -2477,7 +2692,9 @@
     <div class="top-bar-inner">
       <div class="brand">
         <div class="brand-icon">
-          <svg width="20" height="20"><use href="#icon-senior"/></svg>
+          <svg width="20" height="20">
+            <use href="#icon-senior" />
+          </svg>
         </div>
         <div>
           <div class="brand-name">Sounding Senior and In Control</div>
@@ -2513,20 +2730,43 @@
     <!-- PAGE 1 ─ LANDING ──────────────────────────────────────── -->
     <div class="page active" id="page-1">
       <div style="text-align:center;padding:20px 0 48px">
-        <div class="page-eyebrow"><svg width="12" height="12"><use href="#icon-circle-check"/></svg> Business Communication Module</div>
-        <h1 class="hero-title" style="max-width:620px;margin:0 auto 16px"><em>Sounding Senior</em><br>and In Control</h1>
-        <p class="hero-sub" style="margin:0 auto 12px">Sound calmer, clearer, and more senior in professional English conversations.</p>
-        <p class="hero-body" style="margin:0 auto 36px">Build the structure, language, and habits to pause before answering, lead with the main point, condense your message, state your view with confidence, calibrate tone, and close with a clear next step &#8212; without sounding cold, robotic, or over-formal.</p>
+        <div class="page-eyebrow"><svg width="12" height="12">
+            <use href="#icon-circle-check" />
+          </svg> Business Communication Module</div>
+        <h1 class="hero-title" style="max-width:620px;margin:0 auto 16px"><em>Sounding Senior</em><br>and In Control
+        </h1>
+        <p class="hero-sub" style="margin:0 auto 12px">Sound calmer, clearer, and more senior in professional English
+          conversations.</p>
+        <p class="hero-body" style="margin:0 auto 36px">Build the structure, language, and habits to pause before
+          answering, lead with the main point, condense your message, state your view with confidence, calibrate tone,
+          and close with a clear next step &#8212; without sounding cold, robotic, or over-formal.</p>
         <div class="flow-visual">
-          <div class="flow-step"><div class="flow-pill">Pause</div><span class="flow-arrow">&#8594;</span></div>
-          <div class="flow-step"><div class="flow-pill">Prioritise</div><span class="flow-arrow">&#8594;</span></div>
-          <div class="flow-step"><div class="flow-pill hl">Condense</div><span class="flow-arrow">&#8594;</span></div>
-          <div class="flow-step"><div class="flow-pill">Position</div><span class="flow-arrow">&#8594;</span></div>
-          <div class="flow-step"><div class="flow-pill">Calibrate</div><span class="flow-arrow">&#8594;</span></div>
-          <div class="flow-step"><div class="flow-pill teal">Close</div></div>
+          <div class="flow-step">
+            <div class="flow-pill">Pause</div><span class="flow-arrow">&#8594;</span>
+          </div>
+          <div class="flow-step">
+            <div class="flow-pill">Prioritise</div><span class="flow-arrow">&#8594;</span>
+          </div>
+          <div class="flow-step">
+            <div class="flow-pill hl">Condense</div><span class="flow-arrow">&#8594;</span>
+          </div>
+          <div class="flow-step">
+            <div class="flow-pill">Position</div><span class="flow-arrow">&#8594;</span>
+          </div>
+          <div class="flow-step">
+            <div class="flow-pill">Calibrate</div><span class="flow-arrow">&#8594;</span>
+          </div>
+          <div class="flow-step">
+            <div class="flow-pill teal">Close</div>
+          </div>
         </div>
-        <button class="btn-primary" onclick="goToPage(2)">Start Module <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        <div style="margin-top:28px;font-size:13px;color:var(--muted)">3&#8211;5 lessons &nbsp;&middot;&nbsp; 18 pages &nbsp;&middot;&nbsp; Skill-based workspace</div>
+        <button class="btn-primary" onclick="goToPage(2)">Start Module <svg width="16" height="16" viewBox="0 0 16 16"
+            fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.6" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg></button>
+        <div style="margin-top:28px;font-size:13px;color:var(--muted)">3&#8211;5 lessons &nbsp;&middot;&nbsp; 18 pages
+          &nbsp;&middot;&nbsp; Skill-based workspace</div>
       </div>
     </div>
 
@@ -2534,32 +2774,73 @@
     <div class="page" id="page-2">
       <div class="page-eyebrow">Module Overview</div>
       <h1 class="page-title">What This Module Builds</h1>
-      <p class="page-subtitle">Good ideas can sound weaker when the English is too vague, apologetic, or overloaded with detail.</p>
+      <p class="page-subtitle">Good ideas can sound weaker when the English is too vague, apologetic, or overloaded with
+        detail.</p>
       <div class="two-col mt-8">
         <div>
           <div class="card">
             <div class="section-label mb-8">In this module</div>
-            <p style="font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:14px">We&#8217;ll practise how to slow down before answering, lead with the main point, make messages shorter, state a position clearly, calibrate tone when pushing back, and close with a clear next step.</p>
-            <p style="font-size:14px;color:var(--muted);line-height:1.65">The goal is not to sound impressive. The goal is to sound clear, calm, and useful.</p>
+            <p style="font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:14px">We&#8217;ll practise how to
+              slow down before answering, lead with the main point, make messages shorter, state a position clearly,
+              calibrate tone when pushing back, and close with a clear next step.</p>
+            <p style="font-size:14px;color:var(--muted);line-height:1.65">The goal is not to sound impressive. The goal
+              is to sound clear, calm, and useful.</p>
           </div>
           <div class="card card-navy mt-12">
             <div class="section-label on-dark">Typical path</div>
             <div style="font-size:22px;font-weight:700;color:white;margin-bottom:4px">3&#8211;5 lessons</div>
-            <div style="font-size:13px;color:rgba(255,255,255,0.55)">Depending on the student&#8217;s current level of concision, confidence, and phrasing under pressure.</div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.55)">Depending on the student&#8217;s current level of
+              concision, confidence, and phrasing under pressure.</div>
           </div>
         </div>
         <div class="card">
           <div class="section-label mb-8">You&#8217;ll build</div>
           <ul class="build-list">
-            <li><div class="build-dot"><svg width="10" height="10" style="color:#2D8F87"><use href="#icon-check"/></svg></div>Stronger main-message answers</li>
-            <li><div class="build-dot"><svg width="10" height="10" style="color:#2D8F87"><use href="#icon-check"/></svg></div>Calmer responses under pressure</li>
-            <li><div class="build-dot"><svg width="10" height="10" style="color:#2D8F87"><use href="#icon-check"/></svg></div>Fewer weak hedging words</li>
-            <li><div class="build-dot"><svg width="10" height="10" style="color:#2D8F87"><use href="#icon-check"/></svg></div>Less apologetic opening language</li>
-            <li><div class="build-dot"><svg width="10" height="10" style="color:#2D8F87"><use href="#icon-check"/></svg></div>Clearer recommendation phrasing</li>
-            <li><div class="build-dot"><svg width="10" height="10" style="color:#2D8F87"><use href="#icon-check"/></svg></div>More concise project updates</li>
-            <li><div class="build-dot"><svg width="10" height="10" style="color:#2D8F87"><use href="#icon-check"/></svg></div>Better pushback without sounding blunt</li>
-            <li><div class="build-dot"><svg width="10" height="10" style="color:#2D8F87"><use href="#icon-check"/></svg></div>More controlled disagreement</li>
-            <li><div class="build-dot"><svg width="10" height="10" style="color:#2D8F87"><use href="#icon-check"/></svg></div>Stronger close and next-step language</li>
+            <li>
+              <div class="build-dot"><svg width="10" height="10" style="color:#2D8F87">
+                  <use href="#icon-check" />
+                </svg></div>Stronger main-message answers
+            </li>
+            <li>
+              <div class="build-dot"><svg width="10" height="10" style="color:#2D8F87">
+                  <use href="#icon-check" />
+                </svg></div>Calmer responses under pressure
+            </li>
+            <li>
+              <div class="build-dot"><svg width="10" height="10" style="color:#2D8F87">
+                  <use href="#icon-check" />
+                </svg></div>Fewer weak hedging words
+            </li>
+            <li>
+              <div class="build-dot"><svg width="10" height="10" style="color:#2D8F87">
+                  <use href="#icon-check" />
+                </svg></div>Less apologetic opening language
+            </li>
+            <li>
+              <div class="build-dot"><svg width="10" height="10" style="color:#2D8F87">
+                  <use href="#icon-check" />
+                </svg></div>Clearer recommendation phrasing
+            </li>
+            <li>
+              <div class="build-dot"><svg width="10" height="10" style="color:#2D8F87">
+                  <use href="#icon-check" />
+                </svg></div>More concise project updates
+            </li>
+            <li>
+              <div class="build-dot"><svg width="10" height="10" style="color:#2D8F87">
+                  <use href="#icon-check" />
+                </svg></div>Better pushback without sounding blunt
+            </li>
+            <li>
+              <div class="build-dot"><svg width="10" height="10" style="color:#2D8F87">
+                  <use href="#icon-check" />
+                </svg></div>More controlled disagreement
+            </li>
+            <li>
+              <div class="build-dot"><svg width="10" height="10" style="color:#2D8F87">
+                  <use href="#icon-check" />
+                </svg></div>Stronger close and next-step language
+            </li>
           </ul>
         </div>
       </div>
@@ -2568,13 +2849,16 @@
         <div class="study-tools-grid">
           <div class="study-tool-card">
             <div class="study-tool-header">
-              <div class="study-tool-icon"><svg width="20" height="20"><use href="#icon-podcast"/></svg></div>
+              <div class="study-tool-icon"><svg width="20" height="20">
+                  <use href="#icon-podcast" />
+                </svg></div>
               <div>
                 <div class="study-tool-kicker">Podcast · Deep Dive</div>
-                <div class="study-tool-title">Sounding Senior and In Control Audio Overview</div>
+                <div class="study-tool-title">Sound Senior with Simple Professional English</div>
               </div>
             </div>
-            <div class="study-tool-desc">A hosted audio walkthrough of the senior communication framework using real workplace situations as examples. Good before or after a session.</div>
+            <div class="study-tool-desc">A hosted audio walkthrough of the senior communication framework using real
+              workplace situations as examples. Good before or after a session.</div>
             <audio class="study-tool-audio" controls preload="metadata">
               <source src="sounding-senior-and-in-control-audio-overview.m4a" type="audio/mp4">
               Your browser does not support the audio element.
@@ -2582,15 +2866,24 @@
           </div>
           <div class="study-tool-card">
             <div class="study-tool-header">
-              <div class="study-tool-icon"><svg width="20" height="20"><use href="#icon-mindmap"/></svg></div>
+              <div class="study-tool-icon"><svg width="20" height="20">
+                  <use href="#icon-mindmap" />
+                </svg></div>
               <div>
                 <div class="study-tool-kicker">Mind Map · Framework Overview</div>
                 <div class="study-tool-title">Sounding Senior Framework at a Glance</div>
               </div>
             </div>
-            <div class="study-tool-desc">An interactive visual map of the six steps, key phrases, weak signal patterns, and practice challenges. Open it, explore it, save it.</div>
-            <a class="study-tool-link" href="#" target="_blank" rel="noopener">
-              <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M5 2H2.5A1.5 1.5 0 0 0 1 3.5v7A1.5 1.5 0 0 0 2.5 12h7A1.5 1.5 0 0 0 11 10.5V8M8 1h4m0 0v4m0-4L5.5 7.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="study-tool-desc">An interactive visual map of the six steps, key phrases, weak signal patterns,
+              and practice challenges. Open it, explore it, save it.</div>
+            <a class="study-tool-link"
+              href="https://notebooklm.google.com/notebook/10318cba-a20e-4e8a-ab87-8e00d96918a5/artifact/2e985d50-c18f-4ab5-b9df-df402fbaaa18?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_1&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_1_"
+              target="_blank" rel="noopener">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                <path
+                  d="M5 2H2.5A1.5 1.5 0 0 0 1 3.5v7A1.5 1.5 0 0 0 2.5 12h7A1.5 1.5 0 0 0 11 10.5V8M8 1h4m0 0v4m0-4L5.5 7.5"
+                  stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
               Open Mind Map
             </a>
           </div>
@@ -2602,13 +2895,15 @@
     <div class="page" id="page-3">
       <div class="page-eyebrow">Skill Path</div>
       <h1 class="page-title">Sounding senior is built one move at a time.</h1>
-      <p class="page-subtitle">You don&#8217;t need complicated English to sound more senior. You need better habits: a calmer start, a clearer main point, and a controlled finish.</p>
+      <p class="page-subtitle">You don&#8217;t need complicated English to sound more senior. You need better habits: a
+        calmer start, a clearer main point, and a controlled finish.</p>
       <div class="skill-stack mt-8">
         <div class="skill-stack-item">
           <div class="skill-num">1</div>
           <div>
             <div class="skill-stack-title">Pause before responding</div>
-            <div class="skill-stack-desc">Slow the moment down so you don&#8217;t sound rushed, defensive, or uncertain.</div>
+            <div class="skill-stack-desc">Slow the moment down so you don&#8217;t sound rushed, defensive, or uncertain.
+            </div>
           </div>
         </div>
         <div class="skill-stack-item">
@@ -2636,20 +2931,23 @@
           <div class="skill-num">5</div>
           <div>
             <div class="skill-stack-title">Calibrate the tone</div>
-            <div class="skill-stack-desc">Sound firm without sounding harsh. Sound collaborative without sounding weak.</div>
+            <div class="skill-stack-desc">Sound firm without sounding harsh. Sound collaborative without sounding weak.
+            </div>
           </div>
         </div>
         <div class="skill-stack-item">
           <div class="skill-num teal">6</div>
           <div>
             <div class="skill-stack-title">Close with control</div>
-            <div class="skill-stack-desc">End on a clear next step, action, or decision &#8212; not a vague fade-out.</div>
+            <div class="skill-stack-desc">End on a clear next step, action, or decision &#8212; not a vague fade-out.
+            </div>
           </div>
         </div>
       </div>
       <div class="optional-q mt-20">
         <div class="optional-q-label">Optional &#8212; quick question</div>
-        <div class="optional-q-text">Which feels hardest right now: pausing, leading with the point, being concise, sounding confident, pushing back without tension, or closing clearly?</div>
+        <div class="optional-q-text">Which feels hardest right now: pausing, leading with the point, being concise,
+          sounding confident, pushing back without tension, or closing clearly?</div>
       </div>
     </div>
 
@@ -2657,7 +2955,8 @@
     <div class="page" id="page-4">
       <div class="page-eyebrow">Core Framework</div>
       <h1 class="page-title">The Senior Communication Framework</h1>
-      <p class="page-subtitle">When you feel pressure to answer quickly or say the right thing, this framework helps you stay calm and sound controlled.</p>
+      <p class="page-subtitle">When you feel pressure to answer quickly or say the right thing, this framework helps you
+        stay calm and sound controlled.</p>
       <div class="framework-steps">
         <div class="fw-step">
           <div class="fw-num">1</div>
@@ -2696,7 +2995,8 @@
           <div>
             <div class="fw-label">Calibrate</div>
             <div class="fw-title">Adjust tone to stay professional under pressure.</div>
-            <div class="fw-phrase">&#8220;I see where you&#8217;re coming from, but I&#8217;d frame it slightly differently.&#8221;</div>
+            <div class="fw-phrase">&#8220;I see where you&#8217;re coming from, but I&#8217;d frame it slightly
+              differently.&#8221;</div>
           </div>
         </div>
         <div class="fw-step">
@@ -2722,11 +3022,17 @@
         <div class="client-label">Colleague</div>
         <div class="client-quote">&#8220;Can you quickly explain where we are with this project?&#8221;</div>
         <div class="client-label mt-10">Senior-sounding response</div>
-        <div class="response-text">&#8220;Let me give you the short version first. The main thing here is that the deadline is still achievable, but the approval step is the current risk. In practical terms, everything depends on a decision this week. My recommendation would be to confirm the decision owner today. I see where you&#8217;re coming from on waiting until Friday, but I&#8217;d frame it slightly differently &#8212; the risk is that we lose a week. The practical next step is for me to send a short summary with the two options and the timeline.&#8221;</div>
+        <div class="response-text">&#8220;Let me give you the short version first. The main thing here is that the
+          deadline is still achievable, but the approval step is the current risk. In practical terms, everything
+          depends on a decision this week. My recommendation would be to confirm the decision owner today. I see where
+          you&#8217;re coming from on waiting until Friday, but I&#8217;d frame it slightly differently &#8212; the risk
+          is that we lose a week. The practical next step is for me to send a short summary with the two options and the
+          timeline.&#8221;</div>
       </div>
       <div class="optional-q mt-16">
         <div class="optional-q-label">Optional &#8212; quick question</div>
-        <div class="optional-q-text">Which step do you usually skip or rush through when you&#8217;re under pressure?</div>
+        <div class="optional-q-text">Which step do you usually skip or rush through when you&#8217;re under pressure?
+        </div>
       </div>
     </div>
 
@@ -2734,64 +3040,102 @@
     <div class="page" id="page-5">
       <div class="page-eyebrow">Situation Map</div>
       <h1 class="page-title">Patterns That Sound Less Senior</h1>
-      <p class="page-subtitle">Small changes in phrasing and structure make a big difference to how senior a response sounds. Tap a card to see the better move.</p>
+      <p class="page-subtitle">Small changes in phrasing and structure make a big difference to how senior a response
+        sounds. Tap a card to see the better move.</p>
       <p class="tap-hint">Tap any card to expand it.</p>
       <div class="discovery-grid">
 
         <div class="discovery-card" onclick="toggleDiscovery(this)">
           <div class="discovery-type">Weak pattern 1</div>
           <div class="discovery-quote">&#8220;Over-apologising at the start&#8221;</div>
-          <div class="discovery-meta"><strong>Sounds like:</strong> &#8220;Sorry, I&#8217;m not sure if this is right, but&#8230;&#8221;</div>
-          <div class="discovery-detail">Starting with an apology signals uncertainty before any content has been delivered. Senior communicators do not need to pre-apologise for their own answer. A calm, direct opening is not rude &#8212; it is professional.<div class="discovery-move">Better: &#8220;Here&#8217;s how I&#8217;d approach this.&#8221;</div></div>
+          <div class="discovery-meta"><strong>Sounds like:</strong> &#8220;Sorry, I&#8217;m not sure if this is right,
+            but&#8230;&#8221;</div>
+          <div class="discovery-detail">Starting with an apology signals uncertainty before any content has been
+            delivered. Senior communicators do not need to pre-apologise for their own answer. A calm, direct opening is
+            not rude &#8212; it is professional.<div class="discovery-move">Better: &#8220;Here&#8217;s how I&#8217;d
+              approach this.&#8221;</div>
+          </div>
         </div>
 
         <div class="discovery-card" onclick="toggleDiscovery(this)">
           <div class="discovery-type">Weak pattern 2</div>
           <div class="discovery-quote">&#8220;Burying the main point&#8221;</div>
           <div class="discovery-meta"><strong>Sounds like:</strong> Long context before the answer arrives.</div>
-          <div class="discovery-detail">When the listener has to wait too long for the main point, they wonder if the speaker knows what matters most. Leading with the conclusion sounds more senior &#8212; context can follow.<div class="discovery-move">Better: &#8220;The short version is&#8230;&#8221;</div></div>
+          <div class="discovery-detail">When the listener has to wait too long for the main point, they wonder if the
+            speaker knows what matters most. Leading with the conclusion sounds more senior &#8212; context can follow.
+            <div class="discovery-move">Better: &#8220;The short version is&#8230;&#8221;</div>
+          </div>
         </div>
 
         <div class="discovery-card" onclick="toggleDiscovery(this)">
           <div class="discovery-type">Weak pattern 3</div>
           <div class="discovery-quote">&#8220;Too many hedges in one sentence&#8221;</div>
-          <div class="discovery-meta"><strong>Sounds like:</strong> &#8220;Maybe we could possibly consider&#8230;&#8221;</div>
-          <div class="discovery-detail">Stacking softeners drains the message of all weight. One calibrated hedge is professional. Multiple hedges in a row signals the speaker does not stand behind their own point.<div class="discovery-move">Better: &#8220;My recommendation would be to start with option two.&#8221;</div></div>
+          <div class="discovery-meta"><strong>Sounds like:</strong> &#8220;Maybe we could possibly
+            consider&#8230;&#8221;</div>
+          <div class="discovery-detail">Stacking softeners drains the message of all weight. One calibrated hedge is
+            professional. Multiple hedges in a row signals the speaker does not stand behind their own point.<div
+              class="discovery-move">Better: &#8220;My recommendation would be to start with option two.&#8221;</div>
+          </div>
         </div>
 
         <div class="discovery-card" onclick="toggleDiscovery(this)">
           <div class="discovery-type">Weak pattern 4</div>
           <div class="discovery-quote">&#8220;Over-explaining to prove you&#8217;ve thought about it&#8221;</div>
-          <div class="discovery-meta"><strong>Sounds like:</strong> Giving every detail to show you&#8217;re prepared.</div>
-          <div class="discovery-detail">More words usually mean more work for the listener, not more credibility for the speaker. Senior communication removes weight rather than adding it. The point, one reason, one next step.<div class="discovery-move">Better: &#8220;The key issue is timing. We need a decision this week.&#8221;</div></div>
+          <div class="discovery-meta"><strong>Sounds like:</strong> Giving every detail to show you&#8217;re prepared.
+          </div>
+          <div class="discovery-detail">More words usually mean more work for the listener, not more credibility for the
+            speaker. Senior communication removes weight rather than adding it. The point, one reason, one next step.
+            <div class="discovery-move">Better: &#8220;The key issue is timing. We need a decision this week.&#8221;
+            </div>
+          </div>
         </div>
 
         <div class="discovery-card" onclick="toggleDiscovery(this)">
           <div class="discovery-type">Weak pattern 5</div>
           <div class="discovery-quote">&#8220;Defensive pushback&#8221;</div>
-          <div class="discovery-meta"><strong>Sounds like:</strong> &#8220;But that&#8217;s not what I said.&#8221;</div>
-          <div class="discovery-detail">Reactive pushback sounds emotional rather than professional. Acknowledging the other person&#8217;s reading before reframing it keeps the conversation constructive and positions the speaker as calm and in control.<div class="discovery-move">Better: &#8220;I see where you&#8217;re coming from. What I&#8217;m pointing to is slightly different.&#8221;</div></div>
+          <div class="discovery-meta"><strong>Sounds like:</strong> &#8220;But that&#8217;s not what I said.&#8221;
+          </div>
+          <div class="discovery-detail">Reactive pushback sounds emotional rather than professional. Acknowledging the
+            other person&#8217;s reading before reframing it keeps the conversation constructive and positions the
+            speaker as calm and in control.<div class="discovery-move">Better: &#8220;I see where you&#8217;re coming
+              from. What I&#8217;m pointing to is slightly different.&#8221;</div>
+          </div>
         </div>
 
         <div class="discovery-card" onclick="toggleDiscovery(this)">
           <div class="discovery-type">Weak pattern 6</div>
           <div class="discovery-quote">&#8220;Avoiding a clear recommendation&#8221;</div>
-          <div class="discovery-meta"><strong>Sounds like:</strong> &#8220;It depends. We could do either really.&#8221;</div>
-          <div class="discovery-detail">Refusing to take a position makes the speaker seem passive or uncertain. Giving a clear recommendation while staying open to discussion is more useful and sounds more senior.<div class="discovery-move">Better: &#8220;My recommendation would be option two, but I&#8217;m happy to talk through the trade-offs.&#8221;</div></div>
+          <div class="discovery-meta"><strong>Sounds like:</strong> &#8220;It depends. We could do either really.&#8221;
+          </div>
+          <div class="discovery-detail">Refusing to take a position makes the speaker seem passive or uncertain. Giving
+            a clear recommendation while staying open to discussion is more useful and sounds more senior.<div
+              class="discovery-move">Better: &#8220;My recommendation would be option two, but I&#8217;m happy to talk
+              through the trade-offs.&#8221;</div>
+          </div>
         </div>
 
         <div class="discovery-card" onclick="toggleDiscovery(this)">
           <div class="discovery-type">Weak pattern 7</div>
           <div class="discovery-quote">&#8220;Vague ending&#8221;</div>
-          <div class="discovery-meta"><strong>Sounds like:</strong> &#8220;So yes, that&#8217;s basically it.&#8221;</div>
-          <div class="discovery-detail">Strong answers that fade out lose all the control built earlier. Senior responses land somewhere. The listener should know what happens next &#8212; the action, the owner, or the timing.<div class="discovery-move">Better: &#8220;The practical next step is for me to confirm the decision owner by Thursday.&#8221;</div></div>
+          <div class="discovery-meta"><strong>Sounds like:</strong> &#8220;So yes, that&#8217;s basically it.&#8221;
+          </div>
+          <div class="discovery-detail">Strong answers that fade out lose all the control built earlier. Senior
+            responses land somewhere. The listener should know what happens next &#8212; the action, the owner, or the
+            timing.<div class="discovery-move">Better: &#8220;The practical next step is for me to confirm the decision
+              owner by Thursday.&#8221;</div>
+          </div>
         </div>
 
         <div class="discovery-card" onclick="toggleDiscovery(this)">
           <div class="discovery-type">Weak pattern 8</div>
           <div class="discovery-quote">&#8220;Overly formal or stiff language&#8221;</div>
-          <div class="discovery-meta"><strong>Sounds like:</strong> &#8220;Kindly be informed that we shall proceed accordingly.&#8221;</div>
-          <div class="discovery-detail">Over-formal language can signal that the speaker is translating from a formal written register rather than speaking naturally. Clear, direct professional English is almost always more credible than elaborate or stilted phrasing.<div class="discovery-move">Better: &#8220;We&#8217;ll move ahead with this unless you have concerns.&#8221;</div></div>
+          <div class="discovery-meta"><strong>Sounds like:</strong> &#8220;Kindly be informed that we shall proceed
+            accordingly.&#8221;</div>
+          <div class="discovery-detail">Over-formal language can signal that the speaker is translating from a formal
+            written register rather than speaking naturally. Clear, direct professional English is almost always more
+            credible than elaborate or stilted phrasing.<div class="discovery-move">Better: &#8220;We&#8217;ll move
+              ahead with this unless you have concerns.&#8221;</div>
+          </div>
         </div>
 
       </div>
@@ -2806,27 +3150,38 @@
       <div class="skill-hero">
         <div class="skill-number-badge">Skill 1 of 6</div>
         <h1 class="skill-title">Pause Before Responding</h1>
-        <div class="skill-key-move">Key Move: <span class="key-move-hl">Slow the moment down so you don&#8217;t sound rushed or defensive.</span></div>
+        <div class="skill-key-move">Key Move: <span class="key-move-hl">Slow the moment down so you don&#8217;t sound
+            rushed or defensive.</span></div>
       </div>
       <div class="two-col">
         <div>
           <div class="info-block">
             <div class="info-block-label">Why this matters</div>
-            <div class="info-block-text">Students often start answering too quickly. The first few words come out as &#8220;um,&#8221; &#8220;sorry,&#8221; &#8220;I think maybe&#8230;&#8221; &#8212; which signals anxiety before the content arrives. A short framing phrase at the start shifts the tone immediately and gives the speaker a moment to organise the response.</div>
+            <div class="info-block-text">Students often start answering too quickly. The first few words come out as
+              &#8220;um,&#8221; &#8220;sorry,&#8221; &#8220;I think maybe&#8230;&#8221; &#8212; which signals anxiety
+              before the content arrives. A short framing phrase at the start shifts the tone immediately and gives the
+              speaker a moment to organise the response.</div>
           </div>
           <div class="principle-block">
-            <div class="principle-icon"><svg width="14" height="14" style="color:#C8843A"><use href="#icon-bulb"/></svg></div>
+            <div class="principle-icon"><svg width="14" height="14" style="color:#C8843A">
+                <use href="#icon-bulb" />
+              </svg></div>
             <div class="principle-text">Control begins before the first sentence.</div>
           </div>
         </div>
         <div class="info-block">
           <div class="info-block-label">Useful language</div>
           <div class="phrase-chips">
-            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;Let me give you the short version first.&#8221;</div>
-            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;There are two parts to this.&#8221;</div>
-            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;The simplest way to explain it is&#8230;&#8221;</div>
-            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;Let me frame this clearly.&#8221;</div>
-            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;I&#8217;d separate this into two things.&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;Let me give you the short
+              version first.&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;There are two parts to
+              this.&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;The simplest way to explain it
+              is&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;Let me frame this
+              clearly.&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;I&#8217;d separate this into two
+              things.&#8221;</div>
           </div>
         </div>
       </div>
@@ -2835,11 +3190,13 @@
         <div class="ws-grid">
           <div class="ws-card weak">
             <div class="ws-tag">Weak</div>
-            <div class="ws-text">&#8220;Um, yes, so basically I think maybe we can do it but it depends on a few things and I&#8217;m not totally sure yet.&#8221;</div>
+            <div class="ws-text">&#8220;Um, yes, so basically I think maybe we can do it but it depends on a few things
+              and I&#8217;m not totally sure yet.&#8221;</div>
           </div>
           <div class="ws-card strong">
             <div class="ws-tag">Stronger</div>
-            <div class="ws-text">&#8220;Let me give you the short version first. We can do it, but it depends on two things I need to confirm.&#8221;</div>
+            <div class="ws-text">&#8220;Let me give you the short version first. We can do it, but it depends on two
+              things I need to confirm.&#8221;</div>
           </div>
         </div>
       </div>
@@ -2849,13 +3206,18 @@
             <div class="toggle-label">See it in context</div>
             <div class="toggle-sub">A short model response using this skill.</div>
           </div>
-          <div class="toggle-chevron"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="toggle-chevron"><svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M3 5l4 4 4-4" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg></div>
         </div>
         <div class="full-example-body">
           <div class="client-label">Situation</div>
-          <div class="client-quote">A senior colleague asks for a quick update in a meeting and the student feels pressure to answer immediately.</div>
+          <div class="client-quote">A senior colleague asks for a quick update in a meeting and the student feels
+            pressure to answer immediately.</div>
           <div class="client-label mt-10">Response using Pause</div>
-          <div class="response-text">&#8220;Let me give you the short version first. The project is on track, but there&#8217;s one approval step that&#8217;s creating some risk for the timeline.&#8221;</div>
+          <div class="response-text">&#8220;Let me give you the short version first. The project is on track, but
+            there&#8217;s one approval step that&#8217;s creating some risk for the timeline.&#8221;</div>
         </div>
       </div>
       <div class="practice-section">
@@ -2867,24 +3229,29 @@
         <div class="practice-pane active" id="p6-c">
           <div class="practice-card">
             <div class="practice-prompt">Someone asks, &#8220;Can you quickly explain the situation?&#8221;</div>
-            <div class="practice-task"><strong>Task:</strong> Use one pause phrase before you answer. Don&#8217;t start with &#8220;um,&#8221; &#8220;so,&#8221; or &#8220;sorry.&#8221;</div>
+            <div class="practice-task"><strong>Task:</strong> Use one pause phrase before you answer. Don&#8217;t start
+              with &#8220;um,&#8221; &#8220;so,&#8221; or &#8220;sorry.&#8221;</div>
           </div>
         </div>
         <div class="practice-pane" id="p6-a">
           <div class="practice-card">
             <div class="practice-prompt">A client asks a broad question and expects a clear, concise answer.</div>
-            <div class="practice-task"><strong>Task:</strong> Pause, frame the response, and give the short version before going into detail.</div>
+            <div class="practice-task"><strong>Task:</strong> Pause, frame the response, and give the short version
+              before going into detail.</div>
           </div>
         </div>
         <div class="practice-pane" id="p6-r">
           <div class="practice-card">
             <div class="practice-prompt">The listener sounds impatient and keeps speaking over you.</div>
-            <div class="practice-task"><strong>Challenge:</strong> Use a pause phrase without sounding slow or defensive, even under pressure.</div>
+            <div class="practice-task"><strong>Challenge:</strong> Use a pause phrase without sounding slow or
+              defensive, even under pressure.</div>
           </div>
         </div>
       </div>
       <div class="quick-recap">
-        <div class="recap-icon"><svg width="14" height="14" style="color:white"><use href="#icon-target"/></svg></div>
+        <div class="recap-icon"><svg width="14" height="14" style="color:white">
+            <use href="#icon-target" />
+          </svg></div>
         <div>
           <div class="recap-label">Quick Recap</div>
           <div class="recap-text">A calm first sentence makes everything that follows sound more controlled.</div>
@@ -2898,27 +3265,37 @@
       <div class="skill-hero">
         <div class="skill-number-badge">Skill 2 of 6</div>
         <h1 class="skill-title">Prioritise the Main Point</h1>
-        <div class="skill-key-move">Key Move: <span class="key-move-hl">Lead with the most important message before adding context or explanation.</span></div>
+        <div class="skill-key-move">Key Move: <span class="key-move-hl">Lead with the most important message before
+            adding context or explanation.</span></div>
       </div>
       <div class="two-col">
         <div>
           <div class="info-block">
             <div class="info-block-label">Why this matters</div>
-            <div class="info-block-text">When the main point comes late, the listener has to work through background detail to find the answer. Senior communicators put the conclusion first. This does not mean being blunt &#8212; it means making the key message easy to hear.</div>
+            <div class="info-block-text">When the main point comes late, the listener has to work through background
+              detail to find the answer. Senior communicators put the conclusion first. This does not mean being blunt
+              &#8212; it means making the key message easy to hear.</div>
           </div>
           <div class="principle-block">
-            <div class="principle-icon"><svg width="14" height="14" style="color:#C8843A"><use href="#icon-bulb"/></svg></div>
+            <div class="principle-icon"><svg width="14" height="14" style="color:#C8843A">
+                <use href="#icon-bulb" />
+              </svg></div>
             <div class="principle-text">The answer comes first. The explanation follows.</div>
           </div>
         </div>
         <div class="info-block">
           <div class="info-block-label">Useful language</div>
           <div class="phrase-chips">
-            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;The main thing here is&#8230;&#8221;</div>
-            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;The short version is&#8230;&#8221;</div>
-            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;What matters most right now is&#8230;&#8221;</div>
-            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;The key issue is&#8230;&#8221;</div>
-            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;The most important point is&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;The main thing here
+              is&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;The short version
+              is&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;What matters most right now
+              is&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;The key issue is&#8230;&#8221;
+            </div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;The most important point
+              is&#8230;&#8221;</div>
           </div>
         </div>
       </div>
@@ -2927,11 +3304,13 @@
         <div class="ws-grid">
           <div class="ws-card weak">
             <div class="ws-tag">Weak</div>
-            <div class="ws-text">&#8220;So last week we had a few meetings and then there were some delays and then we checked with the team and then&#8230;&#8221;</div>
+            <div class="ws-text">&#8220;So last week we had a few meetings and then there were some delays and then we
+              checked with the team and then&#8230;&#8221;</div>
           </div>
           <div class="ws-card strong">
             <div class="ws-tag">Stronger</div>
-            <div class="ws-text">&#8220;The main thing here is that the deadline is at risk. There were delays last week and we still need one approval.&#8221;</div>
+            <div class="ws-text">&#8220;The main thing here is that the deadline is at risk. There were delays last week
+              and we still need one approval.&#8221;</div>
           </div>
         </div>
       </div>
@@ -2941,13 +3320,17 @@
             <div class="toggle-label">See it in context</div>
             <div class="toggle-sub">A short model response using this skill.</div>
           </div>
-          <div class="toggle-chevron"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="toggle-chevron"><svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M3 5l4 4 4-4" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg></div>
         </div>
         <div class="full-example-body">
           <div class="client-label">Situation</div>
           <div class="client-quote">A manager asks, &#8220;Where are we with the proposal?&#8221;</div>
           <div class="client-label mt-10">Response using Prioritise</div>
-          <div class="response-text">&#8220;The key issue is timing. The proposal is ready, but we&#8217;re still waiting for one internal sign-off.&#8221;</div>
+          <div class="response-text">&#8220;The key issue is timing. The proposal is ready, but we&#8217;re still
+            waiting for one internal sign-off.&#8221;</div>
         </div>
       </div>
       <div class="practice-section">
@@ -2958,28 +3341,35 @@
         </div>
         <div class="practice-pane active" id="p7-c">
           <div class="practice-card">
-            <div class="practice-prompt">You have three pieces of information to share. Only one is really important.</div>
-            <div class="practice-task"><strong>Task:</strong> Lead with the most important one. Start with &#8220;The main thing here is&#8230;&#8221;</div>
+            <div class="practice-prompt">You have three pieces of information to share. Only one is really important.
+            </div>
+            <div class="practice-task"><strong>Task:</strong> Lead with the most important one. Start with &#8220;The
+              main thing here is&#8230;&#8221;</div>
           </div>
         </div>
         <div class="practice-pane" id="p7-a">
           <div class="practice-card">
             <div class="practice-prompt">A senior person asks for the status of a project before a meeting.</div>
-            <div class="practice-task"><strong>Task:</strong> Give the answer in two sentences. Main point first, key context second.</div>
+            <div class="practice-task"><strong>Task:</strong> Give the answer in two sentences. Main point first, key
+              context second.</div>
           </div>
         </div>
         <div class="practice-pane" id="p7-r">
           <div class="practice-card">
             <div class="practice-prompt">The listener says, &#8220;Can you keep it very brief?&#8221;</div>
-            <div class="practice-task"><strong>Challenge:</strong> Lead with the point and stop after one supporting sentence.</div>
+            <div class="practice-task"><strong>Challenge:</strong> Lead with the point and stop after one supporting
+              sentence.</div>
           </div>
         </div>
       </div>
       <div class="quick-recap">
-        <div class="recap-icon"><svg width="14" height="14" style="color:white"><use href="#icon-target"/></svg></div>
+        <div class="recap-icon"><svg width="14" height="14" style="color:white">
+            <use href="#icon-target" />
+          </svg></div>
         <div>
           <div class="recap-label">Quick Recap</div>
-          <div class="recap-text">If the listener has to wait for the main point, the response sounds less controlled.</div>
+          <div class="recap-text">If the listener has to wait for the main point, the response sounds less controlled.
+          </div>
           <div class="recap-phrase">&#8220;The main thing here is&#8230;&#8221;</div>
         </div>
       </div>
@@ -2990,26 +3380,35 @@
       <div class="skill-hero">
         <div class="skill-number-badge">Skill 3 of 6</div>
         <h1 class="skill-title">Condense the Message</h1>
-        <div class="skill-key-move">Key Move: <span class="key-move-hl">Remove the words that don&#8217;t add value so the real message is easier to hear.</span></div>
+        <div class="skill-key-move">Key Move: <span class="key-move-hl">Remove the words that don&#8217;t add value so
+            the real message is easier to hear.</span></div>
       </div>
       <div class="two-col">
         <div>
           <div class="info-block">
             <div class="info-block-label">Why this matters</div>
-            <div class="info-block-text">When students feel uncertain, they often add more words to try to sound thorough or safe. This usually has the opposite effect. Shorter, cleaner answers tend to sound more confident and more senior. Condensing is not about dumbing down &#8212; it is about removing unnecessary effort for the listener.</div>
+            <div class="info-block-text">When students feel uncertain, they often add more words to try to sound
+              thorough or safe. This usually has the opposite effect. Shorter, cleaner answers tend to sound more
+              confident and more senior. Condensing is not about dumbing down &#8212; it is about removing unnecessary
+              effort for the listener.</div>
           </div>
           <div class="principle-block">
-            <div class="principle-icon"><svg width="14" height="14" style="color:#C8843A"><use href="#icon-bulb"/></svg></div>
+            <div class="principle-icon"><svg width="14" height="14" style="color:#C8843A">
+                <use href="#icon-bulb" />
+              </svg></div>
             <div class="principle-text">Shorter is usually stronger.</div>
           </div>
         </div>
         <div class="info-block">
           <div class="info-block-label">Useful language</div>
           <div class="phrase-chips">
-            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;In practical terms&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;In practical terms&#8230;&#8221;
+            </div>
             <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;To summarise&#8230;&#8221;</div>
-            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;The key point is&#8230;&#8221;</div>
-            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;What this means in practice&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;The key point is&#8230;&#8221;
+            </div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;What this means in
+              practice&#8230;&#8221;</div>
             <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;Put simply&#8230;&#8221;</div>
           </div>
         </div>
@@ -3019,11 +3418,13 @@
         <div class="ws-grid">
           <div class="ws-card weak">
             <div class="ws-tag">Weak</div>
-            <div class="ws-text">&#8220;There are a number of things to consider and the situation is quite complex because there are several different people involved and it&#8217;s not completely clear yet.&#8221;</div>
+            <div class="ws-text">&#8220;There are a number of things to consider and the situation is quite complex
+              because there are several different people involved and it&#8217;s not completely clear yet.&#8221;</div>
           </div>
           <div class="ws-card strong">
             <div class="ws-tag">Stronger</div>
-            <div class="ws-text">&#8220;In practical terms, this depends on a decision from three people. We&#8217;ll know more by Thursday.&#8221;</div>
+            <div class="ws-text">&#8220;In practical terms, this depends on a decision from three people. We&#8217;ll
+              know more by Thursday.&#8221;</div>
           </div>
         </div>
       </div>
@@ -3033,13 +3434,17 @@
             <div class="toggle-label">See it in context</div>
             <div class="toggle-sub">A short model response using this skill.</div>
           </div>
-          <div class="toggle-chevron"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="toggle-chevron"><svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M3 5l4 4 4-4" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg></div>
         </div>
         <div class="full-example-body">
           <div class="client-label">Situation</div>
           <div class="client-quote">A client asks why a proposal is taking longer than expected.</div>
           <div class="client-label mt-10">Response using Condense</div>
-          <div class="response-text">&#8220;In practical terms, the work is done. We&#8217;re just waiting for one internal sign-off before we can send it through.&#8221;</div>
+          <div class="response-text">&#8220;In practical terms, the work is done. We&#8217;re just waiting for one
+            internal sign-off before we can send it through.&#8221;</div>
         </div>
       </div>
       <div class="practice-section">
@@ -3051,24 +3456,29 @@
         <div class="practice-pane active" id="p8-c">
           <div class="practice-card">
             <div class="practice-prompt">Take a long explanation and cut it to two clear sentences.</div>
-            <div class="practice-task"><strong>Task:</strong> Keep only the main point, one reason, and one next step. Remove everything else.</div>
+            <div class="practice-task"><strong>Task:</strong> Keep only the main point, one reason, and one next step.
+              Remove everything else.</div>
           </div>
         </div>
         <div class="practice-pane" id="p8-a">
           <div class="practice-card">
             <div class="practice-prompt">The client asks for a brief summary of a complicated situation.</div>
-            <div class="practice-task"><strong>Task:</strong> Condense the message so the key information is easy to understand in 30 seconds.</div>
+            <div class="practice-task"><strong>Task:</strong> Condense the message so the key information is easy to
+              understand in 30 seconds.</div>
           </div>
         </div>
         <div class="practice-pane" id="p8-r">
           <div class="practice-card">
             <div class="practice-prompt">The listener says, &#8220;Can you simplify that for me?&#8221;</div>
-            <div class="practice-task"><strong>Challenge:</strong> Give the condensed version calmly without sounding defensive or flustered.</div>
+            <div class="practice-task"><strong>Challenge:</strong> Give the condensed version calmly without sounding
+              defensive or flustered.</div>
           </div>
         </div>
       </div>
       <div class="quick-recap">
-        <div class="recap-icon"><svg width="14" height="14" style="color:white"><use href="#icon-target"/></svg></div>
+        <div class="recap-icon"><svg width="14" height="14" style="color:white">
+            <use href="#icon-target" />
+          </svg></div>
         <div>
           <div class="recap-label">Quick Recap</div>
           <div class="recap-text">Fewer words usually means more clarity &#8212; not less credibility.</div>
@@ -3082,27 +3492,37 @@
       <div class="skill-hero">
         <div class="skill-number-badge">Skill 4 of 6</div>
         <h1 class="skill-title">Position Your View Clearly</h1>
-        <div class="skill-key-move">Key Move: <span class="key-move-hl">State your recommendation or opinion with measured confidence &#8212; not as a question or apology.</span></div>
+        <div class="skill-key-move">Key Move: <span class="key-move-hl">State your recommendation or opinion with
+            measured confidence &#8212; not as a question or apology.</span></div>
       </div>
       <div class="two-col">
         <div>
           <div class="info-block">
             <div class="info-block-label">Why this matters</div>
-            <div class="info-block-text">Students often avoid committing to a view because they worry about being wrong or seeming arrogant. But weak, non-committal answers often sound less credible, not more humble. Stating a clear recommendation &#8212; while remaining open to discussion &#8212; is a sign of senior-level communication.</div>
+            <div class="info-block-text">Students often avoid committing to a view because they worry about being wrong
+              or seeming arrogant. But weak, non-committal answers often sound less credible, not more humble. Stating a
+              clear recommendation &#8212; while remaining open to discussion &#8212; is a sign of senior-level
+              communication.</div>
           </div>
           <div class="principle-block">
-            <div class="principle-icon"><svg width="14" height="14" style="color:#C8843A"><use href="#icon-bulb"/></svg></div>
+            <div class="principle-icon"><svg width="14" height="14" style="color:#C8843A">
+                <use href="#icon-bulb" />
+              </svg></div>
             <div class="principle-text">A clear view is more useful than a safe one.</div>
           </div>
         </div>
         <div class="info-block">
           <div class="info-block-label">Useful language</div>
           <div class="phrase-chips">
-            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;My recommendation would be&#8230;&#8221;</div>
-            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;Based on what we know, I&#8217;d suggest&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;My recommendation would
+              be&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;Based on what we know, I&#8217;d
+              suggest&#8230;&#8221;</div>
             <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;My view is&#8230;&#8221;</div>
-            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;I&#8217;d go with&#8230;&#8221;</div>
-            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;The option I&#8217;d prioritise is&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;I&#8217;d go with&#8230;&#8221;
+            </div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;The option I&#8217;d prioritise
+              is&#8230;&#8221;</div>
           </div>
         </div>
       </div>
@@ -3111,11 +3531,13 @@
         <div class="ws-grid">
           <div class="ws-card weak">
             <div class="ws-tag">Weak</div>
-            <div class="ws-text">&#8220;Maybe option two could be good? But I&#8217;m not sure. It depends. We could do either one.&#8221;</div>
+            <div class="ws-text">&#8220;Maybe option two could be good? But I&#8217;m not sure. It depends. We could do
+              either one.&#8221;</div>
           </div>
           <div class="ws-card strong">
             <div class="ws-tag">Stronger</div>
-            <div class="ws-text">&#8220;My recommendation would be option two. It&#8217;s simpler to implement and it gives us more flexibility on timing.&#8221;</div>
+            <div class="ws-text">&#8220;My recommendation would be option two. It&#8217;s simpler to implement and it
+              gives us more flexibility on timing.&#8221;</div>
           </div>
         </div>
       </div>
@@ -3125,13 +3547,18 @@
             <div class="toggle-label">See it in context</div>
             <div class="toggle-sub">A short model response using this skill.</div>
           </div>
-          <div class="toggle-chevron"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="toggle-chevron"><svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M3 5l4 4 4-4" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg></div>
         </div>
         <div class="full-example-body">
           <div class="client-label">Situation</div>
-          <div class="client-quote">A senior stakeholder asks, &#8220;Which approach do you think we should take?&#8221;</div>
+          <div class="client-quote">A senior stakeholder asks, &#8220;Which approach do you think we should take?&#8221;
+          </div>
           <div class="client-label mt-10">Response using Position</div>
-          <div class="response-text">&#8220;My recommendation would be to go with the phased approach. It carries lower risk and it&#8217;s easier to adjust if the requirements change.&#8221;</div>
+          <div class="response-text">&#8220;My recommendation would be to go with the phased approach. It carries lower
+            risk and it&#8217;s easier to adjust if the requirements change.&#8221;</div>
         </div>
       </div>
       <div class="practice-section">
@@ -3143,24 +3570,30 @@
         <div class="practice-pane active" id="p9-c">
           <div class="practice-card">
             <div class="practice-prompt">There are two options. Both have some merit.</div>
-            <div class="practice-task"><strong>Task:</strong> Give a clear recommendation. Start with &#8220;My recommendation would be&#8230;&#8221; and give one reason.</div>
+            <div class="practice-task"><strong>Task:</strong> Give a clear recommendation. Start with &#8220;My
+              recommendation would be&#8230;&#8221; and give one reason.</div>
           </div>
         </div>
         <div class="practice-pane" id="p9-a">
           <div class="practice-card">
-            <div class="practice-prompt">The situation is uncertain and the listener wants your view on how to proceed.</div>
-            <div class="practice-task"><strong>Task:</strong> Give a recommendation without pretending everything is certain. Acknowledge the risk briefly.</div>
+            <div class="practice-prompt">The situation is uncertain and the listener wants your view on how to proceed.
+            </div>
+            <div class="practice-task"><strong>Task:</strong> Give a recommendation without pretending everything is
+              certain. Acknowledge the risk briefly.</div>
           </div>
         </div>
         <div class="practice-pane" id="p9-r">
           <div class="practice-card">
             <div class="practice-prompt">The listener responds, &#8220;Are you sure about that?&#8221;</div>
-            <div class="practice-task"><strong>Challenge:</strong> Hold your recommendation calmly without becoming either defensive or backing away from it.</div>
+            <div class="practice-task"><strong>Challenge:</strong> Hold your recommendation calmly without becoming
+              either defensive or backing away from it.</div>
           </div>
         </div>
       </div>
       <div class="quick-recap">
-        <div class="recap-icon"><svg width="14" height="14" style="color:white"><use href="#icon-target"/></svg></div>
+        <div class="recap-icon"><svg width="14" height="14" style="color:white">
+            <use href="#icon-target" />
+          </svg></div>
         <div>
           <div class="recap-label">Quick Recap</div>
           <div class="recap-text">You can sound confident without sounding certain about everything.</div>
@@ -3174,27 +3607,37 @@
       <div class="skill-hero">
         <div class="skill-number-badge">Skill 5 of 6</div>
         <h1 class="skill-title">Calibrate the Tone</h1>
-        <div class="skill-key-move">Key Move: <span class="key-move-hl">Sound firm and professional without sounding blunt, cold, or defensive.</span></div>
+        <div class="skill-key-move">Key Move: <span class="key-move-hl">Sound firm and professional without sounding
+            blunt, cold, or defensive.</span></div>
       </div>
       <div class="two-col">
         <div>
           <div class="info-block">
             <div class="info-block-label">Why this matters</div>
-            <div class="info-block-text">Senior tone is not just directness. If the student becomes too direct or too clipped, they can sound arrogant or unapproachable. If they soften too much, they can sound uncertain again. Calibrated tone means holding the message while keeping the relationship intact.</div>
+            <div class="info-block-text">Senior tone is not just directness. If the student becomes too direct or too
+              clipped, they can sound arrogant or unapproachable. If they soften too much, they can sound uncertain
+              again. Calibrated tone means holding the message while keeping the relationship intact.</div>
           </div>
           <div class="principle-block">
-            <div class="principle-icon"><svg width="14" height="14" style="color:#C8843A"><use href="#icon-bulb"/></svg></div>
+            <div class="principle-icon"><svg width="14" height="14" style="color:#C8843A">
+                <use href="#icon-bulb" />
+              </svg></div>
             <div class="principle-text">Firm and warm are not opposites.</div>
           </div>
         </div>
         <div class="info-block">
           <div class="info-block-label">Useful language</div>
           <div class="phrase-chips">
-            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;I see where you&#8217;re coming from, but I&#8217;d frame it slightly differently.&#8221;</div>
-            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;I understand the concern. The risk I&#8217;d highlight is&#8230;&#8221;</div>
-            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;That&#8217;s a fair point. What I&#8217;d add is&#8230;&#8221;</div>
-            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;I agree in principle, but I&#8217;d be cautious about&#8230;&#8221;</div>
-            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;I wouldn&#8217;t want to commit to that yet.&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;I see where you&#8217;re coming
+              from, but I&#8217;d frame it slightly differently.&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;I understand the concern. The
+              risk I&#8217;d highlight is&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;That&#8217;s a fair point. What
+              I&#8217;d add is&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;I agree in principle, but
+              I&#8217;d be cautious about&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;I wouldn&#8217;t want to commit
+              to that yet.&#8221;</div>
           </div>
         </div>
       </div>
@@ -3203,11 +3646,14 @@
         <div class="ws-grid">
           <div class="ws-card weak">
             <div class="ws-tag">Weak (too soft)</div>
-            <div class="ws-text">&#8220;Yes, that&#8217;s totally fine. Whatever you think is best. I&#8217;m happy either way.&#8221;</div>
+            <div class="ws-text">&#8220;Yes, that&#8217;s totally fine. Whatever you think is best. I&#8217;m happy
+              either way.&#8221;</div>
           </div>
           <div class="ws-card strong">
             <div class="ws-tag">Stronger (calibrated)</div>
-            <div class="ws-text">&#8220;I understand the thinking. What I&#8217;d flag is that this option carries a bit more timing risk. I&#8217;m comfortable either way, but I&#8217;d want to flag that before we commit.&#8221;</div>
+            <div class="ws-text">&#8220;I understand the thinking. What I&#8217;d flag is that this option carries a bit
+              more timing risk. I&#8217;m comfortable either way, but I&#8217;d want to flag that before we
+              commit.&#8221;</div>
           </div>
         </div>
       </div>
@@ -3220,7 +3666,8 @@
           </div>
           <div class="ws-card strong">
             <div class="ws-tag">Stronger (calibrated)</div>
-            <div class="ws-text">&#8220;I see where you&#8217;re coming from, but I&#8217;d frame it slightly differently. The issue is more about timing than about the process itself.&#8221;</div>
+            <div class="ws-text">&#8220;I see where you&#8217;re coming from, but I&#8217;d frame it slightly
+              differently. The issue is more about timing than about the process itself.&#8221;</div>
           </div>
         </div>
       </div>
@@ -3233,28 +3680,34 @@
         <div class="practice-pane active" id="p10-c">
           <div class="practice-card">
             <div class="practice-prompt">Disagree with a suggestion, but stay professional.</div>
-            <div class="practice-task"><strong>Task:</strong> Use &#8220;I see where you&#8217;re coming from, but&#8230;&#8221; to push back without sounding dismissive.</div>
+            <div class="practice-task"><strong>Task:</strong> Use &#8220;I see where you&#8217;re coming from,
+              but&#8230;&#8221; to push back without sounding dismissive.</div>
           </div>
         </div>
         <div class="practice-pane" id="p10-a">
           <div class="practice-card">
             <div class="practice-prompt">A senior colleague suggests a plan that you think carries too much risk.</div>
-            <div class="practice-task"><strong>Task:</strong> Acknowledge the point, flag the concern, and offer an alternative &#8212; all in a professional tone.</div>
+            <div class="practice-task"><strong>Task:</strong> Acknowledge the point, flag the concern, and offer an
+              alternative &#8212; all in a professional tone.</div>
           </div>
         </div>
         <div class="practice-pane" id="p10-r">
           <div class="practice-card">
             <div class="practice-prompt">The listener is pushing back and sounds frustrated.</div>
-            <div class="practice-task"><strong>Challenge:</strong> Stay calm and professional. Don&#8217;t become either submissive or confrontational.</div>
+            <div class="practice-task"><strong>Challenge:</strong> Stay calm and professional. Don&#8217;t become either
+              submissive or confrontational.</div>
           </div>
         </div>
       </div>
       <div class="quick-recap">
-        <div class="recap-icon"><svg width="14" height="14" style="color:white"><use href="#icon-target"/></svg></div>
+        <div class="recap-icon"><svg width="14" height="14" style="color:white">
+            <use href="#icon-target" />
+          </svg></div>
         <div>
           <div class="recap-label">Quick Recap</div>
           <div class="recap-text">Calibration means holding a clear position without losing the relationship.</div>
-          <div class="recap-phrase">&#8220;I see where you&#8217;re coming from, but I&#8217;d frame it slightly differently.&#8221;</div>
+          <div class="recap-phrase">&#8220;I see where you&#8217;re coming from, but I&#8217;d frame it slightly
+            differently.&#8221;</div>
         </div>
       </div>
     </div>
@@ -3264,27 +3717,38 @@
       <div class="skill-hero">
         <div class="skill-number-badge">Skill 6 of 6</div>
         <h1 class="skill-title">Close With Control</h1>
-        <div class="skill-key-move">Key Move: <span class="key-move-hl">End on a clear action, timing, or decision &#8212; not a vague fade-out.</span></div>
+        <div class="skill-key-move">Key Move: <span class="key-move-hl">End on a clear action, timing, or decision
+            &#8212; not a vague fade-out.</span></div>
       </div>
       <div class="two-col">
         <div>
           <div class="info-block">
             <div class="info-block-label">Why this matters</div>
-            <div class="info-block-text">A strong message that fades out loses all the control built up during the response. Senior communicators close clearly. The listener should leave knowing exactly what happens next &#8212; who does what, by when, or what has been decided. Vague endings undermine everything that came before.</div>
+            <div class="info-block-text">A strong message that fades out loses all the control built up during the
+              response. Senior communicators close clearly. The listener should leave knowing exactly what happens next
+              &#8212; who does what, by when, or what has been decided. Vague endings undermine everything that came
+              before.</div>
           </div>
           <div class="principle-block">
-            <div class="principle-icon"><svg width="14" height="14" style="color:#C8843A"><use href="#icon-bulb"/></svg></div>
+            <div class="principle-icon"><svg width="14" height="14" style="color:#C8843A">
+                <use href="#icon-bulb" />
+              </svg></div>
             <div class="principle-text">The close is what people remember.</div>
           </div>
         </div>
         <div class="info-block">
           <div class="info-block-label">Useful language</div>
           <div class="phrase-chips">
-            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;The practical next step is&#8230;&#8221;</div>
-            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;From my side, I&#8217;ll&#8230;&#8221;</div>
-            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;What I&#8217;d need from you is&#8230;&#8221;</div>
-            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;I&#8217;ll have this to you by&#8230;&#8221;</div>
-            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;We should confirm this by&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;The practical next step
+              is&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;From my side,
+              I&#8217;ll&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;What I&#8217;d need from you
+              is&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;I&#8217;ll have this to you
+              by&#8230;&#8221;</div>
+            <div class="phrase-chip" onclick="this.classList.toggle('selected')">&#8220;We should confirm this
+              by&#8230;&#8221;</div>
           </div>
         </div>
       </div>
@@ -3293,11 +3757,13 @@
         <div class="ws-grid">
           <div class="ws-card weak">
             <div class="ws-tag">Weak</div>
-            <div class="ws-text">&#8220;So yes, that&#8217;s basically it. Let me know if you have any questions or anything.&#8221;</div>
+            <div class="ws-text">&#8220;So yes, that&#8217;s basically it. Let me know if you have any questions or
+              anything.&#8221;</div>
           </div>
           <div class="ws-card strong">
             <div class="ws-tag">Stronger</div>
-            <div class="ws-text">&#8220;The practical next step is for me to confirm the decision owner and send a short summary with the timeline. I&#8217;ll have that to you by Thursday.&#8221;</div>
+            <div class="ws-text">&#8220;The practical next step is for me to confirm the decision owner and send a short
+              summary with the timeline. I&#8217;ll have that to you by Thursday.&#8221;</div>
           </div>
         </div>
       </div>
@@ -3307,13 +3773,19 @@
             <div class="toggle-label">See it in context</div>
             <div class="toggle-sub">A short model response using this skill.</div>
           </div>
-          <div class="toggle-chevron"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="toggle-chevron"><svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M3 5l4 4 4-4" stroke="#6B7280" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg></div>
         </div>
         <div class="full-example-body">
           <div class="client-label">Situation</div>
-          <div class="client-quote">The student has just explained a project delay and needs to finish the response clearly.</div>
+          <div class="client-quote">The student has just explained a project delay and needs to finish the response
+            clearly.</div>
           <div class="client-label mt-10">Response using Close</div>
-          <div class="response-text">&#8220;The practical next step is for me to send a short summary of the two options and the revised timeline. I&#8217;ll have that with you by Thursday so you can confirm the direction before the end of the week.&#8221;</div>
+          <div class="response-text">&#8220;The practical next step is for me to send a short summary of the two options
+            and the revised timeline. I&#8217;ll have that with you by Thursday so you can confirm the direction before
+            the end of the week.&#8221;</div>
         </div>
       </div>
       <div class="practice-section">
@@ -3325,24 +3797,30 @@
         <div class="practice-pane active" id="p11-c">
           <div class="practice-card">
             <div class="practice-prompt">You&#8217;ve just explained a situation and need to close clearly.</div>
-            <div class="practice-task"><strong>Task:</strong> End with &#8220;The practical next step is&#8230;&#8221; and include action, owner, and timing.</div>
+            <div class="practice-task"><strong>Task:</strong> End with &#8220;The practical next step is&#8230;&#8221;
+              and include action, owner, and timing.</div>
           </div>
         </div>
         <div class="practice-pane" id="p11-a">
           <div class="practice-card">
             <div class="practice-prompt">Both sides need to take action before the next meeting.</div>
-            <div class="practice-task"><strong>Task:</strong> Close with one action for each side. Be specific about timing.</div>
+            <div class="practice-task"><strong>Task:</strong> Close with one action for each side. Be specific about
+              timing.</div>
           </div>
         </div>
         <div class="practice-pane" id="p11-r">
           <div class="practice-card">
-            <div class="practice-prompt">The listener is ready to move on and about to close the conversation themselves.</div>
-            <div class="practice-task"><strong>Challenge:</strong> Step in first with a clear close before they drift to a vague ending.</div>
+            <div class="practice-prompt">The listener is ready to move on and about to close the conversation
+              themselves.</div>
+            <div class="practice-task"><strong>Challenge:</strong> Step in first with a clear close before they drift to
+              a vague ending.</div>
           </div>
         </div>
       </div>
       <div class="quick-recap">
-        <div class="recap-icon"><svg width="14" height="14" style="color:white"><use href="#icon-target"/></svg></div>
+        <div class="recap-icon"><svg width="14" height="14" style="color:white">
+            <use href="#icon-target" />
+          </svg></div>
         <div>
           <div class="recap-label">Quick Recap</div>
           <div class="recap-text">A strong close turns a good response into a professional one.</div>
@@ -3355,7 +3833,8 @@
     <div class="page" id="page-12">
       <div class="page-eyebrow">Full Sequence</div>
       <h1 class="page-title">Put the Framework Together</h1>
-      <p class="page-subtitle">A senior-sounding response uses all six steps: a calm start, a clear main point, a condensed explanation, a positioned view, a calibrated tone, and a controlled close.</p>
+      <p class="page-subtitle">A senior-sounding response uses all six steps: a calm start, a clear main point, a
+        condensed explanation, a positioned view, a calibrated tone, and a controlled close.</p>
       <div class="sequence-steps mt-8">
         <div class="seq-step">
           <div class="seq-line-col">
@@ -3374,7 +3853,8 @@
           </div>
           <div class="seq-content">
             <div class="seq-label">Prioritise</div>
-            <div class="seq-phrase">&#8220;The main thing here is that the deadline is still achievable, but the approval step is the current risk.&#8221;</div>
+            <div class="seq-phrase">&#8220;The main thing here is that the deadline is still achievable, but the
+              approval step is the current risk.&#8221;</div>
           </div>
         </div>
         <div class="seq-step">
@@ -3394,7 +3874,8 @@
           </div>
           <div class="seq-content">
             <div class="seq-label">Position</div>
-            <div class="seq-phrase">&#8220;My recommendation would be to confirm the decision owner today rather than waiting until Friday.&#8221;</div>
+            <div class="seq-phrase">&#8220;My recommendation would be to confirm the decision owner today rather than
+              waiting until Friday.&#8221;</div>
           </div>
         </div>
         <div class="seq-step">
@@ -3404,7 +3885,8 @@
           </div>
           <div class="seq-content">
             <div class="seq-label">Calibrate</div>
-            <div class="seq-phrase">&#8220;I see where you&#8217;re coming from on waiting, but I&#8217;d frame it slightly differently &#8212; the risk is that we lose another full week.&#8221;</div>
+            <div class="seq-phrase">&#8220;I see where you&#8217;re coming from on waiting, but I&#8217;d frame it
+              slightly differently &#8212; the risk is that we lose another full week.&#8221;</div>
           </div>
         </div>
         <div class="seq-step">
@@ -3413,7 +3895,8 @@
           </div>
           <div class="seq-content">
             <div class="seq-label">Close</div>
-            <div class="seq-phrase">&#8220;The practical next step is for me to send a short summary with the two options and the timeline. I&#8217;ll have that with you by end of day.&#8221;</div>
+            <div class="seq-phrase">&#8220;The practical next step is for me to send a short summary with the two
+              options and the timeline. I&#8217;ll have that with you by end of day.&#8221;</div>
           </div>
         </div>
       </div>
@@ -3422,15 +3905,25 @@
         <div class="client-label">Colleague</div>
         <div class="client-quote">&#8220;Can you quickly explain where we are with this project?&#8221;</div>
         <div class="client-label mt-10">Response</div>
-        <div class="response-text">&#8220;Let me give you the short version first. The main thing here is that the deadline is still achievable, but the approval step is the current risk. In practical terms, everything depends on a decision this week. My recommendation would be to confirm the decision owner today rather than waiting until Friday. I see where you&#8217;re coming from on waiting, but I&#8217;d frame it slightly differently &#8212; the risk is that we lose another full week. The practical next step is for me to send a short summary with the two options and the timeline. I&#8217;ll have that with you by end of day.&#8221;</div>
+        <div class="response-text">&#8220;Let me give you the short version first. The main thing here is that the
+          deadline is still achievable, but the approval step is the current risk. In practical terms, everything
+          depends on a decision this week. My recommendation would be to confirm the decision owner today rather than
+          waiting until Friday. I see where you&#8217;re coming from on waiting, but I&#8217;d frame it slightly
+          differently &#8212; the risk is that we lose another full week. The practical next step is for me to send a
+          short summary with the two options and the timeline. I&#8217;ll have that with you by end of day.&#8221;</div>
       </div>
       <div class="card mt-14">
         <div class="section-label mb-8">Written version</div>
-        <p style="font-size:14px;color:var(--navy);line-height:1.7">&#8220;Quick update: the deadline is still achievable but the approval step is the current risk. Everything depends on a decision this week. My recommendation is to confirm the decision owner today. The practical next step is for me to send you a short summary with the two options and the timeline &#8212; I&#8217;ll have that with you by end of day.&#8221;</p>
+        <p style="font-size:14px;color:var(--navy);line-height:1.7">&#8220;Quick update: the deadline is still
+          achievable but the approval step is the current risk. Everything depends on a decision this week. My
+          recommendation is to confirm the decision owner today. The practical next step is for me to send you a short
+          summary with the two options and the timeline &#8212; I&#8217;ll have that with you by end of day.&#8221;</p>
       </div>
       <div class="optional-q mt-16">
         <div class="optional-q-label">Optional &#8212; quick question</div>
-        <div class="optional-q-text">Which step made the most difference to how senior the response sounds: the opening pause, the main point, the condensed message, the recommendation, the calibrated pushback, or the clear close?</div>
+        <div class="optional-q-text">Which step made the most difference to how senior the response sounds: the opening
+          pause, the main point, the condensed message, the recommendation, the calibrated pushback, or the clear close?
+        </div>
       </div>
     </div>
 
@@ -3438,13 +3931,17 @@
     <div class="page" id="page-13">
       <div class="page-eyebrow">Reference</div>
       <h1 class="page-title">Sounding Senior Language Bank</h1>
-      <p class="page-subtitle">Key phrases organised by the six framework steps. Use this page during or after practice.</p>
+      <p class="page-subtitle">Key phrases organised by the six framework steps. Use this page during or after practice.
+      </p>
       <div class="lang-accordion mt-8">
 
         <div class="lang-group">
           <div class="lang-group-header" onclick="toggleLangGroup(this)">
             <span class="lang-group-title">Pause and framing<span class="lang-group-count">5 phrases</span></span>
-            <svg class="lang-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="lang-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </div>
           <div class="lang-group-body">
             <div class="lang-phrase-list">
@@ -3459,8 +3956,12 @@
 
         <div class="lang-group">
           <div class="lang-group-header" onclick="toggleLangGroup(this)">
-            <span class="lang-group-title">Prioritising the main point<span class="lang-group-count">5 phrases</span></span>
-            <svg class="lang-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="lang-group-title">Prioritising the main point<span class="lang-group-count">5
+                phrases</span></span>
+            <svg class="lang-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </div>
           <div class="lang-group-body">
             <div class="lang-phrase-list">
@@ -3476,7 +3977,10 @@
         <div class="lang-group">
           <div class="lang-group-header" onclick="toggleLangGroup(this)">
             <span class="lang-group-title">Condensing<span class="lang-group-count">5 phrases</span></span>
-            <svg class="lang-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="lang-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </div>
           <div class="lang-group-body">
             <div class="lang-phrase-list">
@@ -3491,8 +3995,12 @@
 
         <div class="lang-group">
           <div class="lang-group-header" onclick="toggleLangGroup(this)">
-            <span class="lang-group-title">Positioning a recommendation<span class="lang-group-count">5 phrases</span></span>
-            <svg class="lang-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="lang-group-title">Positioning a recommendation<span class="lang-group-count">5
+                phrases</span></span>
+            <svg class="lang-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </div>
           <div class="lang-group-body">
             <div class="lang-phrase-list">
@@ -3507,13 +4015,19 @@
 
         <div class="lang-group">
           <div class="lang-group-header" onclick="toggleLangGroup(this)">
-            <span class="lang-group-title">Calibrated pushback and disagreement<span class="lang-group-count">6 phrases</span></span>
-            <svg class="lang-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="lang-group-title">Calibrated pushback and disagreement<span class="lang-group-count">6
+                phrases</span></span>
+            <svg class="lang-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </div>
           <div class="lang-group-body">
             <div class="lang-phrase-list">
-              <div class="lang-phrase">&#8220;I see where you&#8217;re coming from, but I&#8217;d frame it slightly differently.&#8221;</div>
-              <div class="lang-phrase">&#8220;I understand the concern. The risk I&#8217;d highlight is&#8230;&#8221;</div>
+              <div class="lang-phrase">&#8220;I see where you&#8217;re coming from, but I&#8217;d frame it slightly
+                differently.&#8221;</div>
+              <div class="lang-phrase">&#8220;I understand the concern. The risk I&#8217;d highlight is&#8230;&#8221;
+              </div>
               <div class="lang-phrase">&#8220;That&#8217;s a fair point. What I&#8217;d add is&#8230;&#8221;</div>
               <div class="lang-phrase">&#8220;I agree in principle, but I&#8217;d be cautious about&#8230;&#8221;</div>
               <div class="lang-phrase">&#8220;I wouldn&#8217;t want to commit to that yet.&#8221;</div>
@@ -3525,13 +4039,17 @@
         <div class="lang-group">
           <div class="lang-group-header" onclick="toggleLangGroup(this)">
             <span class="lang-group-title">Saying no or not yet<span class="lang-group-count">4 phrases</span></span>
-            <svg class="lang-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="lang-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </div>
           <div class="lang-group-body">
             <div class="lang-phrase-list">
               <div class="lang-phrase">&#8220;I&#8217;d hold off on committing to that.&#8221;</div>
               <div class="lang-phrase">&#8220;That&#8217;s not something I can confirm right now.&#8221;</div>
-              <div class="lang-phrase">&#8220;I don&#8217;t think that&#8217;s the right move at this stage.&#8221;</div>
+              <div class="lang-phrase">&#8220;I don&#8217;t think that&#8217;s the right move at this stage.&#8221;
+              </div>
               <div class="lang-phrase">&#8220;I&#8217;d want to check one thing before we decide.&#8221;</div>
             </div>
           </div>
@@ -3540,7 +4058,10 @@
         <div class="lang-group">
           <div class="lang-group-header" onclick="toggleLangGroup(this)">
             <span class="lang-group-title">Closing with control<span class="lang-group-count">5 phrases</span></span>
-            <svg class="lang-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="lang-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </div>
           <div class="lang-group-body">
             <div class="lang-phrase-list">
@@ -3555,13 +4076,19 @@
 
         <div class="lang-group">
           <div class="lang-group-header" onclick="toggleLangGroup(this)">
-            <span class="lang-group-title">Handling pressure and unexpected questions<span class="lang-group-count">5 phrases</span></span>
-            <svg class="lang-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="lang-group-title">Handling pressure and unexpected questions<span class="lang-group-count">5
+                phrases</span></span>
+            <svg class="lang-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </div>
           <div class="lang-group-body">
             <div class="lang-phrase-list">
-              <div class="lang-phrase">&#8220;That&#8217;s a good question. Let me think about that for a moment.&#8221;</div>
-              <div class="lang-phrase">&#8220;I don&#8217;t have that detail with me right now, but I&#8217;ll confirm it today.&#8221;</div>
+              <div class="lang-phrase">&#8220;That&#8217;s a good question. Let me think about that for a moment.&#8221;
+              </div>
+              <div class="lang-phrase">&#8220;I don&#8217;t have that detail with me right now, but I&#8217;ll confirm
+                it today.&#8221;</div>
               <div class="lang-phrase">&#8220;I&#8217;d rather give you the accurate answer than guess.&#8221;</div>
               <div class="lang-phrase">&#8220;Let me make sure I&#8217;m answering the right question.&#8221;</div>
               <div class="lang-phrase">&#8220;Can I come back to that point in a moment?&#8221;</div>
@@ -3572,7 +4099,8 @@
       </div>
       <div class="optional-q mt-16">
         <div class="optional-q-label">Optional &#8212; quick question</div>
-        <div class="optional-q-text">Which two or three phrases here would make the biggest difference in your real work conversations?</div>
+        <div class="optional-q-text">Which two or three phrases here would make the biggest difference in your real work
+          conversations?</div>
       </div>
     </div>
 
@@ -3589,7 +4117,10 @@
               <div class="prompt-title">Prompt 1 &#8212; Quick Project Update</div>
               <div class="prompt-quote">&#8220;Can you quickly explain where we are with this?&#8221;</div>
             </div>
-            <svg class="prompt-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="prompt-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </div>
           <div class="prompt-body">
             <p class="prompt-hint">Choose one skill to practise, or use the full framework.</p>
@@ -3608,7 +4139,10 @@
               <div class="prompt-title">Prompt 2 &#8212; Explaining a Delay</div>
               <div class="prompt-quote">&#8220;Why is this taking longer than expected?&#8221;</div>
             </div>
-            <svg class="prompt-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="prompt-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </div>
           <div class="prompt-body">
             <div class="prompt-options">
@@ -3626,7 +4160,10 @@
               <div class="prompt-title">Prompt 3 &#8212; Giving a Recommendation</div>
               <div class="prompt-quote">&#8220;What do you think we should do?&#8221;</div>
             </div>
-            <svg class="prompt-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="prompt-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </div>
           <div class="prompt-body">
             <div class="prompt-options">
@@ -3644,7 +4181,10 @@
               <div class="prompt-title">Prompt 4 &#8212; Pushing Back Professionally</div>
               <div class="prompt-quote">&#8220;I think we should just move ahead with the original plan.&#8221;</div>
             </div>
-            <svg class="prompt-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="prompt-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </div>
           <div class="prompt-body">
             <div class="prompt-options">
@@ -3661,7 +4201,10 @@
               <div class="prompt-title">Prompt 5 &#8212; Responding Under Pressure</div>
               <div class="prompt-quote">&#8220;We need an answer now. What do you think?&#8221;</div>
             </div>
-            <svg class="prompt-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="prompt-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </div>
           <div class="prompt-body">
             <div class="prompt-options">
@@ -3679,7 +4222,10 @@
               <div class="prompt-title">Prompt 6 &#8212; Saying Not Yet</div>
               <div class="prompt-quote">&#8220;Can you confirm you&#8217;ll have this done by Friday?&#8221;</div>
             </div>
-            <svg class="prompt-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="prompt-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </div>
           <div class="prompt-body">
             <div class="prompt-options">
@@ -3696,7 +4242,10 @@
               <div class="prompt-title">Prompt 7 &#8212; Giving a Concise Senior Update</div>
               <div class="prompt-quote">&#8220;I only have two minutes. Can you summarise where we are?&#8221;</div>
             </div>
-            <svg class="prompt-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="prompt-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </div>
           <div class="prompt-body">
             <div class="prompt-options">
@@ -3714,7 +4263,10 @@
               <div class="prompt-title">Prompt 8 &#8212; Responding to a Broad Question</div>
               <div class="prompt-quote">&#8220;What&#8217;s your view on how this project is going?&#8221;</div>
             </div>
-            <svg class="prompt-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="prompt-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </div>
           <div class="prompt-body">
             <div class="prompt-options">
@@ -3732,7 +4284,10 @@
               <div class="prompt-title">Prompt 9 &#8212; Closing a Meeting or Conversation</div>
               <div class="prompt-quote">&#8220;Is there anything else, or are we done?&#8221;</div>
             </div>
-            <svg class="prompt-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="prompt-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </div>
           <div class="prompt-body">
             <div class="prompt-options">
@@ -3749,7 +4304,10 @@
               <div class="prompt-title">Prompt 10 &#8212; Unexpected Question</div>
               <div class="prompt-quote">&#8220;Someone asks something you did not prepare for.&#8221;</div>
             </div>
-            <svg class="prompt-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="prompt-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M4.5 7L9 11.5 13.5 7" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </div>
           <div class="prompt-body">
             <div class="prompt-options">
@@ -3768,65 +4326,100 @@
     <div class="page" id="page-15">
       <div class="page-eyebrow amber">Practice Upgrade</div>
       <h1 class="page-title">Make It More Realistic</h1>
-      <p class="page-subtitle">Once the response is clear, try the same task with one extra difficulty. Add one challenge at a time.</p>
+      <p class="page-subtitle">Once the response is clear, try the same task with one extra difficulty. Add one
+        challenge at a time.</p>
       <div class="challenge-grid mt-8">
 
         <div class="challenge-card" onclick="this.classList.toggle('active')">
-          <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="9" r="5.5" stroke="#C8843A" stroke-width="1.3"/><path d="M8 6v3l2 1.5" stroke="#C8843A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="9" r="5.5" stroke="#C8843A" stroke-width="1.3" />
+              <path d="M8 6v3l2 1.5" stroke="#C8843A" stroke-width="1.3" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg></div>
           <div class="challenge-title">Short Version</div>
           <div class="challenge-quote">You only have 30 seconds.</div>
         </div>
 
         <div class="challenge-card" onclick="this.classList.toggle('active')">
-          <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 6a5 5 0 0 1 10 0c0 2-1 3.5-2.5 4.5V12H5.5v-1.5C4 9.5 3 8 3 6z" stroke="#C8843A" stroke-width="1.3" fill="none"/></svg></div>
+          <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 6a5 5 0 0 1 10 0c0 2-1 3.5-2.5 4.5V12H5.5v-1.5C4 9.5 3 8 3 6z" stroke="#C8843A"
+                stroke-width="1.3" fill="none" />
+            </svg></div>
           <div class="challenge-title">Impatient Listener</div>
           <div class="challenge-quote">The listener seems in a hurry and keeps cutting in.</div>
         </div>
 
         <div class="challenge-card" onclick="this.classList.toggle('active')">
-          <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="5" width="12" height="8" rx="1.5" stroke="#C8843A" stroke-width="1.3"/><path d="M5 5V4a3 3 0 0 1 6 0v1" stroke="#C8843A" stroke-width="1.3"/></svg></div>
+          <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <rect x="2" y="5" width="12" height="8" rx="1.5" stroke="#C8843A" stroke-width="1.3" />
+              <path d="M5 5V4a3 3 0 0 1 6 0v1" stroke="#C8843A" stroke-width="1.3" />
+            </svg></div>
           <div class="challenge-title">Senior Audience</div>
           <div class="challenge-quote">The listener expects brevity and hates unnecessary detail.</div>
         </div>
 
         <div class="challenge-card" onclick="this.classList.toggle('active')">
-          <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="#C8843A" stroke-width="1.3"/><path d="M6 6.5c0-1 .9-1.5 2-1.5s2 .7 2 1.5c0 1-1 1.5-2 2" stroke="#C8843A" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="11" r="0.75" fill="#C8843A"/></svg></div>
+          <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="5.5" stroke="#C8843A" stroke-width="1.3" />
+              <path d="M6 6.5c0-1 .9-1.5 2-1.5s2 .7 2 1.5c0 1-1 1.5-2 2" stroke="#C8843A" stroke-width="1.3"
+                stroke-linecap="round" />
+              <circle cx="8" cy="11" r="0.75" fill="#C8843A" />
+            </svg></div>
           <div class="challenge-title">Unexpected Question</div>
           <div class="challenge-quote">You did not prepare for this question.</div>
         </div>
 
         <div class="challenge-card" onclick="this.classList.toggle('active')">
-          <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2.5" y="3.5" width="11" height="9" rx="1.5" stroke="#C8843A" stroke-width="1.3"/><path d="M5 7h6M5 9.5h4" stroke="#C8843A" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+          <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <rect x="2.5" y="3.5" width="11" height="9" rx="1.5" stroke="#C8843A" stroke-width="1.3" />
+              <path d="M5 7h6M5 9.5h4" stroke="#C8843A" stroke-width="1.3" stroke-linecap="round" />
+            </svg></div>
           <div class="challenge-title">Incomplete Information</div>
           <div class="challenge-quote">You don&#8217;t have all the details yet.</div>
         </div>
 
         <div class="challenge-card" onclick="this.classList.toggle('active')">
-          <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 8V4a1 1 0 0 1 2 0v4M6 8V6a1 1 0 0 0-2 0v3a5 5 0 0 0 5 5h1a4 4 0 0 0 4-4V8a1 1 0 0 0-2 0" stroke="#C8843A" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg></div>
+          <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M6 8V4a1 1 0 0 1 2 0v4M6 8V6a1 1 0 0 0-2 0v3a5 5 0 0 0 5 5h1a4 4 0 0 0 4-4V8a1 1 0 0 0-2 0"
+                stroke="#C8843A" stroke-width="1.3" stroke-linecap="round" fill="none" />
+            </svg></div>
           <div class="challenge-title">Interruption</div>
           <div class="challenge-quote">The listener interrupts before you finish.</div>
         </div>
 
         <div class="challenge-card" onclick="this.classList.toggle('active')">
-          <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="#C8843A" stroke-width="1.3" opacity="0.5"/><path d="M8 4v4l3 2" stroke="#C8843A" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+          <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="5.5" stroke="#C8843A" stroke-width="1.3" opacity="0.5" />
+              <path d="M8 4v4l3 2" stroke="#C8843A" stroke-width="1.3" stroke-linecap="round" />
+            </svg></div>
           <div class="challenge-title">Skeptical Listener</div>
           <div class="challenge-quote">The listener challenges your recommendation.</div>
         </div>
 
         <div class="challenge-card" onclick="this.classList.toggle('active')">
-          <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="6" cy="6" r="3" stroke="#C8843A" stroke-width="1.3"/><circle cx="11" cy="6" r="3" stroke="#C8843A" stroke-width="1.3"/><path d="M8 13c-2 0-5-1-5-3" stroke="#C8843A" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+          <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="6" cy="6" r="3" stroke="#C8843A" stroke-width="1.3" />
+              <circle cx="11" cy="6" r="3" stroke="#C8843A" stroke-width="1.3" />
+              <path d="M8 13c-2 0-5-1-5-3" stroke="#C8843A" stroke-width="1.3" stroke-linecap="round" />
+            </svg></div>
           <div class="challenge-title">Multiple Listeners</div>
           <div class="challenge-quote">More than one person is asking or responding.</div>
         </div>
 
         <div class="challenge-card" onclick="this.classList.toggle('active')">
-          <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h3M11 8h3M5 4l2 4-2 4M11 4l-2 4 2 4" stroke="#C8843A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M2 8h3M11 8h3M5 4l2 4-2 4M11 4l-2 4 2 4" stroke="#C8843A" stroke-width="1.3"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg></div>
           <div class="challenge-title">Written Format</div>
           <div class="challenge-quote">The same response needs to work as a written message.</div>
         </div>
 
         <div class="challenge-card" onclick="this.classList.toggle('active')">
-          <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="#C8843A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="#C8843A" stroke-width="1.3" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg></div>
           <div class="challenge-title">Pushback Needed</div>
           <div class="challenge-quote">You need to disagree calmly as part of the response.</div>
         </div>
@@ -3834,13 +4427,16 @@
       </div>
       <div class="card mt-20">
         <div class="section-label mb-8">How to use these</div>
-        <p style="font-size:14px;color:var(--navy);line-height:1.65;margin-bottom:12px">Choose one prompt from the Practice Prompt Library and one challenge from this page. Practise using one skill or the full framework.</p>
+        <p style="font-size:14px;color:var(--navy);line-height:1.65;margin-bottom:12px">Choose one prompt from the
+          Practice Prompt Library and one challenge from this page. Practise using one skill or the full framework.</p>
         <div class="challenge-example">
           <p><strong>Prompt:</strong> &#8220;What do you think we should do?&#8221;</p>
           <p><strong>Challenge:</strong> The listener is senior and only has 30 seconds.</p>
           <p class="task">Task: Give a clear recommendation in one confident sentence, then close with a next step.</p>
         </div>
-        <p style="font-size:13px;color:var(--muted);margin-top:12px;font-style:italic">Rule: Add one challenge at a time. The goal is not pressure for the sake of pressure. The goal is to stay clear, calm, and senior-sounding even when the situation is harder.</p>
+        <p style="font-size:13px;color:var(--muted);margin-top:12px;font-style:italic">Rule: Add one challenge at a
+          time. The goal is not pressure for the sake of pressure. The goal is to stay clear, calm, and senior-sounding
+          even when the situation is harder.</p>
       </div>
     </div>
 
@@ -3848,20 +4444,23 @@
     <div class="page" id="page-16">
       <div class="page-eyebrow">Standard</div>
       <h1 class="page-title">What Good Sounding Senior Looks Like</h1>
-      <p class="page-subtitle">A senior-sounding response does not need to be perfect. It needs to be clear, calm, and easy to act on.</p>
+      <p class="page-subtitle">A senior-sounding response does not need to be perfect. It needs to be clear, calm, and
+        easy to act on.</p>
       <div class="good-list mt-8">
         <div class="good-item">
           <div class="good-num">1</div>
           <div>
             <div class="good-title">Calm start</div>
-            <div class="good-phrase">The response begins with control, not with &#8220;um,&#8221; &#8220;sorry,&#8221; or rushing.</div>
+            <div class="good-phrase">The response begins with control, not with &#8220;um,&#8221; &#8220;sorry,&#8221;
+              or rushing.</div>
           </div>
         </div>
         <div class="good-item">
           <div class="good-num">2</div>
           <div>
             <div class="good-title">Main point first</div>
-            <div class="good-phrase">The listener can hear the key message without waiting through background detail.</div>
+            <div class="good-phrase">The listener can hear the key message without waiting through background detail.
+            </div>
           </div>
         </div>
         <div class="good-item">
@@ -3875,7 +4474,8 @@
           <div class="good-num">4</div>
           <div>
             <div class="good-title">Clear position</div>
-            <div class="good-phrase">There is a recommendation, view, or decision &#8212; not just a list of possibilities.</div>
+            <div class="good-phrase">There is a recommendation, view, or decision &#8212; not just a list of
+              possibilities.</div>
           </div>
         </div>
         <div class="good-item">
@@ -3896,35 +4496,61 @@
           <div class="good-num">7</div>
           <div>
             <div class="good-title">Clear close</div>
-            <div class="good-phrase">The response ends with an action, timing, or decision &#8212; not a vague &#8220;let me know.&#8221;</div>
+            <div class="good-phrase">The response ends with an action, timing, or decision &#8212; not a vague
+              &#8220;let me know.&#8221;</div>
           </div>
         </div>
       </div>
       <div class="card mt-20">
         <div class="section-label mb-8">Strong Senior Communication Checklist</div>
-        <p style="font-size:13.5px;color:var(--muted);margin-bottom:14px">A strong senior-sounding response usually includes most of these:</p>
+        <p style="font-size:13.5px;color:var(--muted);margin-bottom:14px">A strong senior-sounding response usually
+          includes most of these:</p>
         <div class="checklist">
-          <div class="checklist-item"><svg width="12" height="12" style="color:#2D8F87"><use href="#icon-check-sm"/></svg>no apologetic opening</div>
-          <div class="checklist-item"><svg width="12" height="12" style="color:#2D8F87"><use href="#icon-check-sm"/></svg>answer comes first</div>
-          <div class="checklist-item"><svg width="12" height="12" style="color:#2D8F87"><use href="#icon-check-sm"/></svg>short and condensed</div>
-          <div class="checklist-item"><svg width="12" height="12" style="color:#2D8F87"><use href="#icon-check-sm"/></svg>clear recommendation</div>
-          <div class="checklist-item"><svg width="12" height="12" style="color:#2D8F87"><use href="#icon-check-sm"/></svg>calm pushback when needed</div>
-          <div class="checklist-item"><svg width="12" height="12" style="color:#2D8F87"><use href="#icon-check-sm"/></svg>no weak hedging</div>
-          <div class="checklist-item"><svg width="12" height="12" style="color:#2D8F87"><use href="#icon-check-sm"/></svg>controlled close</div>
-          <div class="checklist-item"><svg width="12" height="12" style="color:#2D8F87"><use href="#icon-check-sm"/></svg>clear next step</div>
-          <div class="checklist-item"><svg width="12" height="12" style="color:#2D8F87"><use href="#icon-check-sm"/></svg>sounds useful, not impressive</div>
+          <div class="checklist-item"><svg width="12" height="12" style="color:#2D8F87">
+              <use href="#icon-check-sm" />
+            </svg>no apologetic opening</div>
+          <div class="checklist-item"><svg width="12" height="12" style="color:#2D8F87">
+              <use href="#icon-check-sm" />
+            </svg>answer comes first</div>
+          <div class="checklist-item"><svg width="12" height="12" style="color:#2D8F87">
+              <use href="#icon-check-sm" />
+            </svg>short and condensed</div>
+          <div class="checklist-item"><svg width="12" height="12" style="color:#2D8F87">
+              <use href="#icon-check-sm" />
+            </svg>clear recommendation</div>
+          <div class="checklist-item"><svg width="12" height="12" style="color:#2D8F87">
+              <use href="#icon-check-sm" />
+            </svg>calm pushback when needed</div>
+          <div class="checklist-item"><svg width="12" height="12" style="color:#2D8F87">
+              <use href="#icon-check-sm" />
+            </svg>no weak hedging</div>
+          <div class="checklist-item"><svg width="12" height="12" style="color:#2D8F87">
+              <use href="#icon-check-sm" />
+            </svg>controlled close</div>
+          <div class="checklist-item"><svg width="12" height="12" style="color:#2D8F87">
+              <use href="#icon-check-sm" />
+            </svg>clear next step</div>
+          <div class="checklist-item"><svg width="12" height="12" style="color:#2D8F87">
+              <use href="#icon-check-sm" />
+            </svg>sounds useful, not impressive</div>
         </div>
       </div>
       <div class="mini-example mt-16">
         <div class="mini-example-label">Example &#8212; Weak vs Strong</div>
         <div class="client-label">Weak</div>
-        <div class="response-text" style="color:var(--muted);font-style:italic;margin-bottom:12px">&#8220;Um, sorry, I think maybe it&#8217;s going okay, but there are some things that are a bit complicated and I&#8217;m not totally sure yet, so&#8230; maybe we just wait and see?&#8221;</div>
+        <div class="response-text" style="color:var(--muted);font-style:italic;margin-bottom:12px">&#8220;Um, sorry, I
+          think maybe it&#8217;s going okay, but there are some things that are a bit complicated and I&#8217;m not
+          totally sure yet, so&#8230; maybe we just wait and see?&#8221;</div>
         <div class="client-label">Stronger</div>
-        <div class="response-text">&#8220;Let me give you the short version. The main thing here is timing &#8212; we&#8217;re on track, but one approval is still missing. My recommendation is to confirm the decision owner today. The practical next step is for me to send you a brief summary with the options by end of day.&#8221;</div>
+        <div class="response-text">&#8220;Let me give you the short version. The main thing here is timing &#8212;
+          we&#8217;re on track, but one approval is still missing. My recommendation is to confirm the decision owner
+          today. The practical next step is for me to send you a brief summary with the options by end of day.&#8221;
+        </div>
       </div>
       <div class="optional-q mt-16">
         <div class="optional-q-label">Tone note</div>
-        <div class="optional-q-text">Senior English sounds calm and useful &#8212; not perfect, not impressive, and not cold.</div>
+        <div class="optional-q-text">Senior English sounds calm and useful &#8212; not perfect, not impressive, and not
+          cold.</div>
       </div>
     </div>
 
@@ -3932,22 +4558,51 @@
     <div class="page" id="page-17">
       <div class="completion-hero">
         <div class="completion-badge">
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M8 18l6 6 14-14" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+            <path d="M8 18l6 6 14-14" stroke="white" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
         </div>
         <h1 class="completion-title">Sounding Senior and In Control<br>Complete</h1>
-        <p class="completion-sub">You now have a clear structure for sounding calmer, clearer, and more controlled in professional English.</p>
+        <p class="completion-sub">You now have a clear structure for sounding calmer, clearer, and more controlled in
+          professional English.</p>
       </div>
-      <div class="win-message">You can now slow down, lead with the point, make your message shorter, state your view clearly, calibrate under pressure, and close with control &#8212; in any professional conversation.</div>
+      <div class="win-message">You can now slow down, lead with the point, make your message shorter, state your view
+        clearly, calibrate under pressure, and close with control &#8212; in any professional conversation.</div>
       <div class="two-col">
         <div class="card">
           <div class="section-label mb-8">What you can do now</div>
           <div class="can-do-list">
-            <div class="can-do-item"><div class="can-do-check"><svg width="11" height="11" style="color:#2D8F87"><use href="#icon-check-lg"/></svg></div>Pause and frame before answering</div>
-            <div class="can-do-item"><div class="can-do-check"><svg width="11" height="11" style="color:#2D8F87"><use href="#icon-check-lg"/></svg></div>Lead with the most important point</div>
-            <div class="can-do-item"><div class="can-do-check"><svg width="11" height="11" style="color:#2D8F87"><use href="#icon-check-lg"/></svg></div>Condense without losing clarity</div>
-            <div class="can-do-item"><div class="can-do-check"><svg width="11" height="11" style="color:#2D8F87"><use href="#icon-check-lg"/></svg></div>State a recommendation with confidence</div>
-            <div class="can-do-item"><div class="can-do-check"><svg width="11" height="11" style="color:#2D8F87"><use href="#icon-check-lg"/></svg></div>Push back calmly and professionally</div>
-            <div class="can-do-item"><div class="can-do-check"><svg width="11" height="11" style="color:#2D8F87"><use href="#icon-check-lg"/></svg></div>Close every response with a clear next step</div>
+            <div class="can-do-item">
+              <div class="can-do-check"><svg width="11" height="11" style="color:#2D8F87">
+                  <use href="#icon-check-lg" />
+                </svg></div>Pause and frame before answering
+            </div>
+            <div class="can-do-item">
+              <div class="can-do-check"><svg width="11" height="11" style="color:#2D8F87">
+                  <use href="#icon-check-lg" />
+                </svg></div>Lead with the most important point
+            </div>
+            <div class="can-do-item">
+              <div class="can-do-check"><svg width="11" height="11" style="color:#2D8F87">
+                  <use href="#icon-check-lg" />
+                </svg></div>Condense without losing clarity
+            </div>
+            <div class="can-do-item">
+              <div class="can-do-check"><svg width="11" height="11" style="color:#2D8F87">
+                  <use href="#icon-check-lg" />
+                </svg></div>State a recommendation with confidence
+            </div>
+            <div class="can-do-item">
+              <div class="can-do-check"><svg width="11" height="11" style="color:#2D8F87">
+                  <use href="#icon-check-lg" />
+                </svg></div>Push back calmly and professionally
+            </div>
+            <div class="can-do-item">
+              <div class="can-do-check"><svg width="11" height="11" style="color:#2D8F87">
+                  <use href="#icon-check-lg" />
+                </svg></div>Close every response with a clear next step
+            </div>
           </div>
         </div>
         <div>
@@ -3985,8 +4640,10 @@
       <div class="card mt-14">
         <div class="section-label mb-8">Reflection</div>
         <div class="reflection-q">Which skill made the biggest difference to how your responses sound?</div>
-        <div class="reflection-q">Which weak pattern &#8212; over-apologising, burying the point, hedging, or vague endings &#8212; do you still need to reduce?</div>
-        <div class="reflection-q last">In which conversations &#8212; client calls, internal meetings, written updates, or difficult discussions &#8212; will you use this framework first?</div>
+        <div class="reflection-q">Which weak pattern &#8212; over-apologising, burying the point, hedging, or vague
+          endings &#8212; do you still need to reduce?</div>
+        <div class="reflection-q last">In which conversations &#8212; client calls, internal meetings, written updates,
+          or difficult discussions &#8212; will you use this framework first?</div>
       </div>
 
       <div class="suggested-next-section">
@@ -3997,60 +4654,71 @@
           <a class="next-module-card" href="#" target="_blank" rel="noopener">
             <div class="next-module-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M4 10 Q4 4 12 4 Q20 4 20 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                <rect x="2.5" y="9.5" width="4" height="6" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/>
-                <rect x="17.5" y="9.5" width="4" height="6" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/>
-                <path d="M21 15.5 Q21 19 17 19 L14 19" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-                <circle cx="12" cy="19.5" r="1.5" fill="currentColor" opacity="0.6"/>
+                <path d="M4 10 Q4 4 12 4 Q20 4 20 10" fill="none" stroke="currentColor" stroke-width="1.6"
+                  stroke-linecap="round" />
+                <rect x="2.5" y="9.5" width="4" height="6" rx="2" fill="none" stroke="currentColor"
+                  stroke-width="1.4" />
+                <rect x="17.5" y="9.5" width="4" height="6" rx="2" fill="none" stroke="currentColor"
+                  stroke-width="1.4" />
+                <path d="M21 15.5 Q21 19 17 19 L14 19" fill="none" stroke="currentColor" stroke-width="1.4"
+                  stroke-linecap="round" />
+                <circle cx="12" cy="19.5" r="1.5" fill="currentColor" opacity="0.6" />
               </svg>
             </div>
             <div class="next-module-content">
               <div class="next-module-kicker">Next Path</div>
               <div class="next-module-title">Client Call Confidence</div>
-              <div class="next-module-desc"><strong>Best if</strong> you need more control during live calls, fast questions, or unclear client conversations.</div>
+              <div class="next-module-desc"><strong>Best if</strong> you need more control during live calls, fast
+                questions, or unclear client conversations.</div>
             </div>
             <div class="next-module-arrow">&#8594;</div>
           </a>
           <a class="next-module-card" href="#" target="_blank" rel="noopener">
             <div class="next-module-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <rect x="3" y="4" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/>
-                <path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                <rect x="3" y="4" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6" />
+                <path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
               </svg>
             </div>
             <div class="next-module-content">
               <div class="next-module-kicker">Next Path</div>
               <div class="next-module-title">Meeting Participation</div>
-              <div class="next-module-desc"><strong>Best if</strong> you need to contribute, push back, and stay on the record in live meetings.</div>
+              <div class="next-module-desc"><strong>Best if</strong> you need to contribute, push back, and stay on the
+                record in live meetings.</div>
             </div>
             <div class="next-module-arrow">&#8594;</div>
           </a>
           <a class="next-module-card" href="#" target="_blank" rel="noopener">
             <div class="next-module-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2L4 6V13C4 18 7.5 21.5 12 23C16.5 21.5 20 18 20 13V6L12 2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                <path d="M9 13l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 2L4 6V13C4 18 7.5 21.5 12 23C16.5 21.5 20 18 20 13V6L12 2Z" stroke="currentColor"
+                  stroke-width="1.6" stroke-linejoin="round" />
+                <path d="M9 13l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                  stroke-linejoin="round" />
               </svg>
             </div>
             <div class="next-module-content">
               <div class="next-module-kicker">Next Path</div>
               <div class="next-module-title">Negotiation and Difficult Conversations</div>
-              <div class="next-module-desc"><strong>Best if</strong> you need to handle tension, disagreement, or sensitive conversations professionally.</div>
+              <div class="next-module-desc"><strong>Best if</strong> you need to handle tension, disagreement, or
+                sensitive conversations professionally.</div>
             </div>
             <div class="next-module-arrow">&#8594;</div>
           </a>
           <a class="next-module-card" href="#" target="_blank" rel="noopener">
             <div class="next-module-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/>
-                <path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                <path d="M7 10l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+                <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.6" />
+                <path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                <path d="M7 10l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" opacity="0.6" />
               </svg>
             </div>
             <div class="next-module-content">
               <div class="next-module-kicker">Next Path</div>
               <div class="next-module-title">Presentation and Q&amp;A Structure</div>
-              <div class="next-module-desc"><strong>Best if</strong> you need to structure and deliver ideas clearly in front of a group.</div>
+              <div class="next-module-desc"><strong>Best if</strong> you need to structure and deliver ideas clearly in
+                front of a group.</div>
             </div>
             <div class="next-module-arrow">&#8594;</div>
           </a>
@@ -4058,10 +4726,14 @@
       </div>
 
       <div class="completion-actions">
-        <button class="btn-teal" onclick="goToPage(18)">Bonus Round <svg width="15" height="15" style="color:white"><use href="#icon-arrow-right-bonus"/></svg></button>
+        <button class="btn-teal" onclick="goToPage(18)">Bonus Round <svg width="15" height="15" style="color:white">
+            <use href="#icon-arrow-right-bonus" />
+          </svg></button>
         <div style="font-size:12.5px;color:var(--muted)">Optional &#8212; one more round if useful</div>
         <button class="btn-back" style="border-color:var(--border)" onclick="jumpToQuickReference()">
-          <svg width="13" height="13"><use href="#icon-doc-plus"/></svg>
+          <svg width="13" height="13">
+            <use href="#icon-doc-plus" />
+          </svg>
           Quick Reference
         </button>
       </div>
@@ -4071,12 +4743,14 @@
     <div class="page" id="page-18">
       <div class="page-eyebrow">Optional</div>
       <h1 class="page-title">Bonus Round</h1>
-      <p class="page-subtitle">One extra practice round. No new theory &#8212; just one more useful round to reinforce the framework.</p>
+      <p class="page-subtitle">One extra practice round. No new theory &#8212; just one more useful round to reinforce
+        the framework.</p>
       <div class="bonus-cards mt-8">
         <div class="bonus-card">
           <div class="bonus-num">Option 1</div>
           <div class="bonus-title">30-Second Senior Answer</div>
-          <div class="bonus-desc">Answer a broad question using the full framework in 30 seconds or less. Pause, main point, position, and close.</div>
+          <div class="bonus-desc">Answer a broad question using the full framework in 30 seconds or less. Pause, main
+            point, position, and close.</div>
           <div class="bonus-options">
             <div class="bonus-opt" onclick="this.classList.toggle('selected')">project update</div>
             <div class="bonus-opt" onclick="this.classList.toggle('selected')">unexpected question</div>
@@ -4088,7 +4762,9 @@
         <div class="bonus-card">
           <div class="bonus-num">Option 2</div>
           <div class="bonus-title">No Hedging Challenge</div>
-          <div class="bonus-desc">Give the same response again but remove all weak hedging words: &#8220;maybe,&#8221; &#8220;I think,&#8221; &#8220;kind of,&#8221; &#8220;possibly,&#8221; &#8220;I&#8217;m not sure but.&#8221;</div>
+          <div class="bonus-desc">Give the same response again but remove all weak hedging words: &#8220;maybe,&#8221;
+            &#8220;I think,&#8221; &#8220;kind of,&#8221; &#8220;possibly,&#8221; &#8220;I&#8217;m not sure but.&#8221;
+          </div>
           <div class="bonus-options">
             <div class="bonus-opt" onclick="this.classList.toggle('selected')">recommendation</div>
             <div class="bonus-opt" onclick="this.classList.toggle('selected')">project update</div>
@@ -4100,7 +4776,8 @@
         <div class="bonus-card">
           <div class="bonus-num">Option 3</div>
           <div class="bonus-title">Push Back Challenge</div>
-          <div class="bonus-desc">The listener suggests something you disagree with. Push back calmly, give your view, and close with a practical next step.</div>
+          <div class="bonus-desc">The listener suggests something you disagree with. Push back calmly, give your view,
+            and close with a practical next step.</div>
           <div class="bonus-options">
             <div class="bonus-opt" onclick="this.classList.toggle('selected')">timing pressure</div>
             <div class="bonus-opt" onclick="this.classList.toggle('selected')">skeptical senior</div>
@@ -4116,7 +4793,8 @@
     <div class="page" id="quick-reference">
       <div class="page-eyebrow">Student Reference</div>
       <h1 class="page-title">Sounding Senior and In Control Quick Reference</h1>
-      <p class="page-subtitle">A compact review of the framework, key phrases, weak patterns to reduce, and one model response.</p>
+      <p class="page-subtitle">A compact review of the framework, key phrases, weak patterns to reduce, and one model
+        response.</p>
 
       <!-- Section 1: Framework -->
       <div class="section-label" style="margin-bottom:8px">Framework</div>
@@ -4185,7 +4863,8 @@
           <div class="good-num">5</div>
           <div>
             <div class="good-title">Calibrate</div>
-            <div class="good-phrase">&#8220;I see where you&#8217;re coming from, but I&#8217;d frame it slightly differently.&#8221;</div>
+            <div class="good-phrase">&#8220;I see where you&#8217;re coming from, but I&#8217;d frame it slightly
+              differently.&#8221;</div>
           </div>
         </div>
         <div class="good-item">
@@ -4201,11 +4880,21 @@
       <div class="section-label" style="margin-top:24px;margin-bottom:8px">Weak Patterns to Reduce</div>
       <div class="card">
         <div style="display:flex;flex-direction:column;gap:10px">
-          <div style="font-size:13.5px;color:var(--navy)"><span style="font-weight:700;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.07em">Over-apologising: </span>&#8220;Sorry, I&#8217;m not sure if this is right, but&#8230;&#8221;</div>
-          <div style="font-size:13.5px;color:var(--navy)"><span style="font-weight:700;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.07em">Burying the point: </span>Long context before the answer arrives.</div>
-          <div style="font-size:13.5px;color:var(--navy)"><span style="font-weight:700;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.07em">Too many hedges: </span>&#8220;Maybe we could possibly consider&#8230;&#8221;</div>
-          <div style="font-size:13.5px;color:var(--navy)"><span style="font-weight:700;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.07em">Avoiding a view: </span>&#8220;It depends. We could do either really.&#8221;</div>
-          <div style="font-size:13.5px;color:var(--navy)"><span style="font-weight:700;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.07em">Vague ending: </span>&#8220;So yes, that&#8217;s basically it.&#8221;</div>
+          <div style="font-size:13.5px;color:var(--navy)"><span
+              style="font-weight:700;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.07em">Over-apologising:
+            </span>&#8220;Sorry, I&#8217;m not sure if this is right, but&#8230;&#8221;</div>
+          <div style="font-size:13.5px;color:var(--navy)"><span
+              style="font-weight:700;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.07em">Burying
+              the point: </span>Long context before the answer arrives.</div>
+          <div style="font-size:13.5px;color:var(--navy)"><span
+              style="font-weight:700;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.07em">Too
+              many hedges: </span>&#8220;Maybe we could possibly consider&#8230;&#8221;</div>
+          <div style="font-size:13.5px;color:var(--navy)"><span
+              style="font-weight:700;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.07em">Avoiding
+              a view: </span>&#8220;It depends. We could do either really.&#8221;</div>
+          <div style="font-size:13.5px;color:var(--navy)"><span
+              style="font-weight:700;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.07em">Vague
+              ending: </span>&#8220;So yes, that&#8217;s basically it.&#8221;</div>
         </div>
       </div>
 
@@ -4216,19 +4905,29 @@
         <div class="client-label">Colleague</div>
         <div class="client-quote">&#8220;Can you quickly explain where we are with this project?&#8221;</div>
         <div class="client-label mt-10">Response</div>
-        <div class="response-text">&#8220;Let me give you the short version first. The main thing here is that the deadline is still achievable, but the approval step is the current risk. In practical terms, everything depends on a decision this week. My recommendation would be to confirm the decision owner today rather than waiting. I see where you&#8217;re coming from on waiting, but I&#8217;d frame it slightly differently &#8212; the risk is that we lose another full week. The practical next step is for me to send a short summary with the options and the timeline by end of day.&#8221;</div>
+        <div class="response-text">&#8220;Let me give you the short version first. The main thing here is that the
+          deadline is still achievable, but the approval step is the current risk. In practical terms, everything
+          depends on a decision this week. My recommendation would be to confirm the decision owner today rather than
+          waiting. I see where you&#8217;re coming from on waiting, but I&#8217;d frame it slightly differently &#8212;
+          the risk is that we lose another full week. The practical next step is for me to send a short summary with the
+          options and the timeline by end of day.&#8221;</div>
       </div>
 
       <!-- Section 5: Use This When -->
       <div class="optional-q" style="margin-top:20px">
         <div class="optional-q-label">Use this when</div>
-        <div class="optional-q-text">Use this page before calls, meetings, written updates, or any situation where you need to sound calm, clear, and in control &#8212; especially when the listener is senior or time is short.</div>
+        <div class="optional-q-text">Use this page before calls, meetings, written updates, or any situation where you
+          need to sound calm, clear, and in control &#8212; especially when the listener is senior or time is short.
+        </div>
       </div>
 
       <!-- Section 6: Print button -->
       <div style="margin-top:24px;text-align:center">
         <button id="qr-print-btn" class="btn-teal" onclick="window.print()">
-          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M4 5V2h7v3M4 10H2V6h11v4h-2M4 10v3h7v-3" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+            <path d="M4 5V2h7v3M4 10H2V6h11v4h-2M4 10v3h7v-3" stroke="white" stroke-width="1.4" stroke-linecap="round"
+              stroke-linejoin="round" fill="none" />
+          </svg>
           Print / Save as PDF
         </button>
       </div>
@@ -4244,37 +4943,56 @@
     <div class="jump-panel-inner">
       <div class="jump-section-label">Start</div>
       <div class="jump-links">
-        <button class="jump-link" onclick="jumpTo(1)"><span class="jump-link-title">Landing</span><span class="jump-link-desc">Begin the module</span></button>
-        <button class="jump-link" onclick="jumpTo(2)"><span class="jump-link-title">Overview</span><span class="jump-link-desc">What this module builds</span></button>
-        <button class="jump-link" onclick="jumpTo(3)"><span class="jump-link-title">Skill Path</span><span class="jump-link-desc">See the skill progression</span></button>
+        <button class="jump-link" onclick="jumpTo(1)"><span class="jump-link-title">Landing</span><span
+            class="jump-link-desc">Begin the module</span></button>
+        <button class="jump-link" onclick="jumpTo(2)"><span class="jump-link-title">Overview</span><span
+            class="jump-link-desc">What this module builds</span></button>
+        <button class="jump-link" onclick="jumpTo(3)"><span class="jump-link-title">Skill Path</span><span
+            class="jump-link-desc">See the skill progression</span></button>
       </div>
       <div class="jump-section-label">Framework</div>
       <div class="jump-links">
-        <button class="jump-link" onclick="jumpTo(4)"><span class="jump-link-title">Core Framework</span><span class="jump-link-desc">Learn the senior communication structure</span></button>
-        <button class="jump-link" onclick="jumpTo(5)"><span class="jump-link-title">Seniority Signal Map</span><span class="jump-link-desc">Patterns that sound less senior</span></button>
+        <button class="jump-link" onclick="jumpTo(4)"><span class="jump-link-title">Core Framework</span><span
+            class="jump-link-desc">Learn the senior communication structure</span></button>
+        <button class="jump-link" onclick="jumpTo(5)"><span class="jump-link-title">Seniority Signal Map</span><span
+            class="jump-link-desc">Patterns that sound less senior</span></button>
       </div>
       <div class="jump-section-label">Skills</div>
       <div class="jump-links">
-        <button class="jump-link" onclick="jumpTo(6)"><span class="jump-link-title">Skill 1 &#8212; Pause</span><span class="jump-link-desc">Slow the moment down before answering.</span></button>
-        <button class="jump-link" onclick="jumpTo(7)"><span class="jump-link-title">Skill 2 &#8212; Prioritise</span><span class="jump-link-desc">Lead with the most important point.</span></button>
-        <button class="jump-link" onclick="jumpTo(8)"><span class="jump-link-title">Skill 3 &#8212; Condense</span><span class="jump-link-desc">Remove the words that don&#8217;t add value.</span></button>
-        <button class="jump-link" onclick="jumpTo(9)"><span class="jump-link-title">Skill 4 &#8212; Position</span><span class="jump-link-desc">State your view with measured confidence.</span></button>
-        <button class="jump-link" onclick="jumpTo(10)"><span class="jump-link-title">Skill 5 &#8212; Calibrate</span><span class="jump-link-desc">Sound firm without sounding blunt.</span></button>
-        <button class="jump-link" onclick="jumpTo(11)"><span class="jump-link-title">Skill 6 &#8212; Close</span><span class="jump-link-desc">End on a clear action or decision.</span></button>
-        <button class="jump-link" onclick="jumpTo(12)"><span class="jump-link-title">Put It Together</span><span class="jump-link-desc">Combine the full six-step sequence.</span></button>
+        <button class="jump-link" onclick="jumpTo(6)"><span class="jump-link-title">Skill 1 &#8212; Pause</span><span
+            class="jump-link-desc">Slow the moment down before answering.</span></button>
+        <button class="jump-link" onclick="jumpTo(7)"><span class="jump-link-title">Skill 2 &#8212;
+            Prioritise</span><span class="jump-link-desc">Lead with the most important point.</span></button>
+        <button class="jump-link" onclick="jumpTo(8)"><span class="jump-link-title">Skill 3 &#8212; Condense</span><span
+            class="jump-link-desc">Remove the words that don&#8217;t add value.</span></button>
+        <button class="jump-link" onclick="jumpTo(9)"><span class="jump-link-title">Skill 4 &#8212; Position</span><span
+            class="jump-link-desc">State your view with measured confidence.</span></button>
+        <button class="jump-link" onclick="jumpTo(10)"><span class="jump-link-title">Skill 5 &#8212;
+            Calibrate</span><span class="jump-link-desc">Sound firm without sounding blunt.</span></button>
+        <button class="jump-link" onclick="jumpTo(11)"><span class="jump-link-title">Skill 6 &#8212; Close</span><span
+            class="jump-link-desc">End on a clear action or decision.</span></button>
+        <button class="jump-link" onclick="jumpTo(12)"><span class="jump-link-title">Put It Together</span><span
+            class="jump-link-desc">Combine the full six-step sequence.</span></button>
       </div>
       <div class="jump-section-label">Practice &amp; Reference</div>
       <div class="jump-links">
-        <button class="jump-link" onclick="jumpTo(13)"><span class="jump-link-title">Language Bank</span><span class="jump-link-desc">Find useful phrases quickly</span></button>
-        <button class="jump-link" onclick="jumpTo(14)"><span class="jump-link-title">Practice Prompts</span><span class="jump-link-desc">Choose focused practice</span></button>
-        <button class="jump-link" onclick="jumpTo(15)"><span class="jump-link-title">Make It More Realistic</span><span class="jump-link-desc">Add one realistic challenge</span></button>
-        <button class="jump-link" onclick="jumpTo(16)"><span class="jump-link-title">What Good Looks Like</span><span class="jump-link-desc">Review strong performance</span></button>
+        <button class="jump-link" onclick="jumpTo(13)"><span class="jump-link-title">Language Bank</span><span
+            class="jump-link-desc">Find useful phrases quickly</span></button>
+        <button class="jump-link" onclick="jumpTo(14)"><span class="jump-link-title">Practice Prompts</span><span
+            class="jump-link-desc">Choose focused practice</span></button>
+        <button class="jump-link" onclick="jumpTo(15)"><span class="jump-link-title">Make It More Realistic</span><span
+            class="jump-link-desc">Add one realistic challenge</span></button>
+        <button class="jump-link" onclick="jumpTo(16)"><span class="jump-link-title">What Good Looks Like</span><span
+            class="jump-link-desc">Review strong performance</span></button>
       </div>
       <div class="jump-section-label">Finish</div>
       <div class="jump-links">
-        <button class="jump-link" onclick="jumpTo(17)"><span class="jump-link-title">Module Complete</span><span class="jump-link-desc">Review what the student can now do</span></button>
-        <button class="jump-link" onclick="jumpTo(18)"><span class="jump-link-title">Bonus Round</span><span class="jump-link-desc">Optional extra practice</span></button>
-        <button class="jump-link" id="qr-jump-link" onclick="jumpToQuickReference()"><span class="jump-link-title">Quick Reference</span><span class="jump-link-desc">Compact student takeaway</span></button>
+        <button class="jump-link" onclick="jumpTo(17)"><span class="jump-link-title">Module Complete</span><span
+            class="jump-link-desc">Review what the student can now do</span></button>
+        <button class="jump-link" onclick="jumpTo(18)"><span class="jump-link-title">Bonus Round</span><span
+            class="jump-link-desc">Optional extra practice</span></button>
+        <button class="jump-link" id="qr-jump-link" onclick="jumpToQuickReference()"><span class="jump-link-title">Quick
+            Reference</span><span class="jump-link-desc">Compact student takeaway</span></button>
       </div>
     </div>
   </div>
@@ -4283,7 +5001,10 @@
   <div class="bottom-bar hidden" id="bottomBar">
     <div class="bottom-left">
       <button class="btn-back" id="btnBack" onclick="handleBack()">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 3L5 7l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M9 3L5 7l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
         Back
       </button>
       <span class="page-indicator" id="pageIndicator">
@@ -4293,12 +5014,16 @@
     </div>
     <div class="bottom-right">
       <button class="btn-jump" id="btnJump" onclick="toggleJump()">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 4h10M2 7h7M2 10h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M2 4h10M2 7h7M2 10h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+        </svg>
         Jump to
       </button>
       <button class="btn-continue" id="btnContinue" onclick="handleContinue()">
         Continue
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M5 3l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
       </button>
     </div>
   </div>
