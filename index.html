@@ -1409,6 +1409,25 @@
       line-height: 1.45
     }
 
+    .challenge-detail {
+      display: none;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(200, 132, 58, 0.22);
+    }
+
+    .challenge-card.active .challenge-detail {
+      display: block;
+    }
+
+    .challenge-detail .task {
+      font-size: 13px;
+      color: var(--amber);
+      font-weight: 700;
+      line-height: 1.55;
+      margin: 0;
+    }
+
     /* ── QUICK RECAP ────────────────────────────────────── */
     .quick-recap {
       background: var(--navy);
@@ -2260,28 +2279,6 @@
       flex-direction: column;
       align-items: center;
       gap: 12px
-    }
-
-    /* Challenge example box */
-    .challenge-example {
-      background: var(--bg);
-      border-radius: var(--radius-sm);
-      padding: 14px 16px
-    }
-
-    .challenge-example p {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 4px
-    }
-
-    .challenge-example p:last-child {
-      margin-bottom: 0
-    }
-
-    .challenge-example .task {
-      color: var(--teal);
-      font-weight: 600
     }
 
     /* ── STUDY TOOLS ────────────────────────────────────────── */
@@ -4326,11 +4323,13 @@
     <div class="page" id="page-15">
       <div class="page-eyebrow amber">Practice Upgrade</div>
       <h1 class="page-title">Senior Presence Challenge Bank</h1>
-      <p class="page-subtitle">Once the response is clear, try the same task with one extra difficulty. Add one
-        challenge at a time.</p>
+      <p class="page-subtitle">Once the response structure is clear, try the same prompt with one extra difficulty. Add
+        one challenge at a time.</p>
+      <p class="tap-hint">Tap any card to expand it.</p>
+
       <div class="challenge-grid mt-8">
 
-        <div class="challenge-card" onclick="this.classList.toggle('active')">
+        <div class="challenge-card" onclick="toggleChallengeCard(this)">
           <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <circle cx="8" cy="9" r="5.5" stroke="#C8843A" stroke-width="1.3" />
               <path d="M8 6v3l2 1.5" stroke="#C8843A" stroke-width="1.3" stroke-linecap="round"
@@ -4338,27 +4337,38 @@
             </svg></div>
           <div class="challenge-title">Short Version</div>
           <div class="challenge-quote">You only have 30 seconds.</div>
+          <div class="challenge-detail">
+            <p class="task">Give the main point, one reason, and one next step without adding unnecessary background.
+            </p>
+          </div>
         </div>
 
-        <div class="challenge-card" onclick="this.classList.toggle('active')">
+        <div class="challenge-card" onclick="toggleChallengeCard(this)">
           <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M3 6a5 5 0 0 1 10 0c0 2-1 3.5-2.5 4.5V12H5.5v-1.5C4 9.5 3 8 3 6z" stroke="#C8843A"
                 stroke-width="1.3" fill="none" />
             </svg></div>
           <div class="challenge-title">Impatient Listener</div>
           <div class="challenge-quote">The listener seems in a hurry and keeps cutting in.</div>
+          <div class="challenge-detail">
+            <p class="task">Stay calm, keep the response short, and return to the main point without sounding rushed.
+            </p>
+          </div>
         </div>
 
-        <div class="challenge-card" onclick="this.classList.toggle('active')">
+        <div class="challenge-card" onclick="toggleChallengeCard(this)">
           <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <rect x="2" y="5" width="12" height="8" rx="1.5" stroke="#C8843A" stroke-width="1.3" />
               <path d="M5 5V4a3 3 0 0 1 6 0v1" stroke="#C8843A" stroke-width="1.3" />
             </svg></div>
           <div class="challenge-title">Senior Audience</div>
           <div class="challenge-quote">The listener expects brevity and hates unnecessary detail.</div>
+          <div class="challenge-detail">
+            <p class="task">Lead with the conclusion first, then add only the most useful supporting detail.</p>
+          </div>
         </div>
 
-        <div class="challenge-card" onclick="this.classList.toggle('active')">
+        <div class="challenge-card" onclick="toggleChallengeCard(this)">
           <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <circle cx="8" cy="8" r="5.5" stroke="#C8843A" stroke-width="1.3" />
               <path d="M6 6.5c0-1 .9-1.5 2-1.5s2 .7 2 1.5c0 1-1 1.5-2 2" stroke="#C8843A" stroke-width="1.3"
@@ -4367,36 +4377,50 @@
             </svg></div>
           <div class="challenge-title">Unexpected Question</div>
           <div class="challenge-quote">You did not prepare for this question.</div>
+          <div class="challenge-detail">
+            <p class="task">Pause, frame the response, and give a clear answer without over-apologising or guessing.</p>
+          </div>
         </div>
 
-        <div class="challenge-card" onclick="this.classList.toggle('active')">
+        <div class="challenge-card" onclick="toggleChallengeCard(this)">
           <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <rect x="2.5" y="3.5" width="11" height="9" rx="1.5" stroke="#C8843A" stroke-width="1.3" />
               <path d="M5 7h6M5 9.5h4" stroke="#C8843A" stroke-width="1.3" stroke-linecap="round" />
             </svg></div>
           <div class="challenge-title">Incomplete Information</div>
           <div class="challenge-quote">You don&#8217;t have all the details yet.</div>
+          <div class="challenge-detail">
+            <p class="task">Be clear about what you know, what you still need to check, and when you will follow up.</p>
+          </div>
         </div>
 
-        <div class="challenge-card" onclick="this.classList.toggle('active')">
+        <div class="challenge-card" onclick="toggleChallengeCard(this)">
           <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M6 8V4a1 1 0 0 1 2 0v4M6 8V6a1 1 0 0 0-2 0v3a5 5 0 0 0 5 5h1a4 4 0 0 0 4-4V8a1 1 0 0 0-2 0"
                 stroke="#C8843A" stroke-width="1.3" stroke-linecap="round" fill="none" />
             </svg></div>
           <div class="challenge-title">Interruption</div>
           <div class="challenge-quote">The listener interrupts before you finish.</div>
+          <div class="challenge-detail">
+            <p class="task">Acknowledge the interruption, answer the point briefly, then return to your main message.
+            </p>
+          </div>
         </div>
 
-        <div class="challenge-card" onclick="this.classList.toggle('active')">
+        <div class="challenge-card" onclick="toggleChallengeCard(this)">
           <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <circle cx="8" cy="8" r="5.5" stroke="#C8843A" stroke-width="1.3" opacity="0.5" />
               <path d="M8 4v4l3 2" stroke="#C8843A" stroke-width="1.3" stroke-linecap="round" />
             </svg></div>
           <div class="challenge-title">Skeptical Listener</div>
           <div class="challenge-quote">The listener challenges your recommendation.</div>
+          <div class="challenge-detail">
+            <p class="task">Hold your position calmly, acknowledge the concern, and explain the reason behind your view.
+            </p>
+          </div>
         </div>
 
-        <div class="challenge-card" onclick="this.classList.toggle('active')">
+        <div class="challenge-card" onclick="toggleChallengeCard(this)">
           <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <circle cx="6" cy="6" r="3" stroke="#C8843A" stroke-width="1.3" />
               <circle cx="11" cy="6" r="3" stroke="#C8843A" stroke-width="1.3" />
@@ -4404,39 +4428,46 @@
             </svg></div>
           <div class="challenge-title">Multiple Listeners</div>
           <div class="challenge-quote">More than one person is asking or responding.</div>
+          <div class="challenge-detail">
+            <p class="task">Name the point you are answering, keep the response focused, and close with a clear action.
+            </p>
+          </div>
         </div>
 
-        <div class="challenge-card" onclick="this.classList.toggle('active')">
+        <div class="challenge-card" onclick="toggleChallengeCard(this)">
           <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M2 8h3M11 8h3M5 4l2 4-2 4M11 4l-2 4 2 4" stroke="#C8843A" stroke-width="1.3"
                 stroke-linecap="round" stroke-linejoin="round" />
             </svg></div>
           <div class="challenge-title">Written Format</div>
           <div class="challenge-quote">The same response needs to work as a written message.</div>
+          <div class="challenge-detail">
+            <p class="task">Turn the spoken response into a concise written update with a clear main point and next
+              step.</p>
+          </div>
         </div>
 
-        <div class="challenge-card" onclick="this.classList.toggle('active')">
+        <div class="challenge-card" onclick="toggleChallengeCard(this)">
           <div class="challenge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="#C8843A" stroke-width="1.3" stroke-linecap="round"
                 stroke-linejoin="round" />
             </svg></div>
           <div class="challenge-title">Pushback Needed</div>
           <div class="challenge-quote">You need to disagree calmly as part of the response.</div>
+          <div class="challenge-detail">
+            <p class="task">Push back with a calibrated phrase, explain the risk, and close with a practical next step.
+            </p>
+          </div>
         </div>
 
       </div>
+
       <div class="card mt-20">
         <div class="section-label mb-8">How to use these</div>
-        <p style="font-size:14px;color:var(--navy);line-height:1.65;margin-bottom:12px">Choose one prompt from the
-          Practice Prompt Library and one challenge from this page. Practise using one skill or the full framework.</p>
-        <div class="challenge-example">
-          <p><strong>Prompt:</strong> &#8220;What do you think we should do?&#8221;</p>
-          <p><strong>Challenge:</strong> The listener is senior and only has 30 seconds.</p>
-          <p class="task">Task: Give a clear recommendation in one confident sentence, then close with a next step.</p>
-        </div>
-        <p style="font-size:13px;color:var(--muted);margin-top:12px;font-style:italic">Rule: Add one challenge at a
-          time. The goal is not pressure for the sake of pressure. The goal is to stay clear, calm, and senior-sounding
-          even when the situation is harder.</p>
+        <p style="font-size:14px;color:var(--muted);line-height:1.65">Choose one prompt from the Practice Prompts page
+          and one challenge from this page. Practise using one skill or the full framework. Add one challenge at a time.
+          The goal is not to sound perfect. The goal is to stay calm, clear, useful, and senior-sounding when the
+          conversation becomes more realistic.</p>
       </div>
     </div>
 
@@ -4980,8 +5011,8 @@
             class="jump-link-desc">Find useful phrases quickly</span></button>
         <button class="jump-link" onclick="jumpTo(14)"><span class="jump-link-title">Practice Prompts</span><span
             class="jump-link-desc">Choose focused practice</span></button>
-        <button class="jump-link" onclick="jumpTo(15)"><span class="jump-link-title">Senior Presence Challenge Bank</span><span
-            class="jump-link-desc">Add one realistic challenge</span></button>
+        <button class="jump-link" onclick="jumpTo(15)"><span class="jump-link-title">Senior Presence Challenge
+            Bank</span><span class="jump-link-desc">Add one realistic challenge</span></button>
         <button class="jump-link" onclick="jumpTo(16)"><span class="jump-link-title">What Good Looks Like</span><span
             class="jump-link-desc">Review strong performance</span></button>
       </div>
@@ -5199,6 +5230,18 @@
       const was = card.classList.contains('active');
       document.querySelectorAll('.discovery-card').forEach(c => c.classList.remove('active'));
       if (!was) card.classList.add('active');
+    }
+
+    function toggleChallengeCard(card) {
+      const wasActive = card.classList.contains('active');
+
+      document.querySelectorAll('.challenge-card').forEach(function (c) {
+        c.classList.remove('active');
+      });
+
+      if (!wasActive) {
+        card.classList.add('active');
+      }
     }
 
     function switchTab(tab, paneId) {
