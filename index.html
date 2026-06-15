@@ -1281,15 +1281,15 @@
       transition: var(--transition)
     }
 
-    .practice-tab:hover {
-      border-color: var(--teal);
-      color: var(--teal)
-    }
-
     .practice-tab.active {
       background: var(--navy);
       border-color: var(--navy);
       color: white
+    }
+
+    .practice-tab:hover:not(.active) {
+      border-color: var(--navy);
+      color: var(--navy)
     }
 
     .practice-pane {
@@ -1302,32 +1302,35 @@
 
     .practice-card {
       background: var(--card);
-      border: 1px solid var(--border);
+      border: 1.5px solid var(--border);
       border-radius: var(--radius);
       padding: 20px 22px;
       box-shadow: var(--shadow)
     }
 
     .practice-prompt {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--navy);
+      background: #F8F7F4;
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      font-size: 14px;
       font-style: italic;
-      margin-bottom: 10px;
-      line-height: 1.45
+      color: var(--navy-mid);
+      border-left: 3px solid var(--navy);
+      margin-bottom: 14px;
+      line-height: 1.55
     }
 
     .practice-task {
-      font-size: 13.5px;
-      color: var(--muted);
+      font-size: 14px;
+      color: var(--navy);
       line-height: 1.6
     }
 
     .practice-options {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 14px
+      gap: 7px;
+      margin-top: 10px
     }
 
     .practice-opt {
@@ -3188,8 +3191,8 @@
         <div class="ws-grid">
           <div class="ws-card weak">
             <div class="ws-tag">Weak</div>
-            <div class="ws-text">&#8220;Um, yes, so basically I think maybe we can do it but it depends on a few things
-              and I&#8217;m not totally sure yet.&#8221;</div>
+            <div class="ws-text">&#8220;I think we can probably do it, but it depends on a few things and I&#8217;m not
+              totally sure yet.&#8221;</div>
           </div>
           <div class="ws-card strong">
             <div class="ws-tag">Stronger</div>
@@ -3227,22 +3230,24 @@
         <div class="practice-pane active" id="p6-c">
           <div class="practice-card">
             <div class="practice-prompt">Someone asks, &#8220;Can you quickly explain the situation?&#8221;</div>
-            <div class="practice-task"><strong>Task:</strong> Use one pause phrase before you answer. Don&#8217;t start
-              with &#8220;um,&#8221; &#8220;so,&#8221; or &#8220;sorry.&#8221;</div>
+            <div class="practice-task"><strong>Task:</strong> Use one pause phrase before you answer. Suggested start:
+              &#8220;Let me give you the short version first.&#8221; Don&#8217;t start with &#8220;um,&#8221;
+              &#8220;so,&#8221; or &#8220;sorry.&#8221;</div>
           </div>
         </div>
         <div class="practice-pane" id="p6-a">
           <div class="practice-card">
-            <div class="practice-prompt">A client asks a broad question and expects a clear, concise answer.</div>
-            <div class="practice-task"><strong>Task:</strong> Pause, frame the response, and give the short version
-              before going into detail.</div>
+            <div class="practice-prompt">You need to answer a broad question in a professional conversation and sound
+              calm before giving details.</div>
+            <div class="practice-task"><strong>Task:</strong> Use a real conversation from your current role. Pause,
+              frame the response, and give the short version before going into detail.</div>
           </div>
         </div>
         <div class="practice-pane" id="p6-r">
           <div class="practice-card">
             <div class="practice-prompt">The listener sounds impatient and keeps speaking over you.</div>
-            <div class="practice-task"><strong>Challenge:</strong> Use a pause phrase without sounding slow or
-              defensive, even under pressure.</div>
+            <div class="practice-task"><strong>Challenge:</strong> Keep the same real conversation. Use a pause phrase
+              without sounding slow or defensive, even under pressure.</div>
           </div>
         </div>
       </div>
@@ -3302,8 +3307,8 @@
         <div class="ws-grid">
           <div class="ws-card weak">
             <div class="ws-tag">Weak</div>
-            <div class="ws-text">&#8220;So last week we had a few meetings and then there were some delays and then we
-              checked with the team and then&#8230;&#8221;</div>
+            <div class="ws-text">&#8220;We had a few meetings last week, and there were some delays, and we&#8217;re
+              still checking a few things with the team.&#8221;</div>
           </div>
           <div class="ws-card strong">
             <div class="ws-tag">Stronger</div>
@@ -3341,22 +3346,23 @@
           <div class="practice-card">
             <div class="practice-prompt">You have three pieces of information to share. Only one is really important.
             </div>
-            <div class="practice-task"><strong>Task:</strong> Lead with the most important one. Start with &#8220;The
-              main thing here is&#8230;&#8221;</div>
+            <div class="practice-task"><strong>Task:</strong> Lead with the most important one. Suggested start:
+              &#8220;The main thing here is...&#8221;</div>
           </div>
         </div>
         <div class="practice-pane" id="p7-a">
           <div class="practice-card">
-            <div class="practice-prompt">A senior person asks for the status of a project before a meeting.</div>
-            <div class="practice-task"><strong>Task:</strong> Give the answer in two sentences. Main point first, key
-              context second.</div>
+            <div class="practice-prompt">Someone asks for the status of a project, task, decision, or client situation
+              before a meeting.</div>
+            <div class="practice-task"><strong>Task:</strong> Use a real situation from your current role. Give the
+              answer in two sentences: main point first, key context second.</div>
           </div>
         </div>
         <div class="practice-pane" id="p7-r">
           <div class="practice-card">
             <div class="practice-prompt">The listener says, &#8220;Can you keep it very brief?&#8221;</div>
-            <div class="practice-task"><strong>Challenge:</strong> Lead with the point and stop after one supporting
-              sentence.</div>
+            <div class="practice-task"><strong>Challenge:</strong> Keep the same real situation. Lead with the point and
+              stop after one supporting sentence.</div>
           </div>
         </div>
       </div>
@@ -3453,23 +3459,24 @@
         </div>
         <div class="practice-pane active" id="p8-c">
           <div class="practice-card">
-            <div class="practice-prompt">Take a long explanation and cut it to two clear sentences.</div>
-            <div class="practice-task"><strong>Task:</strong> Keep only the main point, one reason, and one next step.
-              Remove everything else.</div>
+            <div class="practice-prompt">&#8220;There are a few different things happening, and it depends on the
+              timing, the team, and one decision we are still waiting for.&#8221;</div>
+            <div class="practice-task"><strong>Task:</strong> Condense this into two clear sentences. Keep only the main
+              point, one reason, and one next step. Suggested start: &#8220;In practical terms...&#8221;</div>
           </div>
         </div>
         <div class="practice-pane" id="p8-a">
           <div class="practice-card">
-            <div class="practice-prompt">The client asks for a brief summary of a complicated situation.</div>
-            <div class="practice-task"><strong>Task:</strong> Condense the message so the key information is easy to
-              understand in 30 seconds.</div>
+            <div class="practice-prompt">Someone asks for a brief summary of a complicated situation.</div>
+            <div class="practice-task"><strong>Task:</strong> Use a real situation from your current role. Condense the
+              message so the key information is easy to understand in 30 seconds.</div>
           </div>
         </div>
         <div class="practice-pane" id="p8-r">
           <div class="practice-card">
             <div class="practice-prompt">The listener says, &#8220;Can you simplify that for me?&#8221;</div>
-            <div class="practice-task"><strong>Challenge:</strong> Give the condensed version calmly without sounding
-              defensive or flustered.</div>
+            <div class="practice-task"><strong>Challenge:</strong> Keep the same real situation. Give the condensed
+              version calmly without sounding defensive or flustered.</div>
           </div>
         </div>
       </div>
@@ -3530,8 +3537,8 @@
         <div class="ws-grid">
           <div class="ws-card weak">
             <div class="ws-tag">Weak</div>
-            <div class="ws-text">&#8220;Maybe option two could be good? But I&#8217;m not sure. It depends. We could do
-              either one.&#8221;</div>
+            <div class="ws-text">&#8220;Option two might be the better direction, but I&#8217;m open to either option.
+              It depends how you want to approach it.&#8221;</div>
           </div>
           <div class="ws-card strong">
             <div class="ws-tag">Stronger</div>
@@ -3569,23 +3576,23 @@
         <div class="practice-pane active" id="p9-c">
           <div class="practice-card">
             <div class="practice-prompt">There are two options. Both have some merit.</div>
-            <div class="practice-task"><strong>Task:</strong> Give a clear recommendation. Start with &#8220;My
-              recommendation would be&#8230;&#8221; and give one reason.</div>
+            <div class="practice-task"><strong>Task:</strong> Give a clear recommendation and one reason. Suggested
+              start: &#8220;My recommendation would be...&#8221;</div>
           </div>
         </div>
         <div class="practice-pane" id="p9-a">
           <div class="practice-card">
             <div class="practice-prompt">The situation is uncertain and the listener wants your view on how to proceed.
             </div>
-            <div class="practice-task"><strong>Task:</strong> Give a recommendation without pretending everything is
-              certain. Acknowledge the risk briefly.</div>
+            <div class="practice-task"><strong>Task:</strong> Use a real scenario from your current role. Give a
+              recommendation without pretending everything is certain. Acknowledge the risk briefly.</div>
           </div>
         </div>
         <div class="practice-pane" id="p9-r">
           <div class="practice-card">
             <div class="practice-prompt">The listener responds, &#8220;Are you sure about that?&#8221;</div>
-            <div class="practice-task"><strong>Challenge:</strong> Hold your recommendation calmly without becoming
-              either defensive or backing away from it.</div>
+            <div class="practice-task"><strong>Challenge:</strong> Keep the same real scenario. Hold your recommendation
+              calmly without becoming either defensive or backing away from it.</div>
           </div>
         </div>
       </div>
@@ -3679,22 +3686,23 @@
         <div class="practice-pane active" id="p10-c">
           <div class="practice-card">
             <div class="practice-prompt">Disagree with a suggestion, but stay professional.</div>
-            <div class="practice-task"><strong>Task:</strong> Use &#8220;I see where you&#8217;re coming from,
-              but&#8230;&#8221; to push back without sounding dismissive.</div>
+            <div class="practice-task"><strong>Task:</strong> Push back without sounding dismissive. Suggested start:
+              &#8220;I see where you&#8217;re coming from, but...&#8221;</div>
           </div>
         </div>
         <div class="practice-pane" id="p10-a">
           <div class="practice-card">
-            <div class="practice-prompt">A senior colleague suggests a plan that you think carries too much risk.</div>
-            <div class="practice-task"><strong>Task:</strong> Acknowledge the point, flag the concern, and offer an
-              alternative &#8212; all in a professional tone.</div>
+            <div class="practice-prompt">You need to flag a concern, disagree, or push back while keeping the
+              relationship intact.</div>
+            <div class="practice-task"><strong>Task:</strong> Use a real conversation from your current role.
+              Acknowledge the point, flag the concern, and offer an alternative in a professional tone.</div>
           </div>
         </div>
         <div class="practice-pane" id="p10-r">
           <div class="practice-card">
             <div class="practice-prompt">The listener is pushing back and sounds frustrated.</div>
-            <div class="practice-task"><strong>Challenge:</strong> Stay calm and professional. Don&#8217;t become either
-              submissive or confrontational.</div>
+            <div class="practice-task"><strong>Challenge:</strong> Keep the same real conversation. Stay calm and
+              professional without becoming either submissive or confrontational.</div>
           </div>
         </div>
       </div>
@@ -3796,23 +3804,24 @@
         <div class="practice-pane active" id="p11-c">
           <div class="practice-card">
             <div class="practice-prompt">You&#8217;ve just explained a situation and need to close clearly.</div>
-            <div class="practice-task"><strong>Task:</strong> End with &#8220;The practical next step is&#8230;&#8221;
-              and include action, owner, and timing.</div>
+            <div class="practice-task"><strong>Task:</strong> End with action, owner, and timing. Suggested start:
+              &#8220;The practical next step is...&#8221;</div>
           </div>
         </div>
         <div class="practice-pane" id="p11-a">
           <div class="practice-card">
-            <div class="practice-prompt">Both sides need to take action before the next meeting.</div>
-            <div class="practice-task"><strong>Task:</strong> Close with one action for each side. Be specific about
+            <div class="practice-prompt">A conversation is ending and both sides need clarity on action, owner, and
               timing.</div>
+            <div class="practice-task"><strong>Task:</strong> Use a real conversation from your current role. Close with
+              one action for each side and be specific about timing.</div>
           </div>
         </div>
         <div class="practice-pane" id="p11-r">
           <div class="practice-card">
             <div class="practice-prompt">The listener is ready to move on and about to close the conversation
               themselves.</div>
-            <div class="practice-task"><strong>Challenge:</strong> Step in first with a clear close before they drift to
-              a vague ending.</div>
+            <div class="practice-task"><strong>Challenge:</strong> Keep the same real conversation. Step in first with a
+              clear close before they drift to a vague ending.</div>
           </div>
         </div>
       </div>
